@@ -3,6 +3,10 @@ import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.*;
 
+/*
+Мультивендор + модуль "Расширенная карта сайта" 2.5.0.
+*/
+
 public class TestRunner {
     public static final String BASIC_URL =  "https://trs.test.abt.team/4162mven/admin.php";
 
