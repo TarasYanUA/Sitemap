@@ -12,7 +12,9 @@ import static com.codeborne.selenide.Selenide.*;
     * Категория "iPods" - с ценой и в наличии
     * Категория "Android" - без цены и без наличия
 Настройка модуля: "Общие -- Исключить категории -- с товарами без цен и наличия"
-Итог: Категория "Android" не попадает в карту сайта.
+Итог:
+    * Категория "iPods" присутствует в карте сайта
+    * Категория "Android" отсутствует в карте сайта.
 */
 
 public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends TestRunner{
