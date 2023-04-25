@@ -1,12 +1,10 @@
-import adminPanel.AdminPage;
+import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import org.openqa.selenium.Alert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
-
 import static com.codeborne.selenide.Selenide.*;
 
 /*
@@ -18,45 +16,45 @@ import static com.codeborne.selenide.Selenide.*;
 */
 
 public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends TestRunner{
-    @Test
-    public void checkGeneralSettings_ExcludeCategories_WithoutAmountAndPrice() {
-        AdminPage adminPage = new AdminPage();
+    @Test(priority = 1)
+    public void setConfigurationsForGeneralSettings_ExcludeCategories_WithoutAmountAndPrice() {
+        CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем первую категорию "iPods"
-        adminPage.navigateToEditingCategoryPage();
-        adminPage.selectCategory_Ipods.click();
-        adminPage.goToStorefront_CategoryPage(1);
+        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.selectCategory_Ipods.click();
+        csCartSettings.goToStorefront_CategoryPage(1);
         String currentUrl_CategoryIpods = WebDriverRunner.getWebDriver().getCurrentUrl(); //Запоминаем ссылку категории "iPods"
+        String[] arrayIpods = currentUrl_CategoryIpods.split("\\?");
+        String urlForCategoryIpods = arrayIpods[0];
+        System.out.println("iPods URL is: " + urlForCategoryIpods);
         switchTo().window(0);
-        adminPage.navigateToProductsOfCategory();
-        adminPage.clickAndType_PriceForCategory_ProdOne("249.00");
-        adminPage.clickAndType_AmountForCategory_ProdOne("10");
-        adminPage.clickAndType_PriceForCategory_ProdTwo("255.00");
-        adminPage.clickAndType_AmountForCategory_ProdTwo("15");
-        adminPage.button_Save.click();
+        csCartSettings.navigateToProductsOfCategory();
+        csCartSettings.clickAndType_PriceForCategory_ProdOne("249.00");
+        csCartSettings.clickAndType_AmountForCategory_ProdOne("10");
+        csCartSettings.clickAndType_PriceForCategory_ProdTwo("255.00");
+        csCartSettings.clickAndType_AmountForCategory_ProdTwo("15");
+        csCartSettings.button_Save.click();
         //Настраиваем вторую категорию "Android"
-        adminPage.navigateToEditingCategoryPage();
-        adminPage.selectCategory_Android.click();
-        adminPage.goToStorefront_CategoryPage(2);
+        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.selectCategory_Android.click();
+        csCartSettings.goToStorefront_CategoryPage(2);
         String currentUrl_CategoryAndroid = WebDriverRunner.getWebDriver().getCurrentUrl(); //Запоминаем ссылку категории "Android"
         switchTo().window(0);
-        adminPage.navigateToProductsOfCategory();
+        String[] arrayAndroid = currentUrl_CategoryAndroid.split("\\?");
+        String urlForCategoryAndroid = arrayAndroid[0];
+        System.out.println("Android URL is: " + urlForCategoryAndroid);
+        csCartSettings.navigateToProductsOfCategory();
         if($$(".products-list__image").size() > 2){
-            do{
-                $(".mobile-hide .dropdown-icon--tools").hover().click();
-                $("a[href*='products.delete']").click();
-                Alert alert = Selenide.webdriver().driver().switchTo().alert();
-                alert.accept();
-                Selenide.sleep(1500);
-            } while ($$(".products-list__image").size() > 2);
+            csCartSettings.deleteProductsFromCategory();
         }
-        adminPage.clickAndType_PriceForCategory_ProdOne("0");
-        adminPage.clickAndType_AmountForCategory_ProdOne("0");
-        adminPage.clickAndType_PriceForCategory_ProdTwo("0");
-        adminPage.clickAndType_AmountForCategory_ProdTwo("0");
-        adminPage.button_Save.click();
+        csCartSettings.clickAndType_PriceForCategory_ProdOne("0");
+        csCartSettings.clickAndType_AmountForCategory_ProdOne("0");
+        csCartSettings.clickAndType_PriceForCategory_ProdTwo("0");
+        csCartSettings.clickAndType_AmountForCategory_ProdTwo("0");
+        csCartSettings.button_Save.click();
 
         //Настраиваем настройки модуля
-        SitemapSettings sitemapSettings = adminPage.navigateToSitemapSettings();
+        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeCategories.selectOptionByValue("without_product_amount_and_price");
         sitemapSettings.tab_XMLSitemap.click();
@@ -64,15 +62,18 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         sitemapSettings.setting_EnableXMLSitemap.click();   }
         if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
             sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();    }
-        adminPage.button_Save.click();
+        csCartSettings.button_Save.click();
 
-
-        String[] arrayIpods = currentUrl_CategoryIpods.split("\\?");
-        String urlForCategoryIpods = arrayIpods[0];
-        System.out.println("URL is: " + urlForCategoryIpods);
-
-        String[] arrayAndroid = currentUrl_CategoryAndroid.split("\\?");
-        String urlForCategoryAndroid = arrayAndroid[0];
-        System.out.println("URL is: " + urlForCategoryAndroid);
+        //Работаем с выгрузкой
+        csCartSettings.navigateToSitemapGenerating();
+        sitemapSettings.clickButton_GenerateSitemap();
+        String url = "https://trs.test.abt.team/4162mven/categories1.xml";
+        Selenide.executeJavaScript("window.open('"+url+"');");
+        csCartSettings.shiftBrowserTab(1);
+        //Проверяем, что ссылка на категорию "iPods" присутствует
+        Assert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)));
+        //Проверяем, что ссылка на категорию "Android" отсутствует
+        Assert.assertFalse($(".pretty-print").has(Condition.text(urlForCategoryAndroid)));
+        screenshot("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice");
     }
 }

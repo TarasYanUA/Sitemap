@@ -1,6 +1,8 @@
 package adminPanel;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class SitemapSettings {
@@ -28,4 +30,13 @@ public class SitemapSettings {
     public SelenideElement setting_FeatureVariantsSettings_IncludeToSitemap = $("input[id*='addon_option_ab__advanced_sitemap_include_extended_']");
     public SelenideElement setting_FeatureVariantsSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_feature_variants_changefreq_']");
     public SelenideElement setting_FeatureVariantsSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_feature_variants_priority_']");
+
+    //Секция "Генерация карты сайта"
+    private SelenideElement button_GenerateSitemap = $("a[href*='ab__advanced_sitemap.generate_sitemap']");
+    public SelenideElement xmlLink = $("a[href$='sitemap.xml']");
+
+    public void clickButton_GenerateSitemap(){
+        button_GenerateSitemap.click();
+        Selenide.sleep(3000);
+    }
 }

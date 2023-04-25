@@ -2,17 +2,20 @@ package adminPanel;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-
+import org.openqa.selenium.Alert;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class AdminPage {
-    public AdminPage(){super();}
+public class CsCartSettings {
+    public CsCartSettings(){super();}
     public SelenideElement menuProducts = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#products']");
     public SelenideElement sectionCategories = $("a[href$='categories.manage']");
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
     public SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
     public SelenideElement sectionSitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
+    public SelenideElement sectionSitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
+
 
     //Страница категории
     public SelenideElement button_Save = $(".btn.cm-submit");
@@ -27,6 +30,9 @@ public class AdminPage {
     private SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
 
+    public void shiftBrowserTab(int tabNumber){
+        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+    }
     public void navigateToEditingCategoryPage(){
         menuProducts.hover();
         sectionCategories.click();
@@ -42,12 +48,27 @@ public class AdminPage {
         gearwheelOnCategoryPage.click();
         button_ViewProducts.click();
     }
+    public void deleteProductsFromCategory(){
+        do{
+            $(".mobile-hide .dropdown-icon--tools").hover().click();
+            $("a[href*='products.delete']").click();
+            Alert alert = Selenide.webdriver().driver().switchTo().alert();
+            alert.accept();
+            Selenide.sleep(1500);
+        } while ($$(".products-list__image").size() > 2);
+    }
     public SitemapSettings navigateToSitemapSettings(){
         menuAddons.hover();
         sectionDownloadedAddons.click();
         menuOfSitemap.click();
         sectionSitemapSettings.click();
         return new SitemapSettings();
+    }
+    public void navigateToSitemapGenerating(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfSitemap.click();
+        sectionSitemapGenerating.click();
     }
     public void clickAndType_PriceForCategory_ProdOne(String value){
         field_PriceForCategory_ProdOne.click();
