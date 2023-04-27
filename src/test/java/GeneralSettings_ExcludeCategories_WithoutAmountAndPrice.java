@@ -14,12 +14,12 @@ import static com.codeborne.selenide.Selenide.*;
 Настройка модуля: "Общие -- Исключить категории -- с товарами без цен и наличия"
 Проверяем, что:
     * Категория "iPods" присутствует в карте сайта
-    * Категория "Android" отсутствует в карте сайта.
+    * Категория "Android" отсутствует в карте сайта
 */
 
 public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends TestRunner{
-    @Test(priority = 1)
-    public void setConfigurationsForGeneralSettings_ExcludeCategories_WithoutAmountAndPrice() {
+    @Test()
+    public void checkGeneralSettings_ExcludeCategories_WithoutAmountAndPrice() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем первую категорию "iPods"
         csCartSettings.navigateToEditingCategoryPage();
@@ -29,7 +29,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         String[] arrayIpods = currentUrl_CategoryIpods.split("\\?");
         String urlForCategoryIpods = arrayIpods[0];
         System.out.println("iPods URL is: " + urlForCategoryIpods);
-        switchTo().window(0);
+        csCartSettings.shiftBrowserTab(0);
         csCartSettings.navigateToProductsOfCategory();
         csCartSettings.clickAndType_PriceForCategory_ProdOne("249.00");
         csCartSettings.clickAndType_AmountForCategory_ProdOne("10");
@@ -41,7 +41,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         csCartSettings.selectCategory_Android.click();
         csCartSettings.goToStorefront_CategoryPage(2);
         String currentUrl_CategoryAndroid = WebDriverRunner.getWebDriver().getCurrentUrl(); //Получили ссылку категории "Android"
-        switchTo().window(0);
+        csCartSettings.shiftBrowserTab(0);
         String[] arrayAndroid = currentUrl_CategoryAndroid.split("\\?");
         String urlForCategoryAndroid = arrayAndroid[0];
         System.out.println("Android URL is: " + urlForCategoryAndroid);
@@ -70,7 +70,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(1);
+        csCartSettings.shiftBrowserTab(3);
         String allUrls = $(".pretty-print").getText();
         String[] splitOne = allUrls.split("<loc>");
         int i=0;
@@ -81,10 +81,10 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         int k=0;
         while (k < finalResult.length) {
             k++;    }
-        System.out.println("Final result is:" + finalResult[0]);
+        System.out.println("Final result is: " + finalResult[0]);
         String urlForCategories = finalResult[0];   //Получили ссылку на карту сайта категорий
         Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
-        csCartSettings.shiftBrowserTab(2);
+        csCartSettings.shiftBrowserTab(4);
         //Проверяем, что ссылка на категорию "iPods" присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)),
@@ -94,5 +94,6 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
                 "There is a link for category 'Android' but shouldn't!");
         screenshot("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice");
         softAssert.assertAll();
+        System.out.println("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice has passed successfully!");
     }
 }

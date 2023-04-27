@@ -57,6 +57,15 @@ public class CsCartSettings {
             Selenide.sleep(1500);
         } while ($$(".products-list__image").size() > 2);
     }
+    public void deleteAllProductsFromCategory(){
+        do{
+            $(".mobile-hide .dropdown-icon--tools").hover().click();
+            $("a[href*='products.delete']").click();
+            Alert alert = Selenide.webdriver().driver().switchTo().alert();
+            alert.accept();
+            Selenide.sleep(1500);
+        } while ($$(".products-list__image").size() > 0);
+    }
     public SitemapSettings navigateToSitemapSettings(){
         menuAddons.hover();
         sectionDownloadedAddons.click();
