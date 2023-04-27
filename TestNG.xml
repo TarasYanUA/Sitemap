@@ -1,0 +1,10 @@
+<suite name="Sitemap">
+    <test name="General settings of Sitemap">
+        <classes>
+            <class name="GeneralSettings_ExcludeCategories_WithoutAmount" />
+            <class name="GeneralSettings_ExcludeCategories_WithoutPrice" />
+            <class name="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
+            <class name="GeneralSettings_ExcludeCategories_WithoutProducts" />
+        </classes>
+    </test>
+</suite>
