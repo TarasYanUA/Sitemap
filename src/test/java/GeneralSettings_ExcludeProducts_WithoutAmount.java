@@ -10,12 +10,12 @@ import static com.codeborne.selenide.Selenide.screenshot;
 
 /*
 Двум товарам из категории "Палатки" настраиваем:
-    * Палатка "Elite" - с ценой и в наличии
-    * Палатка "WeatherMaster" - с ценой и без наличия
+    * Товар "Elite" - с ценой и в наличии
+    * Товар "WeatherMaster" - с ценой и без наличия
 Настройка модуля: "Общие -- Исключить товары -- с товарами без наличия"
 Проверяем, что:
-    * Палатка "Elite" присутствует в карте сайта
-    * Палатка "WeatherMaster" отсутствует в карте сайта
+    * Товар "Elite" присутствует в карте сайта
+    * Товар "WeatherMaster" отсутствует в карте сайта
 */
 
 public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
