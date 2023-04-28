@@ -43,7 +43,7 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         String urlForCategoryAndroid = arrayAndroid[0];
         System.out.println("Android URL is: " + urlForCategoryAndroid);
         Selenide.sleep(2000);
-        csCartSettings.gearwheelOnCategoryPage.click();
+        csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_ViewProducts.click();
         if($$(".products-list__image").size() > 0){
             csCartSettings.deleteAllProductsFromCategory();

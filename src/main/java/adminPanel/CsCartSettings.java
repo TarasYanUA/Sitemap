@@ -19,15 +19,15 @@ public class CsCartSettings {
     public SelenideElement sectionSitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
     public SelenideElement sectionSitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
     private SelenideElement field_Search = $("#simple_search input");
-    private SelenideElement chooseAnyProduct = $(".products-list__image");
-
+    public SelenideElement chooseAnyProduct = $(".products-list__image");
+    public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
+    public SelenideElement button_Preview = $("a[href*='profiles.view_product_as_user']");
 
     //Страница категории
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
     public SelenideElement selectCategory_Android = $(".longtap-selection a[href$='category_id=182']");
-    public SelenideElement gearwheelOnCategoryPage = $(".dropdown-icon--tools");
+    public SelenideElement selectCategory_Tents = $(".longtap-selection a[href*='category_id=218']");
     public SelenideElement button_ViewProducts = $(".dropleft a[href*='products.manage']");
-    public SelenideElement button_Preview = $("a[href*='profiles.view_product_as_user']");
     private SelenideElement field_PriceForCategory_ProdOne = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[1]");
     private SelenideElement field_AmountForCategory_ProdOne = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[1]");
     private SelenideElement field_PriceForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[2]");
@@ -36,6 +36,8 @@ public class CsCartSettings {
     //Страница товара
     public SelenideElement field_ProductPrice = $("#elm_price_price");
     public SelenideElement field_ProductAmount = $("#elm_in_stock");
+    public SelenideElement button_dropdown = $(".btn-bar-left .dropdown-toggle");
+    public SelenideElement chooseCategory_Tents = $("a[href*='products.manage.reset_view&cid=218']");
 
     public void shiftBrowserTab(int tabNumber){
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
@@ -71,13 +73,13 @@ public class CsCartSettings {
     }
     public void goToStorefront_CategoryPage(int tab) {
         Selenide.sleep(2000);
-        gearwheelOnCategoryPage.click();
+        gearwheelOnEditingPage.click();
         button_Preview.click();
         switchTo().window(tab);
     }
     public void goAndSetFirstProductOfCategory(String price, String amount){
         Selenide.sleep(2000);
-        gearwheelOnCategoryPage.click();
+        gearwheelOnEditingPage.click();
         button_ViewProducts.click();
         if($$(".products-list__image").size() > 2){
             deleteProductsFromCategory();   }
@@ -90,10 +92,26 @@ public class CsCartSettings {
     }
     public void goAndSetSecondProductOfCategory(String price, String amount){
         Selenide.sleep(2000);
-        gearwheelOnCategoryPage.click();
+        gearwheelOnEditingPage.click();
         button_ViewProducts.click();
         if($$(".products-list__image").size() > 2){
             deleteProductsFromCategory();   }
+        field_PriceForCategory_ProdTwo.click();
+        field_PriceForCategory_ProdTwo.clear();
+        field_PriceForCategory_ProdTwo.sendKeys(price);
+        field_AmountForCategory_ProdTwo.click();
+        field_AmountForCategory_ProdTwo.clear();
+        field_AmountForCategory_ProdTwo.sendKeys(amount);
+    }
+    public void setFirstProduct(String price, String amount){
+        field_PriceForCategory_ProdOne.click();
+        field_PriceForCategory_ProdOne.clear();
+        field_PriceForCategory_ProdOne.sendKeys(price);
+        field_AmountForCategory_ProdOne.click();
+        field_AmountForCategory_ProdOne.clear();
+        field_AmountForCategory_ProdOne.sendKeys(amount);
+    }
+    public void setSecondProduct(String price, String amount){
         field_PriceForCategory_ProdTwo.click();
         field_PriceForCategory_ProdTwo.clear();
         field_PriceForCategory_ProdTwo.sendKeys(price);
