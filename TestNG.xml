@@ -5,6 +5,8 @@
             <class name="GeneralSettings_ExcludeCategories_WithoutPrice" />
             <class name="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
             <class name="GeneralSettings_ExcludeCategories_WithoutProducts" />
+
+            <class name="GeneralSettings_ExcludeBrands_WithoutAmount" />
         </classes>
     </test>
 </suite>

@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
 
@@ -12,27 +13,27 @@ import static com.codeborne.selenide.Selenide.screenshot;
 Двум брендам "GoPro" и "Panasonic" настраиваем по 1 товару:
     * Бренд "GoPro" - с ценой и в наличии
     * Бренд "Panasonic" - с ценой и без наличия
-Настройка модуля: "Общие -- Исключить бренды -- с товарами без наличия"
+Настройка модуля: "Общие -- Исключить бренды -- с товарами без цен"
 Проверяем, что:
     * Бренд "GoPro" присутствует в карте сайта
     * Бренд "Panasonic" отсутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeBrands_WithoutAmount extends TestRunner{
+public class GeneralSettings_ExcludeBrands_WithoutPrice extends TestRunner{
     @Test
-    public void checkGeneralSettings_ExcludeBrands_WithoutAmount() {
+    public void checkGeneralSettings_ExcludeBrands_WithoutPrice() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем товары двух брендов
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("admin");
         String mainUrl = split[0]; //получили ссылку
         csCartSettings.goAndSetEditingProductPage("GoPro - Hero3", "400", "15");
-        csCartSettings.goAndSetEditingProductPage("KX-MB2000", "130", "0");
+        csCartSettings.goAndSetEditingProductPage("KX-MB2000", "0", "10");
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.setting_ExcludeBrands.selectOptionByValue("without_product_amount");
+        sitemapSettings.setting_ExcludeBrands.selectOptionByValue("without_product_price");
         sitemapSettings.tab_XMLSitemap.click();
         if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
         sitemapSettings.setting_EnableXMLSitemap.click();   }
@@ -57,8 +58,8 @@ public class GeneralSettings_ExcludeBrands_WithoutAmount extends TestRunner{
         //Проверяем, что ссылка на бренд "Panasonic" отсутствует
         softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForPanasonic)),
                 "There is a link for brand 'Panasonic' but shouldn't!");
-        screenshot("GeneralSettings_ExcludeBrands_WithoutAmount");
+        screenshot("GeneralSettings_ExcludeBrands_WithoutPrice");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ExcludeBrands_WithoutAmount has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeBrands_WithoutPrice has passed successfully!");
     }
 }

@@ -30,11 +30,8 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         String urlForCategoryIpods = arrayIpods[0];
         System.out.println("iPods URL is: " + urlForCategoryIpods);
         csCartSettings.shiftBrowserTab(0);
-        csCartSettings.navigateToProductsOfCategory();
-        csCartSettings.clickAndType_PriceForCategory_ProdOne("249.00");
-        csCartSettings.clickAndType_AmountForCategory_ProdOne("10");
-        csCartSettings.clickAndType_PriceForCategory_ProdTwo("255.00");
-        csCartSettings.clickAndType_AmountForCategory_ProdTwo("15");
+        csCartSettings.goAndSetFirstProductOfCategory("249", "10");
+        csCartSettings.goAndSetSecondProductOfCategory("255", "15");
         csCartSettings.button_Save.click();
         //Настраиваем вторую категорию "Android"
         csCartSettings.navigateToEditingCategoryPage();
@@ -45,7 +42,9 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         String[] arrayAndroid = currentUrl_CategoryAndroid.split("\\?");
         String urlForCategoryAndroid = arrayAndroid[0];
         System.out.println("Android URL is: " + urlForCategoryAndroid);
-        csCartSettings.navigateToProductsOfCategory();
+        Selenide.sleep(2000);
+        csCartSettings.gearwheelOnCategoryPage.click();
+        csCartSettings.button_ViewProducts.click();
         if($$(".products-list__image").size() > 0){
             csCartSettings.deleteAllProductsFromCategory();
         }
@@ -66,18 +65,7 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         csCartSettings.shiftBrowserTab(3);
-        String allUrls = $(".pretty-print").getText();
-        String[] splitOne = allUrls.split("<loc>");
-        int i=0;
-        while (i < splitOne.length) {
-            i++;    }
-        String preliminaryResult = splitOne[2];
-        String[] finalResult = preliminaryResult.split("</loc>");
-        int k=0;
-        while (k < finalResult.length) {
-            k++;    }
-        System.out.println("Final result is: " + finalResult[0]);
-        String urlForCategories = finalResult[0];   //Получили ссылку на карту сайта категорий
+        String urlForCategories = sitemapSettings.splitLinkMethod(2);
         Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
         csCartSettings.shiftBrowserTab(4);
         //Проверяем, что ссылка на категорию "iPods" присутствует

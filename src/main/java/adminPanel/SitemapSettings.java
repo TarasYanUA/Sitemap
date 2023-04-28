@@ -39,4 +39,21 @@ public class SitemapSettings {
         button_GenerateSitemap.click();
         Selenide.sleep(3000);
     }
+
+    public String splitLinkMethod (int partNumber) {
+        String allUrls = $(".pretty-print").getText();
+        String[] splitOne = allUrls.split("<loc>");
+        int i = 0;
+        while (i < splitOne.length) {
+            i++;
+        }
+        String preliminaryResult = splitOne[partNumber];
+        String[] finalResult = preliminaryResult.split("</loc>");
+        int k = 0;
+        while (k < finalResult.length) {
+            k++;
+        }
+        System.out.println("Final result is: " + finalResult[0]);
+        return finalResult[0];   //Получили ссылку на карту сайта
+    }
 }

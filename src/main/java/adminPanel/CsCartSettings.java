@@ -66,10 +66,31 @@ public class CsCartSettings {
         button_Preview.click();
         switchTo().window(tab);
     }
-    public void navigateToProductsOfCategory(){
+    public void goAndSetFirstProductOfCategory(String price, String amount){
         Selenide.sleep(2000);
         gearwheelOnCategoryPage.click();
         button_ViewProducts.click();
+        if($$(".products-list__image").size() > 2){
+            deleteProductsFromCategory();   }
+        field_PriceForCategory_ProdOne.click();
+        field_PriceForCategory_ProdOne.clear();
+        field_PriceForCategory_ProdOne.sendKeys(price);
+        field_AmountForCategory_ProdOne.click();
+        field_AmountForCategory_ProdOne.clear();
+        field_AmountForCategory_ProdOne.sendKeys(amount);
+    }
+    public void goAndSetSecondProductOfCategory(String price, String amount){
+        Selenide.sleep(2000);
+        gearwheelOnCategoryPage.click();
+        button_ViewProducts.click();
+        if($$(".products-list__image").size() > 2){
+            deleteProductsFromCategory();   }
+        field_PriceForCategory_ProdTwo.click();
+        field_PriceForCategory_ProdTwo.clear();
+        field_PriceForCategory_ProdTwo.sendKeys(price);
+        field_AmountForCategory_ProdTwo.click();
+        field_AmountForCategory_ProdTwo.clear();
+        field_AmountForCategory_ProdTwo.sendKeys(amount);
     }
     public void deleteProductsFromCategory(){
         do{
@@ -101,25 +122,5 @@ public class CsCartSettings {
         sectionDownloadedAddons.click();
         menuOfSitemap.click();
         sectionSitemapGenerating.click();
-    }
-    public void clickAndType_PriceForCategory_ProdOne(String value){
-        field_PriceForCategory_ProdOne.click();
-        field_PriceForCategory_ProdOne.clear();
-        field_PriceForCategory_ProdOne.sendKeys(value);
-    }
-    public void clickAndType_AmountForCategory_ProdOne(String value){
-        field_AmountForCategory_ProdOne.click();
-        field_AmountForCategory_ProdOne.clear();
-        field_AmountForCategory_ProdOne.sendKeys(value);
-    }
-    public void clickAndType_PriceForCategory_ProdTwo(String value){
-        field_PriceForCategory_ProdTwo.click();
-        field_PriceForCategory_ProdTwo.clear();
-        field_PriceForCategory_ProdTwo.sendKeys(value);
-    }
-    public void clickAndType_AmountForCategory_ProdTwo(String value){
-        field_AmountForCategory_ProdTwo.click();
-        field_AmountForCategory_ProdTwo.clear();
-        field_AmountForCategory_ProdTwo.sendKeys(value);
     }
 }
