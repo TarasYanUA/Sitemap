@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.*;
 */
 
 public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunner{
-    @Test()
+    @Test
     public void checkGeneralSettings_ExcludeCategories_WithoutProducts() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем первую категорию "iPods"

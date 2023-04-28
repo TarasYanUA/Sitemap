@@ -13,7 +13,7 @@ public class TestRunner {
 
     @BeforeMethod
     public void openBrowser()  {
-        Configuration.browser = "edge";
+        Configuration.browser = "chrome";
         Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true;  //делаем скриншоты при падении
         Configuration.browserSize = "1920x1050"; //Увеличиваем размер экрана

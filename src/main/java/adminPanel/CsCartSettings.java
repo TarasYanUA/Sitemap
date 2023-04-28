@@ -3,22 +3,26 @@ package adminPanel;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CsCartSettings {
     public CsCartSettings(){super();}
+    public SelenideElement button_Save = $(".btn.cm-submit");
     public SelenideElement menuProducts = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#products']");
     public SelenideElement sectionCategories = $("a[href$='categories.manage']");
+    public SelenideElement sectionProducts = $("a[href$='products.manage']");
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
     public SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
     public SelenideElement sectionSitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
     public SelenideElement sectionSitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
+    private SelenideElement field_Search = $("#simple_search input");
+    private SelenideElement chooseAnyProduct = $(".products-list__image");
 
 
     //Страница категории
-    public SelenideElement button_Save = $(".btn.cm-submit");
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
     public SelenideElement selectCategory_Android = $(".longtap-selection a[href$='category_id=182']");
     public SelenideElement gearwheelOnCategoryPage = $(".dropdown-icon--tools");
@@ -29,6 +33,9 @@ public class CsCartSettings {
     private SelenideElement field_PriceForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[2]");
     private SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
+    //Страница товара
+    public SelenideElement field_ProductPrice = $("#elm_price_price");
+    public SelenideElement field_ProductAmount = $("#elm_in_stock");
 
     public void shiftBrowserTab(int tabNumber){
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
@@ -36,6 +43,22 @@ public class CsCartSettings {
     public void navigateToEditingCategoryPage(){
         menuProducts.hover();
         sectionCategories.click();
+    }
+    public void goAndSetEditingProductPage(String name, String price, String amount){
+        menuProducts.hover();
+        sectionProducts.click();
+        field_Search.click();
+        field_Search. clear();
+        field_Search.sendKeys(name);
+        field_Search.sendKeys(Keys.ENTER);
+        chooseAnyProduct.click();
+        field_ProductPrice.click();
+        field_ProductPrice.clear();
+        field_ProductPrice.sendKeys(price);
+        field_ProductAmount.click();
+        field_ProductAmount.clear();
+        field_ProductAmount.sendKeys(amount);
+        button_Save.click();
     }
     public void goToStorefront_CategoryPage(int tab) {
         Selenide.sleep(2000);

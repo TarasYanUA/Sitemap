@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="First test-case is totally ready where everything is done automatically!">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Four test-cases are ready!&#10;Added TestNG file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutProducts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +47,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Idea Projects/UniTheme2/TestNG.xml",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Video_gallery/pom.xml&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -64,10 +67,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts">
-    <configuration name="Split" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Split" />
+  <component name="RunManager" selected="TestNG.GeneralSettings_ExcludeBrands_WithoutAmount">
+    <configuration name="GeneralSettings_ExcludeBrands_WithoutAmount" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeBrands_WithoutAmount" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +134,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Split" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutAmount" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmount" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
@@ -135,11 +142,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutAmount" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmount" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
         <item itemvalue="TestNG.Sitemap/TestNG.xml" />
-        <item itemvalue="Application.Split" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682501095311</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Four test-cases are ready!&#10;Added TestNG file.">
+      <created>1682597784351</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682597784351</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Four test-cases are ready!&#10;Added TestNG file.">
+      <created>1682597827264</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682597827264</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,7 +271,8 @@
     <MESSAGE value="Automatically took two urls from both categories." />
     <MESSAGE value="First test-case is ready!" />
     <MESSAGE value="First test-case is totally ready where everything is done automatically!" />
-    <option name="LAST_COMMIT_MESSAGE" value="First test-case is totally ready where everything is done automatically!" />
+    <MESSAGE value="Four test-cases are ready!&#10;Added TestNG file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Four test-cases are ready!&#10;Added TestNG file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -263,6 +285,11 @@
           <properties class="java.net.SocketException" package="java.net" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutAmount.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
