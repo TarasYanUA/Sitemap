@@ -26,6 +26,8 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         String[] arrayIpods = currentUrl_CategoryIpods.split("\\?");
         String urlForCategoryIpods = arrayIpods[0];
         System.out.println("iPods URL is: " + urlForCategoryIpods);
+        csCartSettings.goAndSetFirstProductOfCategory("0", "0");
+        csCartSettings.button_Save.click();
         csCartSettings.shiftBrowserTab(0);
         csCartSettings.navigateToEditingCategoryPage();
         csCartSettings.selectCategory_Android.click();

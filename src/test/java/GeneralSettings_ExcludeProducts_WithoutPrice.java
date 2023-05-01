@@ -5,22 +5,23 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
 
 /*
 Двум товарам из категории "Палатки" настраиваем:
     * Товар "Elite" - с ценой и в наличии
-    * Товар "WeatherMaster" - с ценой и без наличия
+    * Товар "WeatherMaster" - без цены и в наличии
 Настройка модуля: "Общие -- Исключить товары -- с товарами без наличия"
 Проверяем, что:
     * Товар "Elite" присутствует в карте сайта
     * Товар "WeatherMaster" отсутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
+public class GeneralSettings_ExcludeProducts_WithoutPrice extends TestRunner{
     @Test
-    public void checkGeneralSettings_ExcludeProducts_WithoutAmount() {
+    public void checkGeneralSettings_ExcludeProducts_WithoutPrice() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем 2 товара из категории "Палатки"
         csCartSettings.navigateToEditingCategoryPage();
@@ -28,7 +29,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_ViewProducts.click();
         csCartSettings.setFirstProduct("300", "8");
-        csCartSettings.setSecondProduct("350", "0");
+        csCartSettings.setSecondProduct("0", "15");
         csCartSettings.button_Save.click();
         csCartSettings.chooseAnyProduct.click();
         csCartSettings.gearwheelOnEditingPage.click();
@@ -54,7 +55,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         csCartSettings.shiftBrowserTab(0);
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.setting_ExcludeProducts.selectOptionByValue("without_amount");
+        sitemapSettings.setting_ExcludeProducts.selectOptionByValue("without_price");
         sitemapSettings.tab_XMLSitemap.click();
         if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
         sitemapSettings.setting_EnableXMLSitemap.click();   }
@@ -78,8 +79,8 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         //Проверяем, что ссылка на товар "WeatherMaster" отсутствует
         softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForProductWeatherMaster)),
                 "There is a link for product 'WeatherMaster' but shouldn't!");
-        screenshot("GeneralSettings_ExcludeProducts_WithoutAmount");
+        screenshot("GeneralSettings_ExcludeProducts_WithoutPrice");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ExcludeProducts_WithoutAmount has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeProducts_WithoutPrice has passed successfully!");
     }
 }

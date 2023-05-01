@@ -23,6 +23,7 @@ public class GeneralSettings_ExcludeBrands_DoNotExclude extends TestRunner{
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("admin");
         String mainUrl = split[0]; //получили ссылку
+        csCartSettings.goAndSetEditingProductPage("GoPro - Hero3", "0", "0");
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();

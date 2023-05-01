@@ -21,7 +21,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 
 public class GeneralSettings_ExcludeBrands_WithoutProducts extends TestRunner{
     @Test
-    public void checkGeneralSettings_ExcludeBrands_WithoutPrice() {
+    public void checkGeneralSettings_ExcludeBrands_WithoutProducts() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем товары двух брендов
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
@@ -33,7 +33,7 @@ public class GeneralSettings_ExcludeBrands_WithoutProducts extends TestRunner{
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.setting_ExcludeBrands.selectOptionByValue("without_product_price");
+        sitemapSettings.setting_ExcludeBrands.selectOptionByValue("without_products");
         sitemapSettings.tab_XMLSitemap.click();
         if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
         sitemapSettings.setting_EnableXMLSitemap.click();   }
@@ -58,8 +58,8 @@ public class GeneralSettings_ExcludeBrands_WithoutProducts extends TestRunner{
         //Проверяем, что ссылка на бренд "Panasonic" отсутствует
         softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForPanasonic)),
                 "There is a link for brand 'Panasonic' but shouldn't!");
-        screenshot("GeneralSettings_ExcludeBrands_WithoutPrice");
+        screenshot("GeneralSettings_ExcludeBrands_WithoutProducts");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ExcludeBrands_WithoutPrice has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeBrands_WithoutProducts has passed successfully!");
     }
 }

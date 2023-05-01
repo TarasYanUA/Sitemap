@@ -12,6 +12,11 @@
             <class name="GeneralSettings_ExcludeBrands_WithoutAmountAndPrice" />
             <class name="GeneralSettings_ExcludeBrands_WithoutProducts" />
             <class name="GeneralSettings_ExcludeBrands_DoNotExclude" />
+
+            <class name="GeneralSettings_ExcludeProducts_WithoutAmount" />
+            <class name="GeneralSettings_ExcludeProducts_WithoutPrice" />
+            <class name="GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
+            <class name="GeneralSettings_ExcludeProducts_DoNotExclude" />
         </classes>
     </test>
 </suite>
