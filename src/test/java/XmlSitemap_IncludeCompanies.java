@@ -38,7 +38,7 @@ public class XmlSitemap_IncludeCompanies extends TestRunner{
         Selenide.executeJavaScript("window.open('"+urlForCompanies+"');");
         csCartSettings.shiftBrowserTab(2);
         //Проверяем, что ссылки на страницы компаний присутствуют
-        softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForCompanies)),
+        softAssert.assertTrue($(".pretty-print").has(Condition.text("company_id")),
                 "There are no links for companies pages!");
         screenshot("XmlSitemap_IncludeCompanies");
         softAssert.assertAll();
