@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 
 /*
 Тест-кейс не записан в файл TestNG, потому что ещё не исправлена ошибка https://abteam.planfix.com/task/33046
+Настройка модуля: "Общие -- Исключить вариации товаров из карты сайта"
 */
 
 public class ZzZGeneralSettings_ExcludeProductVariations extends TestRunner{

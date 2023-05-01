@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved conditions for test-cases a little bit.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added new test-case GeneralSettings_ExcludeProductVariations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,18 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ZzZGeneralSettings_ExcludeProductVariations">
-    <configuration name="GeneralSettings_ExcludeBrands_DoNotExclude" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeBrands_DoNotExclude" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.XmlSitemap_IncludeCompanies">
     <configuration name="GeneralSettings_ExcludeCategories_DoNotExclude" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -112,6 +100,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XmlSitemap_IncludeCompanies" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlSitemap_IncludeCompanies" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ZzZGeneralSettings_ExcludeProductVariations" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -125,18 +124,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_DoNotExclude" />
+      <item itemvalue="TestNG.XmlSitemap_IncludeCompanies" />
+      <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmount" />
-      <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.XmlSitemap_IncludeCompanies" />
         <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmount" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_DoNotExclude" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682928728057</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added new test-case GeneralSettings_ExcludeProductVariations.">
+      <created>1682944743837</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1682944743838</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -336,7 +342,8 @@
     <MESSAGE value="First test-case for product sitemap is ready!" />
     <MESSAGE value="Added test-cases for products." />
     <MESSAGE value="Improved conditions for test-cases a little bit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved conditions for test-cases a little bit." />
+    <MESSAGE value="Added new test-case GeneralSettings_ExcludeProductVariations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new test-case GeneralSettings_ExcludeProductVariations." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

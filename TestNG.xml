@@ -17,6 +17,8 @@
             <class name="GeneralSettings_ExcludeProducts_WithoutPrice" />
             <class name="GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
             <class name="GeneralSettings_ExcludeProducts_DoNotExclude" />
+
+            <class name="XmlSitemap_IncludeCompanies" />
         </classes>
     </test>
 </suite>
