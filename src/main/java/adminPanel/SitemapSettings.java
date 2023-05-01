@@ -12,7 +12,7 @@ public class SitemapSettings {
     public SelenideElement setting_ExcludeCategories = $("select[id*='addon_option_ab__advanced_sitemap_exclude_categories_']");
     public SelenideElement setting_ExcludeBrands = $("select[id*='addon_option_ab__advanced_sitemap_exclude_brands_']");
     public SelenideElement setting_ExcludeProducts = $("select[id*='addon_option_ab__advanced_sitemap_exclude_products_']");
-    public SelenideElement setting_ExcludeProductsVariations = $("input[id*='addon_option_ab__advanced_sitemap_exclude_products_variations_']");
+    public SelenideElement setting_ExcludeProductVariations = $("input[id*='addon_option_ab__advanced_sitemap_exclude_products_variations_']");
 
     //вкладка "XML-карта сайта"
     public SelenideElement tab_XMLSitemap = $("#ab__advanced_sitemap_xml_sitemap");

@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added test-cases for products.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved conditions for test-cases a little bit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,18 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Video_gallery/pom.xml&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Idea Projects/Video_gallery/pom.xml",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -68,22 +67,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice">
+  <component name="RunManager" selected="TestNG.ZzZGeneralSettings_ExcludeProductVariations">
     <configuration name="GeneralSettings_ExcludeBrands_DoNotExclude" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeBrands_DoNotExclude" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ExcludeBrands_WithoutProducts" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeBrands_WithoutProducts" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -124,20 +112,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ZzZGeneralSettings_ExcludeProductVariations" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ZzZGeneralSettings_ExcludeProductVariations" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_DoNotExclude" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutProducts" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmount" />
+      <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmount" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_DoNotExclude" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutProducts" />
       </list>
     </recent_temporary>
   </component>
@@ -290,8 +289,26 @@
       <option name="project" value="LOCAL" />
       <updated>1682927678155</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Improved conditions for test-cases a little bit.">
+      <created>1682928728057</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1682928728057</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -318,7 +335,8 @@
     <MESSAGE value="Added test-cases for the setting &quot;do not exclude&quot;." />
     <MESSAGE value="First test-case for product sitemap is ready!" />
     <MESSAGE value="Added test-cases for products." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test-cases for products." />
+    <MESSAGE value="Improved conditions for test-cases a little bit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved conditions for test-cases a little bit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -62,6 +62,15 @@ public class CsCartSettings {
         field_ProductAmount.sendKeys(amount);
         button_Save.click();
     }
+    public void navigateToEditingProductPage(String name){
+        menuProducts.hover();
+        sectionProducts.click();
+        field_Search.click();
+        field_Search. clear();
+        field_Search.sendKeys(name);
+        field_Search.sendKeys(Keys.ENTER);
+        chooseAnyProduct.click();
+    }
     public void deleteProductOnProductsSection(String name){
             menuProducts.hover();
             sectionProducts.click();
