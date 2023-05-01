@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 /*
 Двум категориям "iPods" и "Android" настраиваем по 2 товара:
-    * Категория "iPods" - с ценой и в наличии
+    * Категория "iPods" - 1 товар без цены, 1 товар без наличия
     * Категория "Android" - без цены и без наличия
 Настройка модуля: "Общие -- Исключить категории -- с товарами без цен и наличия"
 Проверяем, что:
@@ -30,8 +30,8 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         String urlForCategoryIpods = arrayIpods[0];
         System.out.println("iPods URL is: " + urlForCategoryIpods);
         csCartSettings.shiftBrowserTab(0);
-        csCartSettings.goAndSetFirstProductOfCategory("249", "10");
-        csCartSettings.goAndSetSecondProductOfCategory("255", "15");
+        csCartSettings.goAndSetFirstProductOfCategory("0", "10");
+        csCartSettings.goAndSetSecondProductOfCategory("255", "0");
         csCartSettings.button_Save.click();
         //Настраиваем вторую категорию "Android"
         csCartSettings.navigateToEditingCategoryPage();

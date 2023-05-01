@@ -9,6 +9,9 @@ import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.*;
 
 /*
+Двум категориям "iPods" и "Android" настраиваем по 2 товара:
+    * Категория "iPods" - без цены и без наличия
+    * Категория "Android" - без товаров
 Настройка модуля: "Общие -- Исключить категории -- не исключать"
 Проверяем, что:
     * Категория "iPods" присутствует в карте сайта

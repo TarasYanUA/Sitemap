@@ -10,6 +10,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
 
 /*
+Двум брендам "GoPro" и "Panasonic" настраиваем по 1 товару:
+    * Бренд "GoPro" - без цены и без наличия
+    * Бренд "Panasonic" - без товаров
 Настройка модуля: "Общие -- Исключить бренды -- не исключать"
 Проверяем, что:
     * Бренд "GoPro" присутствует в карте сайта

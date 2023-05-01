@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 
 /*
 Двум брендам "GoPro" и "Panasonic" настраиваем по 1 товару:
-    * Бренд "GoPro" - с ценой и в наличии
+    * Бренд "GoPro" - без цены и в наличии
     * Бренд "Panasonic" - без цен и без наличия
 Настройка модуля: "Общие -- Исключить бренды -- с товарами без цен и наличия"
 Проверяем, что:
@@ -26,7 +26,7 @@ public class GeneralSettings_ExcludeBrands_WithoutAmountAndPrice extends TestRun
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("admin");
         String mainUrl = split[0]; //получили ссылку
-        csCartSettings.goAndSetEditingProductPage("GoPro - Hero3", "400", "15");
+        csCartSettings.goAndSetEditingProductPage("GoPro - Hero3", "0", "15");
         csCartSettings.goAndSetEditingProductPage("KX-MB2000", "0", "0");
 
         //Настраиваем настройки модуля

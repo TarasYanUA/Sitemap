@@ -11,9 +11,9 @@ import static com.codeborne.selenide.Selenide.screenshot;
 
 /*
 Двум брендам "GoPro" и "Panasonic" настраиваем по 1 товару:
-    * Бренд "GoPro" - с ценой и в наличии
-    * Бренд "Panasonic" - с ценой и без наличия
-Настройка модуля: "Общие -- Исключить бренды -- с товарами без цен"
+    * Бренд "GoPro" - без цены и без наличия
+    * Бренд "Panasonic" - без товаров
+Настройка модуля: "Общие -- Исключить бренды -- без товаров"
 Проверяем, что:
     * Бренд "GoPro" присутствует в карте сайта
     * Бренд "Panasonic" отсутствует в карте сайта
@@ -27,7 +27,7 @@ public class GeneralSettings_ExcludeBrands_WithoutProducts extends TestRunner{
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("admin");
         String mainUrl = split[0]; //получили ссылку
-        csCartSettings.goAndSetEditingProductPage("GoPro - Hero3", "400", "15");
+        csCartSettings.goAndSetEditingProductPage("GoPro - Hero3", "0", "0");
         csCartSettings.deleteProductOnProductsSection("KX-MB2000");
 
         //Настраиваем настройки модуля
