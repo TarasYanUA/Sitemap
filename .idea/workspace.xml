@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added new test-case XmlSitemap_IncludeCompanies.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added a new test-case XmlSitemap_AddLastModifiedDate.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_IncludeCompanies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_IncludeCompanies.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682949382671</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added a new test-case XmlSitemap_AddLastModifiedDate.">
+      <created>1682952157934</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1682952157934</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -358,7 +364,8 @@
     <MESSAGE value="Improved conditions for test-cases a little bit." />
     <MESSAGE value="Added new test-case GeneralSettings_ExcludeProductVariations." />
     <MESSAGE value="Added new test-case XmlSitemap_IncludeCompanies." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new test-case XmlSitemap_IncludeCompanies." />
+    <MESSAGE value="Added a new test-case XmlSitemap_AddLastModifiedDate." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new test-case XmlSitemap_AddLastModifiedDate." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
