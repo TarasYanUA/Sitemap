@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved code for some test-cases." />
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added a new test-case XmlSitemap_CategorySettings.">
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -376,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683036190291</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Added a new test-case XmlSitemap_CategorySettings.">
+      <created>1683037810109</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1683037810109</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -423,7 +433,8 @@
     <MESSAGE value="Test-case XmlSitemap_ProductSettings is ready!" />
     <MESSAGE value="Added some asserts and fixed some bugs." />
     <MESSAGE value="Improved code for some test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved code for some test-cases." />
+    <MESSAGE value="Added a new test-case XmlSitemap_CategorySettings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new test-case XmlSitemap_CategorySettings." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
