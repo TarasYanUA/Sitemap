@@ -26,6 +26,9 @@ public class GeneralSettings_ExcludeProducts_WithoutAmountAndPrice extends TestR
         //Настраиваем 2 товара из категории "Палатки"
         csCartSettings.navigateToEditingCategoryPage();
         csCartSettings.selectCategory_Tents.click();
+        if($(".alert").exists()){
+            $(".close.cm-notification-close").click();
+        }   //Выключаем сообщение о предупредлении, если оно появилось
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_ViewProducts.click();
         csCartSettings.setFirstProduct("300", "8");

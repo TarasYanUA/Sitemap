@@ -75,6 +75,9 @@ public class CsCartSettings {
         if(chooseAnyProduct.exists()){chooseAnyProduct.click(); }
     }
     public void deleteProductOnProductsSection(String name){
+            if($(".alert").exists()){
+                $(".close.cm-notification-close").click();
+            }   //Выключаем сообщение о предупредлении, если оно появилось
             menuProducts.hover();
             sectionProducts.click();
             field_Search.click();
@@ -103,11 +106,6 @@ public class CsCartSettings {
         field_AmountForCategory_ProdOne.sendKeys(amount);
     }
     public void goAndSetSecondProductOfCategory(String price, String amount){
-        Selenide.sleep(2000);
-        gearwheelOnEditingPage.click();
-        button_ViewProducts.click();
-        if($$(".products-list__image").size() > 2){
-            deleteProductsFromCategory();   }
         field_PriceForCategory_ProdTwo.click();
         field_PriceForCategory_ProdTwo.clear();
         field_PriceForCategory_ProdTwo.sendKeys(price);
@@ -116,6 +114,9 @@ public class CsCartSettings {
         field_AmountForCategory_ProdTwo.sendKeys(amount);
     }
     public void setFirstProduct(String price, String amount){
+        if($(".alert").exists()){
+            $(".close.cm-notification-close").click();
+        }   //Выключаем сообщение о предупредлении, если оно появилось
         field_PriceForCategory_ProdOne.click();
         field_PriceForCategory_ProdOne.clear();
         field_PriceForCategory_ProdOne.sendKeys(price);

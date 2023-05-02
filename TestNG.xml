@@ -1,4 +1,4 @@
-<suite name="Sitemap">
+<suite name="Sitemap" >
     <test name="General settings of Sitemap">
         <classes>
             <class name="GeneralSettings_ExcludeCategories_WithoutAmount" />
