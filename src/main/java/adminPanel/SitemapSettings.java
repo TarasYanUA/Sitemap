@@ -26,6 +26,10 @@ public class SitemapSettings {
     public SelenideElement setting_CategoriesSettings_IncludeToSitemap = $("input[id*='addon_option_ab__advanced_sitemap_include_categories_']");
     public SelenideElement setting_CategoriesSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_categories_changefreq_']");
     public SelenideElement setting_CategoriesSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_categories_priority_']");
+    public SelenideElement setting_PagesSettings_IncludeToSitemap = $("input[id*='addon_option_ab__advanced_sitemap_include_pages_']");
+    public SelenideElement setting_PagesSettings_IncludeBlogPages = $("input[id*='addon_option_ab__advanced_sitemap_include_blog_']");
+    public SelenideElement setting_PagesSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_pages_changefreq_']");
+    public SelenideElement setting_PagesSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_pages_priority_']");
     public SelenideElement setting_FeatureVariantsSettings_IncludeToSitemap = $("input[id*='addon_option_ab__advanced_sitemap_include_extended_']");
     public SelenideElement setting_FeatureVariantsSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_feature_variants_changefreq_']");
     public SelenideElement setting_FeatureVariantsSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_feature_variants_priority_']");
