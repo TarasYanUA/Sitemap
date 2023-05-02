@@ -50,7 +50,7 @@ public class XmlSitemap_ProductSettings extends TestRunner{
         webdriver().driver().getWebDriver().navigate().refresh();   }
         //Работаем со страницей редактирования товара
         csCartSettings.navigateToEditingProductPage("USB-N53");
-        if ($$("label[for*='elm_parent_product']").size() < 1) {
+        if (!$("label[for*='elm_parent_product']").exists()) {
             csCartSettings.productVendor.click();
             csCartSettings.productBelongsToAllVendors.click();
             csCartSettings.button_Save.click();
@@ -83,12 +83,20 @@ public class XmlSitemap_ProductSettings extends TestRunner{
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
+        //Проверяем, что ссылка на товары присутствует в xml карте-сайта
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue($(".pretty-print").has(Condition.text("products")),
+                "There is no a link for products in the xml-sitemap!");
         String urlForProducts = sitemapSettings.splitLinkMethod(1);
         Selenide.executeJavaScript("window.open('"+urlForProducts+"');");
         shiftBrowserTab(4);
-
-        //Проверяем, что ссылка на товар "USB-N53" присутствует
-        SoftAssert softAssert = new SoftAssert();
+        //Проверяем, что Частота изменений "Каждый день"
+        softAssert.assertTrue($(".pretty-print").has(Condition.text("<changefreq>daily</changefreq>")),
+                "There is no Change frequency 'Daily'!");
+        //Проверяем, что Приоритет "0.7"
+        softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.7</priority>")),
+                "There is no Priority '0.7'!");
+        //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductUSB)),
                 "There is no link for product 'USB-N53' or a vendor code is missed!");
         screenshot("XmlSitemap_ProductSettings");
