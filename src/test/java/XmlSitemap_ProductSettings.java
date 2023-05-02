@@ -87,10 +87,10 @@ public class XmlSitemap_ProductSettings extends TestRunner{
         Selenide.executeJavaScript("window.open('"+urlForProducts+"');");
         shiftBrowserTab(4);
 
-        //Проверяем, что ссылка на товар "X-Box" присутствует
+        //Проверяем, что ссылка на товар "USB-N53" присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductUSB)),
-                "There is no link for product 'X-Box'!");
+                "There is no link for product 'USB-N53' or a vendor code is missed!");
         screenshot("XmlSitemap_ProductSettings");
         softAssert.assertAll();
         System.out.println("XmlSitemap_ProductSettings has passed successfully!");
