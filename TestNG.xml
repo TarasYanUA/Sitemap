@@ -20,6 +20,7 @@
 
             <class name="XmlSitemap_IncludeCompanies" />
             <class name="XmlSitemap_AddLastModifiedDate" />
+            <class name="XmlSitemap_ProductSettings" />
         </classes>
     </test>
 </suite>
