@@ -21,12 +21,12 @@ public class ZzZGeneralSettings_ExcludeProductVariations extends TestRunner{
         csCartSettings.navigateToEditingProductPage("Футболка, Цвет: Синий");
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_Preview.click();
-        csCartSettings.shiftBrowserTab(1);
+        shiftBrowserTab(1);
         String currentUrl_ProductTshirt = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductTshirt = currentUrl_ProductTshirt.split("\\?");
         String urlForProductTshirt = arrayProductTshirt[0]; //Получили ссылку товара "Футболка, Цвет: Синий"
         System.out.println("URL for a product Tshirt: " + urlForProductTshirt);
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -45,10 +45,10 @@ public class ZzZGeneralSettings_ExcludeProductVariations extends TestRunner{
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(3);
+        shiftBrowserTab(3);
         String urlForProducts = sitemapSettings.splitLinkMethod(1);
         Selenide.executeJavaScript("window.open('"+urlForProducts+"');");
-        csCartSettings.shiftBrowserTab(4);
+        shiftBrowserTab(4);
 
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что ссылка на товар "Футболка, Цвет: Синий" присутствует

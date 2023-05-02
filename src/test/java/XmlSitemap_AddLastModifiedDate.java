@@ -29,19 +29,19 @@ public class XmlSitemap_AddLastModifiedDate extends TestRunner{
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(1);
+        shiftBrowserTab(1);
         String urlForCategories = sitemapSettings.splitLinkMethod(2);
         String urlForCompanies = sitemapSettings.splitLinkMethod(7);
         //Проверяем, что теги даты последнего редактирования присутствуют в xml карте-сайта категорий
         SoftAssert softAssert = new SoftAssert();
         Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
-        csCartSettings.shiftBrowserTab(2);
+        shiftBrowserTab(2);
         softAssert.assertTrue($(".pretty-print").has(Condition.text("<lastmod>")),
                 "There are no tags <lastmod> at xml sitemap of the categories!");
         screenshot("XmlSitemap_AddLastModifiedDate - Last modified date at categories");
         //Проверяем, что теги даты последнего редактирования присутствуют в xml карте-сайта компаний
         Selenide.executeJavaScript("window.open('"+urlForCompanies+"');");
-        csCartSettings.shiftBrowserTab(3);
+        shiftBrowserTab(3);
         softAssert.assertTrue($(".pretty-print").has(Condition.text("<lastmod>")),
                 "There are no tags <lastmod> at xml sitemap of the companies!");
         screenshot("XmlSitemap_AddLastModifiedDate - Last modified date at companies");

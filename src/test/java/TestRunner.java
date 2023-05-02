@@ -2,6 +2,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /*
 Мультивендор + модуль "Расширенная карта сайта" 2.5.0.
@@ -23,4 +24,8 @@ public class TestRunner {
     }
     @AfterMethod
     public void closeBrowser() {Selenide.closeWebDriver();}
+
+    public void shiftBrowserTab(int tabNumber){
+        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+    }
 }

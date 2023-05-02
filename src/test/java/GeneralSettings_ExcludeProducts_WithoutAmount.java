@@ -33,25 +33,25 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         csCartSettings.chooseAnyProduct.click();
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_Preview.click();
-        csCartSettings.shiftBrowserTab(1);
+        shiftBrowserTab(1);
         String currentUrl_ProductElite = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductElite = currentUrl_ProductElite.split("\\?");
         String urlForProductElite = arrayProductElite[0];     //Получили ссылку товара "Elite"
         System.out.println("URL for a product Elite: " + urlForProductElite);
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         csCartSettings.button_dropdown.click();
         csCartSettings.chooseCategory_Tents.click();
         $("tr[data-ca-id='236'] .products-list__image").click();
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_Preview.click();
-        csCartSettings.shiftBrowserTab(2);
+        shiftBrowserTab(2);
         String currentUrl_ProductWeatherMaster = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductWeatherMaster = currentUrl_ProductWeatherMaster.split("\\?");
         String urlForProductWeatherMaster = arrayProductWeatherMaster[0];     //Получили ссылку товара "WeatherMaster"
         System.out.println("URL for a product WeatherMaster: " + urlForProductWeatherMaster);
 
         //Настраиваем настройки модуля
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeProducts.selectOptionByValue("without_amount");
@@ -66,10 +66,10 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(3);
+        shiftBrowserTab(3);
         String urlForProducts = sitemapSettings.splitLinkMethod(1);
         Selenide.executeJavaScript("window.open('"+urlForProducts+"');");
-        csCartSettings.shiftBrowserTab(4);
+        shiftBrowserTab(4);
 
         //Проверяем, что ссылка на товар "Elite" присутствует
         SoftAssert softAssert = new SoftAssert();

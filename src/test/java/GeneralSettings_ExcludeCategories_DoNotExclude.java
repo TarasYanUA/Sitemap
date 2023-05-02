@@ -31,12 +31,12 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         System.out.println("iPods URL is: " + urlForCategoryIpods);
         csCartSettings.goAndSetFirstProductOfCategory("0", "0");
         csCartSettings.button_Save.click();
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         csCartSettings.navigateToEditingCategoryPage();
         csCartSettings.selectCategory_Android.click();
         csCartSettings.goToStorefront_CategoryPage(2);
         String currentUrl_CategoryAndroid = WebDriverRunner.getWebDriver().getCurrentUrl(); //Получили ссылку категории "Android"
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         String[] arrayAndroid = currentUrl_CategoryAndroid.split("\\?");
         String urlForCategoryAndroid = arrayAndroid[0];
         System.out.println("Android URL is: " + urlForCategoryAndroid);
@@ -56,10 +56,10 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(3);
+        shiftBrowserTab(3);
         String urlForCategories = sitemapSettings.splitLinkMethod(2);
         Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
-        csCartSettings.shiftBrowserTab(4);
+        shiftBrowserTab(4);
         //Проверяем, что ссылка на категорию "iPods" присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)),

@@ -29,14 +29,14 @@ public class XmlSitemap_IncludeCompanies extends TestRunner{
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(1);
+        shiftBrowserTab(1);
         //Проверяем, что ссылка на компании присутствует в xml карте-сайта
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text("companies")),
                 "There is no a link for companies in the xml-sitemap!");
         String urlForCompanies = sitemapSettings.splitLinkMethod(7);
         Selenide.executeJavaScript("window.open('"+urlForCompanies+"');");
-        csCartSettings.shiftBrowserTab(2);
+        shiftBrowserTab(2);
         //Проверяем, что ссылки на страницы компаний присутствуют
         softAssert.assertTrue($(".pretty-print").has(Condition.text("company_id")),
                 "There are no links for companies pages!");

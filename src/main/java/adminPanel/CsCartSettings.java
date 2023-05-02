@@ -5,7 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CsCartSettings {
     public CsCartSettings(){super();}
@@ -18,10 +17,12 @@ public class CsCartSettings {
     public SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
     public SelenideElement sectionSitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
     public SelenideElement sectionSitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
-    private SelenideElement field_Search = $("#simple_search input");
+    public SelenideElement field_Search = $("#simple_search input");
     public SelenideElement chooseAnyProduct = $(".products-list__image");
     public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
     public SelenideElement button_Preview = $("a[href*='profiles.view_product_as_user']");
+    public SelenideElement searchFieldAtManagementPage = $("#elm_addon");
+    public SelenideElement buttonInstallAddon = $("td.nowrap.right a[href*='addon=master_products']");
 
     //Страница категории
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
@@ -38,10 +39,12 @@ public class CsCartSettings {
     public SelenideElement field_ProductAmount = $("#elm_in_stock");
     public SelenideElement button_dropdown = $(".btn-bar-left .dropdown-toggle");
     public SelenideElement chooseCategory_Tents = $("a[href*='products.manage.reset_view&cid=218']");
+    public SelenideElement productVendor = $("#sw_product_data_company_id_selector_wrap_");
+    public SelenideElement productBelongsToAllVendors = $("a[title='Все продавцы (общий товар)']");
+    private SelenideElement menuCustomers = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']");
+    private SelenideElement customersPage = $x("//span[text()='Администраторы продавца']");
 
-    public void shiftBrowserTab(int tabNumber){
-        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
-    }
+
     public void navigateToEditingCategoryPage(){
         menuProducts.hover();
         sectionCategories.click();
@@ -50,7 +53,7 @@ public class CsCartSettings {
         menuProducts.hover();
         sectionProducts.click();
         field_Search.click();
-        field_Search. clear();
+        field_Search.clear();
         field_Search.sendKeys(name);
         field_Search.sendKeys(Keys.ENTER);
         chooseAnyProduct.click();
@@ -66,16 +69,16 @@ public class CsCartSettings {
         menuProducts.hover();
         sectionProducts.click();
         field_Search.click();
-        field_Search. clear();
+        field_Search.clear();
         field_Search.sendKeys(name);
         field_Search.sendKeys(Keys.ENTER);
-        chooseAnyProduct.click();
+        if(chooseAnyProduct.exists()){chooseAnyProduct.click(); }
     }
     public void deleteProductOnProductsSection(String name){
             menuProducts.hover();
             sectionProducts.click();
             field_Search.click();
-            field_Search. clear();
+            field_Search.clear();
             field_Search.sendKeys(name);
             field_Search.sendKeys(Keys.ENTER);
             deleteAllProductsFromCategory();
@@ -158,5 +161,15 @@ public class CsCartSettings {
         sectionDownloadedAddons.click();
         menuOfSitemap.click();
         sectionSitemapGenerating.click();
+    }
+    public void clickAndTypeSearchFieldAtManagementPage(String value){
+        searchFieldAtManagementPage.click();
+        searchFieldAtManagementPage.sendKeys(value);
+        searchFieldAtManagementPage.sendKeys(Keys.ENTER);
+    }
+    public CustomersPage navigateToCustomersPage() {
+        menuCustomers.hover();
+        customersPage.click();
+        return new CustomersPage();
     }
 }

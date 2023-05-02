@@ -42,10 +42,10 @@ public class GeneralSettings_ExcludeBrands_DoNotExclude extends TestRunner{
         csCartSettings.navigateToSitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        csCartSettings.shiftBrowserTab(1);
+        shiftBrowserTab(1);
         String urlForFeatureBrand = sitemapSettings.splitLinkMethod(3);
         Selenide.executeJavaScript("window.open('"+urlForFeatureBrand+"');");
-        csCartSettings.shiftBrowserTab(2);
+        shiftBrowserTab(2);
         //Проверяем, что ссылка на бренд "GoPro" присутствует
         String urlForGoPro = mainUrl + "gopro-ru/";
         String urlForPanasonic = mainUrl + "panasonic-ru/";
