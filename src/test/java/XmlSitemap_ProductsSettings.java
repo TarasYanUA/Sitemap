@@ -19,9 +19,9 @@ import static com.codeborne.selenide.Selenide.*;
 Проверяем, что у товара в ссылке должен присутствовать код 'vendor_id'
 */
 
-public class XmlSitemap_ProductSettings extends TestRunner{
+public class XmlSitemap_ProductsSettings extends TestRunner{
     @Test
-    public void checkXmlSitemap_ProductSettings() {
+    public void checkXmlSitemap_ProductsSettings() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -99,8 +99,8 @@ public class XmlSitemap_ProductSettings extends TestRunner{
         //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductUSB)),
                 "There is no link for product 'USB-N53' or a vendor code is missed!");
-        screenshot("XmlSitemap_ProductSettings");
+        screenshot("XmlSitemap_ProductsSettings");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_ProductSettings has passed successfully!");
+        System.out.println("XmlSitemap_ProductsSettings has passed successfully!");
     }
 }

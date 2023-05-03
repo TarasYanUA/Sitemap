@@ -13,9 +13,9 @@ import static com.codeborne.selenide.Selenide.*;
     Приоритет -- 0.3
 */
 
-public class XmlSitemap_CategorySettings extends TestRunner{
+public class XmlSitemap_CategoriesSettings extends TestRunner{
     @Test
-    public void checkXmlSitemap_CategorySettings() {
+    public void checkXmlSitemap_CategoriesSettings() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -47,8 +47,8 @@ public class XmlSitemap_CategorySettings extends TestRunner{
         //Проверяем, что Приоритет "0.3"
         softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.3</priority>")),
                 "There is no Priority '0.3'!");
-        screenshot("XmlSitemap_CategorySettings");
+        screenshot("XmlSitemap_CategoriesSettings");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_CategorySettings has passed successfully!");
+        System.out.println("XmlSitemap_CategoriesSettings has passed successfully!");
     }
 }

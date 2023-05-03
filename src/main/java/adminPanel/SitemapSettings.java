@@ -56,7 +56,7 @@ public class SitemapSettings {
         while (k < finalResult.length) {
             k++;
         }
-        System.out.println("Final result is: " + finalResult[0]);
+        System.out.println("Sitemap link is: " + finalResult[0]);
         return finalResult[0];   //Получили ссылку на карту сайта
     }
 }

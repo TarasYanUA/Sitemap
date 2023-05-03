@@ -20,8 +20,8 @@
 
             <class name="XmlSitemap_IncludeCompanies" />
             <class name="XmlSitemap_AddLastModifiedDate" />
-            <class name="XmlSitemap_ProductSettings" />
-            <class name="XmlSitemap_CategorySettings" />
+            <class name="XmlSitemap_ProductsSettings" />
+            <class name="XmlSitemap_CategoriesSettings" />
             <class name="XmlSitemap_PagesSettings" />
         </classes>
     </test>
