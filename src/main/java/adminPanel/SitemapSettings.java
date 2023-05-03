@@ -33,10 +33,18 @@ public class SitemapSettings {
     public SelenideElement setting_FeatureVariantsSettings_IncludeToSitemap = $("input[id*='addon_option_ab__advanced_sitemap_include_extended_']");
     public SelenideElement setting_FeatureVariantsSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_feature_variants_changefreq_']");
     public SelenideElement setting_FeatureVariantsSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_feature_variants_priority_']");
+    public SelenideElement setting_CustomerLinksSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_custom_links_changefreq_']");
+    public SelenideElement setting_CustomerLinksSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_custom_links_priority_']");
 
     //Секция "Генерация карты сайта"
     private SelenideElement button_GenerateSitemap = $("a[href*='ab__advanced_sitemap.generate_sitemap']");
     public SelenideElement xmlLink = $("a[href$='sitemap.xml']");
+
+    //Секция "Пользовательские ссылки в XML-карте сайта"
+    public SelenideElement button_Add = $("#opener_ab__as_add_link span");
+    public SelenideElement field_Link = $("#elm_link");
+    public SelenideElement button_CreateUserLink = $(".buttons-container-picker .btn.btn-primary");
+
 
     public void clickButton_GenerateSitemap(){
         button_GenerateSitemap.click();

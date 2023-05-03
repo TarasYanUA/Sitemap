@@ -15,8 +15,9 @@ public class CsCartSettings {
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
     public SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
-    public SelenideElement sectionSitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
-    public SelenideElement sectionSitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
+    private SelenideElement sectionSitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
+    private SelenideElement sectionSitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
+    private SelenideElement section_UserLinks = $("div.nowrap a[href*='ab__as_links.manage']");
     public SelenideElement field_Search = $("#simple_search input");
     public SelenideElement chooseAnyProduct = $(".products-list__image");
     public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
@@ -162,6 +163,12 @@ public class CsCartSettings {
         sectionDownloadedAddons.click();
         menuOfSitemap.click();
         sectionSitemapGenerating.click();
+    }
+    public void navigateToUserLinksSection(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfSitemap.click();
+        section_UserLinks.click();
     }
     public void clickAndTypeSearchFieldAtManagementPage(String value){
         searchFieldAtManagementPage.click();
