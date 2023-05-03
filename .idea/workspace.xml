@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added a new test-case XmlSitemap_CategorySettings.">
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Started work with test-case XmlSitemap_PageSettings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_CategorySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_CategorySettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_PageSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_PagesSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Idea Projects/Sitemap/TestNG.xml",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Sitemap/TestNG.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -65,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.XmlSitemap_CategorySettings">
+  <component name="RunManager" selected="TestNG.XmlSitemap_PagesSettings">
     <configuration name="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -107,17 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_AddLastModifiedDate" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="XmlSitemap_AddLastModifiedDate" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="XmlSitemap_CategorySettings" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -129,20 +119,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XmlSitemap_PagesSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlSitemap_PagesSettings" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="TestNG.XmlSitemap_PagesSettings" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutPrice" />
       <item itemvalue="TestNG.XmlSitemap_CategorySettings" />
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
-      <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.XmlSitemap_PagesSettings" />
         <item itemvalue="TestNG.XmlSitemap_CategorySettings" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
         <item itemvalue="TestNG.Sitemap/TestNG.xml" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutPrice" />
-        <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
       </list>
     </recent_temporary>
   </component>
@@ -386,7 +387,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683037810109</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Started work with test-case XmlSitemap_PageSettings">
+      <created>1683039589989</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039589989</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Started work with test-case XmlSitemap_PageSettings">
+      <created>1683039596989</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039596989</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -434,7 +449,8 @@
     <MESSAGE value="Added some asserts and fixed some bugs." />
     <MESSAGE value="Improved code for some test-cases." />
     <MESSAGE value="Added a new test-case XmlSitemap_CategorySettings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a new test-case XmlSitemap_CategorySettings." />
+    <MESSAGE value="Started work with test-case XmlSitemap_PageSettings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work with test-case XmlSitemap_PageSettings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

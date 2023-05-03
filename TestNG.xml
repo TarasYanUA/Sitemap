@@ -22,7 +22,7 @@
             <class name="XmlSitemap_AddLastModifiedDate" />
             <class name="XmlSitemap_ProductSettings" />
             <class name="XmlSitemap_CategorySettings" />
-            <class name="XmlSitemap_PageSettings" />
+            <class name="XmlSitemap_PagesSettings" />
         </classes>
     </test>
 </suite>

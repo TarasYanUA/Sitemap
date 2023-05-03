@@ -23,8 +23,8 @@ public class XmlSitemap_CategorySettings extends TestRunner{
         sitemapSettings.tab_XMLSitemap.click();
         if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
         sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();    }
+        if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
+            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();    }
         sitemapSettings.setting_CategoriesSettings_ChangeFrequency.selectOptionByValue("weekly");
         sitemapSettings.setting_CategoriesSettings_Priority.selectOptionByValue("0.3");
         csCartSettings.button_Save.click();
