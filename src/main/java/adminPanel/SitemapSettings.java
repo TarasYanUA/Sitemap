@@ -43,6 +43,8 @@ public class SitemapSettings {
     //вкладка "XML-карта изображений"
     public SelenideElement tab_XMLSitemapOfImages = $("#ab__advanced_sitemap_xml_images_map");
     public SelenideElement setting_EnableXMLImages = $("input[id*='addon_option_ab__advanced_sitemap_enable_html_sitemap_']");
+    public SelenideElement setting_AddTitleAndCaption = $("input[id*='addon_option_ab__advanced_sitemap_add_title_and_caption_']");
+    public SelenideElement setting_AddFeatureValues = $("input[id*='addon_option_ab__advanced_sitemap_add_variation_features_description_']");
 
     //Секция "Генерация карты сайта"
     private SelenideElement button_GenerateSitemap = $("a[href*='ab__advanced_sitemap.generate_sitemap']");

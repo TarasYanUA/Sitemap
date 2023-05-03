@@ -25,6 +25,8 @@ public class CsCartSettings {
     public SelenideElement searchFieldAtManagementPage = $("#elm_addon");
     public SelenideElement buttonInstallAddon = $("td.nowrap.right a[href*='addon=master_products']");
     public SelenideElement storefrontMainButton = $("#header_navbar a[href*='profiles.act_as_user']");
+    private SelenideElement menuOfABAddonsManager = $("tr#addon_ab__addons_manager button.btn.dropdown-toggle");
+    private SelenideElement section_ListOfAvailableSets = $("div.nowrap a[href*='ab__am.addons']");
 
     //Страница категории
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
@@ -45,6 +47,9 @@ public class CsCartSettings {
     public SelenideElement productBelongsToAllVendors = $("a[title='Все продавцы (общий товар)']");
     private SelenideElement menuCustomers = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']");
     private SelenideElement customersPage = $x("//span[text()='Администраторы продавца']");
+
+    //Страница "АВ: Менеджер модулей"
+    private SelenideElement addonsManagerField_Search = $("#ab__am_search");
 
 
     public void navigateToEditingCategoryPage(){
@@ -180,5 +185,17 @@ public class CsCartSettings {
         menuCustomers.hover();
         customersPage.click();
         return new CustomersPage();
+    }
+    public void navigateToABAddonsManager(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfABAddonsManager.click();
+        section_ListOfAvailableSets.click();
+    }
+    public void installAddonAtAddonsManager(String addonName){
+        addonsManagerField_Search.click();
+        addonsManagerField_Search.sendKeys(addonName);
+        addonsManagerField_Search.sendKeys(Keys.ENTER);
+
     }
 }
