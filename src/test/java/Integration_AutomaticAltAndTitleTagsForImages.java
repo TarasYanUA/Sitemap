@@ -23,7 +23,10 @@ public class Integration_AutomaticAltAndTitleTagsForImages extends TestRunner {
         csCartSettings.button_Save.click();
 
         //Устанавливаем модуль "AB: Автоматические теги Alt и Title для изображений по шаблонам"
-        csCartSettings.navigateToABAddonsManager();
+        csCartSettings.installAddonAtAddonsManager("ab__images_seo", "Need CODE");
+
+
+
 
         //Работаем с выгрузкой
         csCartSettings.navigateToSitemapGenerating();

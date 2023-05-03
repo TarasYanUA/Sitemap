@@ -186,16 +186,14 @@ public class CsCartSettings {
         customersPage.click();
         return new CustomersPage();
     }
-    public void navigateToABAddonsManager(){
+    public void installAddonAtAddonsManager(String addonCode, String installButton){
         menuAddons.hover();
         sectionDownloadedAddons.click();
         menuOfABAddonsManager.click();
         section_ListOfAvailableSets.click();
-    }
-    public void installAddonAtAddonsManager(String addonName){
         addonsManagerField_Search.click();
-        addonsManagerField_Search.sendKeys(addonName);
+        addonsManagerField_Search.sendKeys(addonCode);
         addonsManagerField_Search.sendKeys(Keys.ENTER);
-
+        $(installButton).click();
     }
 }
