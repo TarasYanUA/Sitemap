@@ -28,7 +28,7 @@ public class HTMLSitemap extends TestRunner{
         screenshot("HTMLSitemap on storefront");
         String urlOfHTMLSitemapRTL = storefrontUrl + "sitemap-ar/";
         Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemapRTL + "');");
-        shiftBrowserTab(2);
+        shiftBrowserTab(3);
         screenshot("HTMLSitemap on storefront (RTL)");
     }
 }
