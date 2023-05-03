@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case HTMLSitemap is ready!" />
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case HTMLSitemap is ready!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.HTMLSitemap">
+  <component name="RunManager" selected="TestNG.XMLSitemapOfImages">
     <configuration name="HTMLSitemap" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -74,10 +78,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_CategoriesSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="XMLSitemapOfImages" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="XmlSitemap_CategoriesSettings" />
+      <option name="MAIN_CLASS_NAME" value="XMLSitemapOfImages" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -120,18 +124,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.HTMLSitemap" />
-      <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
+      <item itemvalue="TestNG.XMLSitemapOfImages" />
       <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
       <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
       <item itemvalue="TestNG.XmlSitemap_PagesSettings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.XMLSitemapOfImages" />
         <item itemvalue="TestNG.HTMLSitemap" />
         <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
         <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
         <item itemvalue="TestNG.XmlSitemap_PagesSettings" />
-        <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -424,7 +428,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683116496190</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Test-case HTMLSitemap is ready!">
+      <created>1683118396842</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1683118396842</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Test-case HTMLSitemap is ready!">
+      <created>1683118506926</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1683118506926</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

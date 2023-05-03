@@ -26,6 +26,7 @@
             <class name="XmlSitemap_FeatureVariantsSettings" />
             <class name="XmlSitemap_CustomerLinksSettings" />
             <class name="HTMLSitemap" />
+            <class name="XMLSitemapOfImages" />
         </classes>
     </test>
 </suite>

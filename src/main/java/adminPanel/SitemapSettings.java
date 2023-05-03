@@ -36,9 +36,13 @@ public class SitemapSettings {
     public SelenideElement setting_CustomerLinksSettings_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_custom_links_changefreq_']");
     public SelenideElement setting_CustomerLinksSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_custom_links_priority_']");
 
-    //вкладка HTML-карта сайта
+    //вкладка "HTML-карта сайта"
     public SelenideElement tab_HTMLSitemap = $("#ab__advanced_sitemap_html_sitemap");
     public SelenideElement setting_EnableHTMLSitemap = $("input[id*='addon_option_ab__advanced_sitemap_enable_html_sitemap_']");
+
+    //вкладка "XML-карта изображений"
+    public SelenideElement tab_XMLSitemapOfImages = $("#ab__advanced_sitemap_xml_images_map");
+    public SelenideElement setting_EnableXMLImages = $("input[id*='addon_option_ab__advanced_sitemap_enable_html_sitemap_']");
 
     //Секция "Генерация карты сайта"
     private SelenideElement button_GenerateSitemap = $("a[href*='ab__advanced_sitemap.generate_sitemap']");
