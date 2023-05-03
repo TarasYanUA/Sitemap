@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case XmlSitemap_CustomerLinksSettings is ready!">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Started work with a test-case HTMLSitemap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +67,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.XmlSitemap_CustomerLinksSettings">
-    <configuration name="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.HTMLSitemap">
+    <configuration name="HTMLSitemap" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
+      <option name="MAIN_CLASS_NAME" value="HTMLSitemap" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -123,19 +124,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.HTMLSitemap" />
       <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
       <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
       <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
       <item itemvalue="TestNG.XmlSitemap_PagesSettings" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.HTMLSitemap" />
         <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
         <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
         <item itemvalue="TestNG.XmlSitemap_PagesSettings" />
         <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -414,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683107086603</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Started work with a test-case HTMLSitemap">
+      <created>1683107889703</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1683107889704</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -440,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started the first test-case." />
     <MESSAGE value="Two categories are configurated." />
     <MESSAGE value="Automatically took two urls from both categories." />
     <MESSAGE value="First test-case is ready!" />
@@ -465,7 +472,8 @@
     <MESSAGE value="Test-case XmlSitemap_PagesSettings is ready!" />
     <MESSAGE value="Test-case XmlSitemap_FeatureVariantsSettings is ready!" />
     <MESSAGE value="Test-case XmlSitemap_CustomerLinksSettings is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case XmlSitemap_CustomerLinksSettings is ready!" />
+    <MESSAGE value="Started work with a test-case HTMLSitemap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work with a test-case HTMLSitemap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

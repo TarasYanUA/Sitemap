@@ -24,6 +24,7 @@ public class CsCartSettings {
     public SelenideElement button_Preview = $("a[href*='profiles.view_product_as_user']");
     public SelenideElement searchFieldAtManagementPage = $("#elm_addon");
     public SelenideElement buttonInstallAddon = $("td.nowrap.right a[href*='addon=master_products']");
+    public SelenideElement storefrontMainButton = $("#header_navbar a[href*='profiles.act_as_user']");
 
     //Страница категории
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
