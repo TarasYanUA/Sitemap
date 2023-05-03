@@ -25,6 +25,7 @@
             <class name="XmlSitemap_PagesSettings" />
             <class name="XmlSitemap_FeatureVariantsSettings" />
             <class name="XmlSitemap_CustomerLinksSettings" />
+            <class name="HTMLSitemap" />
         </classes>
     </test>
 </suite>

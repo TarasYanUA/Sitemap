@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Started work with a test-case HTMLSitemap">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" afterDir="false" />
-    </list>
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case HTMLSitemap is ready!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -422,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683107889704</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Test-case HTMLSitemap is ready!">
+      <created>1683116496190</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1683116496190</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -448,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Two categories are configurated." />
     <MESSAGE value="Automatically took two urls from both categories." />
     <MESSAGE value="First test-case is ready!" />
     <MESSAGE value="First test-case is totally ready where everything is done automatically!" />
@@ -473,7 +474,8 @@
     <MESSAGE value="Test-case XmlSitemap_FeatureVariantsSettings is ready!" />
     <MESSAGE value="Test-case XmlSitemap_CustomerLinksSettings is ready!" />
     <MESSAGE value="Started work with a test-case HTMLSitemap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work with a test-case HTMLSitemap" />
+    <MESSAGE value="Test-case HTMLSitemap is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case HTMLSitemap is ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22,9 +22,13 @@ public class HTMLSitemap extends TestRunner{
         csCartSettings.storefrontMainButton.click();
         shiftBrowserTab(1);
         String storefrontUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
-        String urlOfHTMLSitemap = storefrontUrl + "sitemap-ru/";
+        String urlOfHTMLSitemap = storefrontUrl + "sitemap/";
         Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemap + "');");
         shiftBrowserTab(2);
-        screenshot("HTMLSitemap on storefront!");
+        screenshot("HTMLSitemap on storefront");
+        String urlOfHTMLSitemapRTL = storefrontUrl + "sitemap-ar/";
+        Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemapRTL + "');");
+        shiftBrowserTab(2);
+        screenshot("HTMLSitemap on storefront (RTL)");
     }
 }
