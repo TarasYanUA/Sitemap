@@ -10,9 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class CsCartSettings {
     public CsCartSettings(){super();}
     public SelenideElement button_Save = $(".btn.cm-submit");
-    public SelenideElement menuProducts = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#products']");
-    public SelenideElement sectionCategories = $("a[href$='categories.manage']");
-    public SelenideElement sectionProducts = $("a[href$='products.manage']");
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
     public SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
@@ -23,15 +20,20 @@ public class CsCartSettings {
     public SelenideElement chooseAnyProduct = $(".products-list__image");
     public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
     public SelenideElement button_Preview = $("a[href*='profiles.view_product_as_user']");
+    private SelenideElement addonsManagerField_Search = $("#ab__am_search");
     public SelenideElement searchFieldAtManagementPage = $("#elm_addon");
     public SelenideElement buttonInstallAddon = $("td.nowrap.right a[href*='addon=master_products']");
     public SelenideElement storefrontMainButton = $("#header_navbar a[href*='profiles.act_as_user']");
     private SelenideElement menuOfABAddonsManager = $("tr#addon_ab__addons_manager button.btn.dropdown-toggle");
     private SelenideElement section_ListOfAvailableSets = $("div.nowrap a[href*='ab__am.addons']");
-    public SelenideElement menuOfAltAndTitle = $("tr#addon_ab__images_seo button.btn.dropdown-toggle");
+    public SelenideElement menuOfAB__images_seo = $("tr#addon_ab__images_seo button.btn.dropdown-toggle");
     private SelenideElement section_ManageAttributes = $("div.nowrap a[href$='ab__is.manage_attrs']");
+    public SelenideElement menuOfAB__deal_of_the_day = $("tr#addon_ab__deal_of_the_day button.btn.dropdown-toggle");
+    private SelenideElement section_PromotionDemoData = $("div.nowrap a[href$='ab__dotd.demodata']");
+    private SelenideElement DemoDataTo_ab_deal_of_the_day = $(".ab__dotd_dbutton a");
 
     //Страница категории
+    public SelenideElement sectionCategories = $("a[href$='categories.manage']");
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
     public SelenideElement selectCategory_Android = $(".longtap-selection a[href$='category_id=182']");
     public SelenideElement selectCategory_Tents = $(".longtap-selection a[href*='category_id=218']");
@@ -42,6 +44,8 @@ public class CsCartSettings {
     private SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
     //Страница товара
+    public SelenideElement menuProducts = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#products']");
+    public SelenideElement sectionProducts = $("a[href$='products.manage']");
     public SelenideElement field_ProductPrice = $("#elm_price_price");
     public SelenideElement field_ProductAmount = $("#elm_in_stock");
     public SelenideElement button_dropdown = $(".btn-bar-left .dropdown-toggle");
@@ -50,9 +54,6 @@ public class CsCartSettings {
     public SelenideElement productBelongsToAllVendors = $("a[title='Все продавцы (общий товар)']");
     private SelenideElement menuCustomers = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']");
     private SelenideElement customersPage = $x("//span[text()='Администраторы продавца']");
-
-    //Страница "АВ: Менеджер модулей"
-    private SelenideElement addonsManagerField_Search = $("#ab__am_search");
 
 
     public void navigateToEditingCategoryPage(){
@@ -201,15 +202,23 @@ public class CsCartSettings {
             $(installButton).click();
             Alert alert = Selenide.webdriver().driver().switchTo().alert();
             alert.accept();
-            Selenide.sleep(8000);
+            Selenide.sleep(9000);
             $(menuAddons).shouldBe(Condition.enabled);
         }
     }
     public AB_images_seo navigateTo_ab_images_seo(){
         menuAddons.hover();
         sectionDownloadedAddons.click();
-        menuOfAltAndTitle.click();
+        menuOfAB__images_seo.click();
         section_ManageAttributes.click();
         return new AB_images_seo();
+    }
+    public void addDemoDataTo_ab_deal_of_the_day(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfAB__deal_of_the_day.click();
+        section_PromotionDemoData.click();
+        DemoDataTo_ab_deal_of_the_day.click();
+        Selenide.sleep(1000);
     }
 }

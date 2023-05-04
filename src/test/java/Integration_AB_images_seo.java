@@ -11,21 +11,9 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class Integration_AB_images_seo extends TestRunner {
     @Test
     public void checkIntegration_AB_images_seo(){
-        //Включаем XML-карту изображений c Alt и Title
         CsCartSettings csCartSettings = new CsCartSettings();
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
-        sitemapSettings.tab_Settings.click();
-        sitemapSettings.tab_XMLSitemapOfImages.click();
-        if(!sitemapSettings.setting_EnableXMLImages.isSelected()){
-            sitemapSettings.setting_EnableXMLImages.click();    }
-        if(!sitemapSettings.setting_AddTitleAndCaption.isSelected()){
-            sitemapSettings.setting_AddTitleAndCaption.click(); }
-        if(!sitemapSettings.setting_AddFeatureValues.isSelected()){
-            sitemapSettings.setting_AddFeatureValues.click();   }
-        csCartSettings.button_Save.click();
-
         //Устанавливаем модуль "AB: Автоматические теги Alt и Title для изображений по шаблонам"
-        csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAltAndTitle, "ab__images_seo", "form[name=ab_install_form_54348]");
+        csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAB__images_seo, "ab__images_seo", "form[name=ab_install_form_54348]");
         AB_images_seo abImagesSeo = csCartSettings.navigateTo_ab_images_seo();
         abImagesSeo.field_ImageNumber.click();
         abImagesSeo.field_ImageNumber.clear();
@@ -42,6 +30,18 @@ public class Integration_AB_images_seo extends TestRunner {
         csCartSettings.button_Save.click();
         abImagesSeo.navigateToGeneralSettings();
         abImagesSeo.setting_AttributeGenerationMethod.selectOptionByValue("always_generate");
+        csCartSettings.button_Save.click();
+
+        //Включаем XML-карту изображений c Alt и Title
+        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        sitemapSettings.tab_Settings.click();
+        sitemapSettings.tab_XMLSitemapOfImages.click();
+        if(!sitemapSettings.setting_EnableXMLImages.isSelected()){
+            sitemapSettings.setting_EnableXMLImages.click();    }
+        if(!sitemapSettings.setting_AddTitleAndCaption.isSelected()){
+            sitemapSettings.setting_AddTitleAndCaption.click(); }
+        if(!sitemapSettings.setting_AddFeatureValues.isSelected()){
+            sitemapSettings.setting_AddFeatureValues.click();   }
         csCartSettings.button_Save.click();
 
         //Работаем с выгрузкой

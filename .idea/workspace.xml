@@ -66,11 +66,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Integration_AB_images_seo">
+  <component name="RunManager" selected="TestNG.Integration_AB_deal_of_the_day">
     <configuration name="HTMLSitemap" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HTMLSitemap" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Integration_AB_deal_of_the_day" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Integration_AB_deal_of_the_day" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -111,31 +122,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_FeatureVariantsSettings" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="XmlSitemap_FeatureVariantsSettings" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="TestNG.Integration_AB_deal_of_the_day" />
       <item itemvalue="TestNG.Integration_AB_images_seo" />
       <item itemvalue="TestNG.HTMLSitemap" />
       <item itemvalue="TestNG.XMLSitemapOfImages" />
       <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
-      <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Integration_AB_deal_of_the_day" />
         <item itemvalue="TestNG.Integration_AB_images_seo" />
         <item itemvalue="TestNG.XMLSitemapOfImages" />
         <item itemvalue="TestNG.HTMLSitemap" />
         <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
-        <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -470,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683204668582</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Test-case Integration_AB_images_seo is ready!">
+      <created>1683206102644</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1683206102644</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
