@@ -1,5 +1,6 @@
 package adminPanel;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Alert;
@@ -27,6 +28,8 @@ public class CsCartSettings {
     public SelenideElement storefrontMainButton = $("#header_navbar a[href*='profiles.act_as_user']");
     private SelenideElement menuOfABAddonsManager = $("tr#addon_ab__addons_manager button.btn.dropdown-toggle");
     private SelenideElement section_ListOfAvailableSets = $("div.nowrap a[href*='ab__am.addons']");
+    private SelenideElement menuOfAltAndTitle = $("tr#addon_ab__images_seo button.btn.dropdown-toggle");
+    private SelenideElement section_ManageAttributes = $("div.nowrap a[href$='ab__is.manage_attrs']");
 
     //Страница категории
     public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
@@ -189,11 +192,24 @@ public class CsCartSettings {
     public void installAddonAtAddonsManager(String addonCode, String installButton){
         menuAddons.hover();
         sectionDownloadedAddons.click();
-        menuOfABAddonsManager.click();
-        section_ListOfAvailableSets.click();
-        addonsManagerField_Search.click();
-        addonsManagerField_Search.sendKeys(addonCode);
-        addonsManagerField_Search.sendKeys(Keys.ENTER);
-        $(installButton).click();
+        if(!$(menuOfAltAndTitle).exists()) {
+            menuOfABAddonsManager.click();
+            section_ListOfAvailableSets.click();
+            addonsManagerField_Search.click();
+            addonsManagerField_Search.sendKeys(addonCode);
+            addonsManagerField_Search.sendKeys(Keys.ENTER);
+            $(installButton).click();
+            Alert alert = Selenide.webdriver().driver().switchTo().alert();
+            alert.accept();
+            Selenide.sleep(8000);
+            $(menuAddons).shouldBe(Condition.enabled);
+        }
+    }
+    public AB_images_seo navigateTo_ab_images_seo(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfAltAndTitle.click();
+        section_ManageAttributes.click();
+        return new AB_images_seo();
     }
 }
