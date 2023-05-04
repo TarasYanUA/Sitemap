@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Started to work with test-case Integration_AutomaticAltAndTitleTagsForImages">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case Integration_AB_images_seo is ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AutomaticAltAndTitleTagsForImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,11 +123,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.Integration_AB_images_seo" />
       <item itemvalue="TestNG.HTMLSitemap" />
       <item itemvalue="TestNG.XMLSitemapOfImages" />
       <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
       <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
-      <item itemvalue="TestNG.Integration_AB_images_seo" />
     </list>
     <recent_temporary>
       <list>
@@ -463,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683126262820</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Test-case Integration_AB_images_seo is ready!">
+      <created>1683204668582</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1683204668582</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -489,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First test-case is totally ready where everything is done automatically!" />
     <MESSAGE value="Four test-cases are ready!&#10;Added TestNG file." />
     <MESSAGE value="The first test-case for brands is ready!" />
     <MESSAGE value="Three test-cases for brands are ready!&#10;Created method to split link for sitemap." />
@@ -514,7 +520,8 @@
     <MESSAGE value="Test-case HTMLSitemap is ready!" />
     <MESSAGE value="Test-case XMLSitemapOfImages is ready!" />
     <MESSAGE value="Started to work with test-case Integration_AutomaticAltAndTitleTagsForImages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started to work with test-case Integration_AutomaticAltAndTitleTagsForImages" />
+    <MESSAGE value="Test-case Integration_AB_images_seo is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case Integration_AB_images_seo is ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

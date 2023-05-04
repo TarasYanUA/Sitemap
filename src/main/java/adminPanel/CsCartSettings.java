@@ -28,7 +28,7 @@ public class CsCartSettings {
     public SelenideElement storefrontMainButton = $("#header_navbar a[href*='profiles.act_as_user']");
     private SelenideElement menuOfABAddonsManager = $("tr#addon_ab__addons_manager button.btn.dropdown-toggle");
     private SelenideElement section_ListOfAvailableSets = $("div.nowrap a[href*='ab__am.addons']");
-    private SelenideElement menuOfAltAndTitle = $("tr#addon_ab__images_seo button.btn.dropdown-toggle");
+    public SelenideElement menuOfAltAndTitle = $("tr#addon_ab__images_seo button.btn.dropdown-toggle");
     private SelenideElement section_ManageAttributes = $("div.nowrap a[href$='ab__is.manage_attrs']");
 
     //Страница категории
@@ -189,10 +189,10 @@ public class CsCartSettings {
         customersPage.click();
         return new CustomersPage();
     }
-    public void installAddonAtAddonsManager(String addonCode, String installButton){
+    public void installAddonAtAddonsManager(SelenideElement addonMenu, String addonCode, String installButton){
         menuAddons.hover();
         sectionDownloadedAddons.click();
-        if(!$(menuOfAltAndTitle).exists()) {
+        if(!$(addonMenu).exists()) {
             menuOfABAddonsManager.click();
             section_ListOfAvailableSets.click();
             addonsManagerField_Search.click();

@@ -25,7 +25,7 @@ public class Integration_AB_images_seo extends TestRunner {
         csCartSettings.button_Save.click();
 
         //Устанавливаем модуль "AB: Автоматические теги Alt и Title для изображений по шаблонам"
-        csCartSettings.installAddonAtAddonsManager("ab__images_seo", "form[name=ab_install_form_54348]");
+        csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAltAndTitle, "ab__images_seo", "form[name=ab_install_form_54348]");
         AB_images_seo abImagesSeo = csCartSettings.navigateTo_ab_images_seo();
         abImagesSeo.field_ImageNumber.click();
         abImagesSeo.field_ImageNumber.clear();
