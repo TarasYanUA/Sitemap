@@ -27,6 +27,11 @@
             <class name="XmlSitemap_CustomerLinksSettings" />
             <class name="HTMLSitemap" />
             <class name="XMLSitemapOfImages" />
+
+            <class name="Integration_AB_images_seo" />
+            <class name="Integration_AB_deal_of_the_day" />
+            <class name="Integration_AB_landing_categories" />
+            <class name="Integration_AB_seo_for_tags" />
         </classes>
     </test>
 </suite>
