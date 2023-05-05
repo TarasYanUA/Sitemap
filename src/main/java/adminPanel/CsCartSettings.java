@@ -31,6 +31,10 @@ public class CsCartSettings {
     public SelenideElement menuOfAB__deal_of_the_day = $("tr#addon_ab__deal_of_the_day button.btn.dropdown-toggle");
     private SelenideElement section_PromotionDemoData = $("div.nowrap a[href$='ab__dotd.demodata']");
     private SelenideElement DemoDataTo_ab_deal_of_the_day = $(".ab__dotd_dbutton a");
+    public SelenideElement menuOfAB__landing_categories = $("tr#addon_ab__landing_categories button.btn.dropdown-toggle");
+    private SelenideElement section_LandingCategoriesDemoData = $("div.nowrap a[href$='ab__lc.demodata']");
+    private SelenideElement DemoDataTo_ab_landing_categories = $(".cm-process-items");
+
 
     //Страница категории
     public SelenideElement sectionCategories = $("a[href$='categories.manage']");
@@ -42,6 +46,7 @@ public class CsCartSettings {
     private SelenideElement field_AmountForCategory_ProdOne = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[1]");
     private SelenideElement field_PriceForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[2]");
     private SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
+
 
     //Страница товара
     public SelenideElement menuProducts = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#products']");
@@ -221,5 +226,14 @@ public class CsCartSettings {
         DemoDataTo_ab_deal_of_the_day.click();
         Selenide.sleep(1000);
         return new AB_deal_of_the_day();
+    }
+    public AB_landing_categories addDemoDataTo_ab_landing_categories(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfAB__landing_categories.click();
+        section_LandingCategoriesDemoData.click();
+        DemoDataTo_ab_landing_categories.click();
+        Selenide.sleep(1000);
+        return new AB_landing_categories();
     }
 }

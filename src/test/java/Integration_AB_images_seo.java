@@ -8,6 +8,13 @@ import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
 
+/*
+Модуль "AB: Автоматические теги Alt и Title для изображений по шаблонам":
+    * Устанавливаем модуль
+    * Добавляем демо-данные
+    * Включаем настройку
+*/
+
 public class Integration_AB_images_seo extends TestRunner {
     @Test
     public void checkIntegration_AB_images_seo(){

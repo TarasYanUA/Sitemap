@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Started work with test-case Integration_AB_deal_of_the_day.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case Integration_AB_deal_of_the_day is ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_deal_of_the_day.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_deal_of_the_day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Integration_AB_deal_of_the_day">
+  <component name="RunManager" selected="TestNG.Integration_AB_landing_categories">
     <configuration name="HTMLSitemap" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,6 +101,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Integration_AB_landing_categories" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Integration_AB_landing_categories" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="XMLSitemapOfImages" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -113,31 +123,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_CustomerLinksSettings" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="XmlSitemap_CustomerLinksSettings" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="TestNG.Integration_AB_landing_categories" />
       <item itemvalue="TestNG.Integration_AB_deal_of_the_day" />
       <item itemvalue="TestNG.Integration_AB_images_seo" />
       <item itemvalue="TestNG.HTMLSitemap" />
       <item itemvalue="TestNG.XMLSitemapOfImages" />
-      <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Integration_AB_landing_categories" />
         <item itemvalue="TestNG.Integration_AB_deal_of_the_day" />
         <item itemvalue="TestNG.Integration_AB_images_seo" />
         <item itemvalue="TestNG.XMLSitemapOfImages" />
         <item itemvalue="TestNG.HTMLSitemap" />
-        <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -486,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683212386579</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Test-case Integration_AB_deal_of_the_day is ready!">
+      <created>1683273345182</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1683273345182</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -512,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="The first test-case for brands is ready!" />
     <MESSAGE value="Three test-cases for brands are ready!&#10;Created method to split link for sitemap." />
     <MESSAGE value="Fourth test-case for brands is ready!" />
     <MESSAGE value="Added test-cases for the setting &quot;do not exclude&quot;." />
@@ -537,7 +542,8 @@
     <MESSAGE value="Started to work with test-case Integration_AutomaticAltAndTitleTagsForImages" />
     <MESSAGE value="Test-case Integration_AB_images_seo is ready!" />
     <MESSAGE value="Started work with test-case Integration_AB_deal_of_the_day." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work with test-case Integration_AB_deal_of_the_day." />
+    <MESSAGE value="Test-case Integration_AB_deal_of_the_day is ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case Integration_AB_deal_of_the_day is ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
