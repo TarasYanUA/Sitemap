@@ -34,6 +34,9 @@ public class CsCartSettings {
     public SelenideElement menuOfAB__landing_categories = $("tr#addon_ab__landing_categories button.btn.dropdown-toggle");
     private SelenideElement section_LandingCategoriesDemoData = $("div.nowrap a[href$='ab__lc.demodata']");
     private SelenideElement DemoDataTo_ab_landing_categories = $(".cm-process-items");
+    public SelenideElement menuOfAB__seo_for_tags = $("tr#addon_ab__seo_for_tags button.btn.dropdown-toggle");
+    private SelenideElement section_TagsGeneralSettings = $("div.nowrap a[href$='addon=ab__seo_for_tags']");
+
 
 
     //Страница категории
@@ -207,7 +210,7 @@ public class CsCartSettings {
             $(installButton).click();
             Alert alert = Selenide.webdriver().driver().switchTo().alert();
             alert.accept();
-            Selenide.sleep(9000);
+            Selenide.sleep(11000);
             $(menuAddons).shouldBe(Condition.enabled);
         }
     }
@@ -235,5 +238,12 @@ public class CsCartSettings {
         DemoDataTo_ab_landing_categories.click();
         Selenide.sleep(1000);
         return new AB_landing_categories();
+    }
+    public void navigateToGeneralSettingOf_ab_seo_for_tags(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfAB__seo_for_tags.click();
+        section_TagsGeneralSettings.click();
+        $("#settings").click();
     }
 }
