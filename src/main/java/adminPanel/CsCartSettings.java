@@ -213,12 +213,13 @@ public class CsCartSettings {
         section_ManageAttributes.click();
         return new AB_images_seo();
     }
-    public void addDemoDataTo_ab_deal_of_the_day(){
+    public AB_deal_of_the_day addDemoDataTo_ab_deal_of_the_day(){
         menuAddons.hover();
         sectionDownloadedAddons.click();
         menuOfAB__deal_of_the_day.click();
         section_PromotionDemoData.click();
         DemoDataTo_ab_deal_of_the_day.click();
         Selenide.sleep(1000);
+        return new AB_deal_of_the_day();
     }
 }
