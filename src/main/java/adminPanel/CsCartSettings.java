@@ -36,7 +36,8 @@ public class CsCartSettings {
     private SelenideElement DemoDataTo_ab_landing_categories = $(".cm-process-items");
     public SelenideElement menuOfAB__seo_for_tags = $("tr#addon_ab__seo_for_tags button.btn.dropdown-toggle");
     private SelenideElement section_TagsGeneralSettings = $("div.nowrap a[href$='addon=ab__seo_for_tags']");
-
+    public SelenideElement menuOfAB__seo_filters = $("tr#addon_ab__seo_filters button.btn.dropdown-toggle");
+    private SelenideElement section_SeoFiltersGeneralSettings = $("div.nowrap a[href$='addon=ab__seo_filters']");
 
 
     //Страница категории
@@ -245,5 +246,13 @@ public class CsCartSettings {
         menuOfAB__seo_for_tags.click();
         section_TagsGeneralSettings.click();
         $("#settings").click();
+    }
+    public AB_seo_filters navigateToGeneralSettingsOf_ab_seo_filters(){
+        menuAddons.hover();
+        sectionDownloadedAddons.click();
+        menuOfAB__seo_filters.click();
+        section_SeoFiltersGeneralSettings.click();
+        $("#settings").click();
+        return new AB_seo_filters();
     }
 }
