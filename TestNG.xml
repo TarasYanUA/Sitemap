@@ -32,6 +32,7 @@
             <class name="Integration_AB_deal_of_the_day" />
             <class name="Integration_AB_landing_categories" />
             <class name="Integration_AB_seo_for_tags" />
+            <class name="Integration_AB_seo_filters" />
         </classes>
     </test>
 </suite>
