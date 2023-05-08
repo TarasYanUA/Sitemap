@@ -8,7 +8,6 @@ import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class Integration_AB_seo_filters extends TestRunner{
     @Test
@@ -36,12 +35,6 @@ public class Integration_AB_seo_filters extends TestRunner{
         ab_seo_filters.button_GenerateRulePage.click();
         Alert alert = Selenide.webdriver().driver().switchTo().alert();
         alert.accept();
-        Selenide.sleep(2000);
-        if($$(".cm-notification-close").size() > 0){
-            do{
-                $(".cm-notification-close").click();
-            } while ($$(".cm-notification-close").size() > 0);
-        }
         ab_seo_filters.navigateToSeoPagesList();
         $("a[href$='android-2.2-froyo-samsung/']").click();
         shiftBrowserTab(1);
