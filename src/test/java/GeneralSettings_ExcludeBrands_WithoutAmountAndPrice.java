@@ -53,10 +53,10 @@ public class GeneralSettings_ExcludeBrands_WithoutAmountAndPrice extends TestRun
         String urlForPanasonic = mainUrl + "panasonic-ru/";
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForGoPro)),
-                "There is no link for brand 'GoPro'!");
+                "There is no link for brand 'GoPro' in the 'feature_variants1' sitemap!");
         //Проверяем, что ссылка на бренд "Panasonic" отсутствует
         softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForPanasonic)),
-                "There is a link for brand 'Panasonic' but shouldn't!");
+                "There is a link for brand 'Panasonic' but shouldn't in the 'feature_variants1' sitemap!");
         screenshot("GeneralSettings_ExcludeBrands_WithoutAmountAndPrice");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeBrands_WithoutAmountAndPrice has passed successfully!");

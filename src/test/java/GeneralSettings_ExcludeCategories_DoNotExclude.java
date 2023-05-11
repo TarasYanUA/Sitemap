@@ -63,10 +63,10 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         //Проверяем, что ссылка на категорию "iPods" присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)),
-                "There is no link for category 'iPods'!");
+                "There is no link for category 'iPods' in the 'categories1' sitemap!");
         //Проверяем, что ссылка на категорию "Android" присутствует
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryAndroid)),
-                "There is no link for category 'Android'!");
+                "There is no link for category 'Android' in the 'categories1' sitemap!");
         screenshot("GeneralSettings_ExcludeCategories_DoNotExclude");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeCategories_DoNotExclude has passed successfully!");

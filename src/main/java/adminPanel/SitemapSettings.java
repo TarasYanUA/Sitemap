@@ -2,6 +2,8 @@ package adminPanel;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class SitemapSettings {
@@ -64,7 +66,7 @@ public class SitemapSettings {
     }
 
     public String splitLinkMethod (int partNumber) {
-        String allUrls = $(".pretty-print").getText();
+        String allUrls = WebDriverRunner.getWebDriver().getPageSource();
         String[] splitOne = allUrls.split("<loc>");
         int i = 0;
         while (i < splitOne.length) {

@@ -75,10 +75,10 @@ public class GeneralSettings_ExcludeProducts_DoNotExclude extends TestRunner{
         //Проверяем, что ссылка на товар "Elite" присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductElite)),
-                "There is no link for product 'Elite'!");
+                "There is no link for product 'Elite' in the 'products1' sitemap!");
         //Проверяем, что ссылка на товар "WeatherMaster" отсутствует
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductWeatherMaster)),
-                "There is no link for product 'WeatherMaster'!");
+                "There is no link for product 'WeatherMaster' in the 'products1' sitemap!");
         screenshot("GeneralSettings_ExcludeProducts_DoNotExclude");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeProducts_DoNotExclude has passed successfully!");

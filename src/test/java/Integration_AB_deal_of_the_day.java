@@ -51,10 +51,10 @@ public class Integration_AB_deal_of_the_day extends TestRunner {
         shiftBrowserTab(2);
         //Проверяем, что в карте-сайта промо-акций Частота изменений "Всегда"
         softAssert.assertTrue($(".pretty-print").has(Condition.text("<changefreq>always</changefreq>")),
-                "There is no Change frequency 'Always' in the sitemap of promotions!");
+                "There is no Change frequency 'Always' in the 'other_links1' sitemap!");
         //Проверяем, что в карте-сайта промо-акций Приоритет "0.8"
         softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.8</priority>")),
-                "There is no Priority '0.8' in the sitemap of promotions!");
+                "There is no Priority '0.8' in the 'other_links1' sitemap!");
         softAssert.assertAll();
         screenshot("Integration_AB_deal_of_the_day");
         System.out.println("Integration_AB_deal_of_the_day has passed successfully!");

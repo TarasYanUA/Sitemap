@@ -63,7 +63,7 @@ public class Integration_AB_landing_categories extends TestRunner{
         //Проверяем, что в карте-сайта присутствует ссылка на посадочную категорию
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfLandingCategory)),
-                "There is no link for a landing category in the sitemap!");
+                "There is no link for a landing category in the 'categories1' sitemap!");
         softAssert.assertAll();
         screenshot("Integration_AB_landing_categories");
         System.out.println("Integration_AB_landing_categories has passed successfully!");

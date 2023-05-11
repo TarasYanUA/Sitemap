@@ -68,10 +68,10 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         //Проверяем, что ссылка на категорию "iPods" присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)),
-                "There is no link for category 'iPods'!");
+                "There is no link for category 'iPods' in the 'categories1' sitemap!");
         //Проверяем, что ссылка на категорию "Android" отсутствует
         softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForCategoryAndroid)),
-                "There is a link for category 'Android' but shouldn't!");
+                "There is a link for category 'Android' but shouldn't in the 'categories1' sitemap!");
         screenshot("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice has passed successfully!");

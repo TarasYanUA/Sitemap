@@ -53,7 +53,7 @@ public class ZzZGeneralSettings_ExcludeProductVariations extends TestRunner{
         SoftAssert softAssert = new SoftAssert();
         //Проверяем, что ссылка на товар "Футболка, Цвет: Синий" присутствует
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductTshirt)),
-                "There is no link for product 'T-Shirt'!");
+                "There is no link for product 'T-Shirt' in the 'products1' sitemap!");
         screenshot("GeneralSettings_ExcludeProductVariations");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeProductVariations has passed successfully!");

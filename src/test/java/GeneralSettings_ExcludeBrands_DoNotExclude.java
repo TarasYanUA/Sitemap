@@ -51,10 +51,10 @@ public class GeneralSettings_ExcludeBrands_DoNotExclude extends TestRunner{
         String urlForPanasonic = mainUrl + "panasonic-ru/";
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForGoPro)),
-                "There is no link for brand 'GoPro'!");
+                "There is no link for brand 'GoPro' in the 'feature_variants1' sitemap!");
         //Проверяем, что ссылка на бренд "Panasonic" присутствует
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForPanasonic)),
-                "There is no link for brand 'Panasonic'!");
+                "There is no link for brand 'Panasonic' in the 'feature_variants1' sitemap!");
         screenshot("GeneralSettings_ExcludeBrands_DoNotExclude");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeBrands_DoNotExclude has passed successfully!");

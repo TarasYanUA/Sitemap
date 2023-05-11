@@ -65,10 +65,10 @@ public class Integration_AB_images_seo extends TestRunner {
         shiftBrowserTab(2);
         //Проверяем, что изображения присутствуют в карте сайта
         softAssert.assertTrue($(".pretty-print").has(Condition.text("images/detailed/")),
-                "There are no images in the xml-sitemap!");
+                "There are no images in the 'images1' sitemap!");
         //Проверяем, что у изображений присутствует Title и Caption от модуля "AB: Автоматические теги Alt и Title для изображений по шаблонам"
         softAssert.assertTrue($(".pretty-print").has(Condition.text("Attribute_TitleSuffix")),
-                "There is no Attribute_TitleSuffix from the add-on 'ab__images_seo'!");
+                "There is no Attribute_TitleSuffix from the add-on 'ab__images_seo' in the 'images1' sitemap!");
         softAssert.assertAll();
         screenshot("Integration_AB_images_seo");
         System.out.println("Integration_AB_images_seo has passed successfully!");

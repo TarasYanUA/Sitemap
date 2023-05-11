@@ -51,13 +51,13 @@ public class Integration_AB_seo_for_tags extends TestRunner{
         SoftAssert softAssert = new SoftAssert();
         String urlOfTagSport = mainUrl + "sport/";
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfTagSport)),
-                "There is no link to the page of tag 'Sport' in the sitemap 'other_links1.xml'!");
+                "There is no link to the page of tag 'Sport' in the 'other_links1.xml' sitemap!");
         Selenide.executeJavaScript("window.open('" + urlForXMLTags + "');");
         shiftBrowserTab(3);
         //Проверяем, что ссылка на страницу всех тегов присутствует
         String urlForAllTags = mainUrl + "tags";
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForAllTags)),
-                "There is no link to the page of all tags in the sitemap 'custom_links2.xml'!");
+                "There is no link to the page of all tags in the 'custom_links2.xml' sitemap!");
         softAssert.assertAll();
         screenshot("Integration_AB_seo_for_tags");
         System.out.println("Integration_AB_seo_for_tags has passed successfully!");

@@ -9,6 +9,14 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.$;
 
+/*
+Модуль "AB: SEO-страницы для фильтров":
+    * Устанавливаем модуль
+    * Включаем настройку
+    * Добавляем Правило
+    * Генерируем SEO-страницы для фильтров
+*/
+
 public class Integration_AB_seo_filters extends TestRunner{
     @Test
     public void checkIntegration_AB_seo_filters(){
@@ -63,6 +71,6 @@ public class Integration_AB_seo_filters extends TestRunner{
         //Проверяем, что ссылка на SEO-страницу для фильтров присутствует
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfSeoPage)),
-                "There is no link to the SEO page for filters in the sitemap 'categories2.xml'!");
+                "There is no link to the SEO page for filters in the 'categories2.xml' sitemap!");
     }
 }
