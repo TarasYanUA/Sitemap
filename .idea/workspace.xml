@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-case Integration_AB_seo_filters is ready!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeBrands_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_deal_of_the_day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_images_seo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_landing_categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_landing_categories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_seo_filters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" afterDir="false" />
-    </list>
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved messages for asserts!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +61,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (2)">
+  <component name="RunManager" selected="TestNG.Sitemap/TestNG.xml">
     <configuration name="AAAIntegration_AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -97,18 +74,6 @@
       </method>
     </configuration>
     <configuration name="AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AAAIntegration_AB_seo_filters" />
-      <option name="METHOD_NAME" value="checkIntegration_AB_seo_filters" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (2)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AAAIntegration_AB_seo_filters" />
@@ -144,15 +109,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.Sitemap/TestNG.xml" />
       <item itemvalue="TestNG.AAAIntegration_AB_seo_filters" />
       <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters" />
       <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" />
-      <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (2)" />
       <item itemvalue="TestNG.Integration_AB_seo_filters" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (2)" />
+        <item itemvalue="TestNG.Sitemap/TestNG.xml" />
         <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters" />
         <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" />
         <item itemvalue="TestNG.AAAIntegration_AB_seo_filters" />
@@ -168,13 +133,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681990603028</updated>
-    </task>
-    <task id="LOCAL-00009" summary="First test-case is ready!">
-      <created>1682435076987</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1682435076987</updated>
     </task>
     <task id="LOCAL-00010" summary="First test-case is ready!">
       <created>1682435154134</created>
@@ -512,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683557921616</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Improved messages for asserts!">
+      <created>1683796860907</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1683796860907</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -538,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improved conditions for test-cases a little bit." />
     <MESSAGE value="Added new test-case GeneralSettings_ExcludeProductVariations." />
     <MESSAGE value="Added new test-case XmlSitemap_IncludeCompanies." />
     <MESSAGE value="Added a new test-case XmlSitemap_AddLastModifiedDate." />
@@ -563,7 +527,8 @@
     <MESSAGE value="Added test-cases to TestNG file." />
     <MESSAGE value="Started to work with a test-case Integration_AB_seo_filters." />
     <MESSAGE value="Test-case Integration_AB_seo_filters is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case Integration_AB_seo_filters is ready!" />
+    <MESSAGE value="Improved messages for asserts!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved messages for asserts!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
