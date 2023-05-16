@@ -30,5 +30,7 @@ public class HTMLSitemap extends TestRunner{
         Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemapRTL + "');");
         shiftBrowserTab(3);
         screenshot("HTMLSitemap on storefront (RTL)");
+        System.out.println("HTMLSitemap has passed successfully!");
+
     }
 }

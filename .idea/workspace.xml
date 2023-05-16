@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved messages for asserts!" />
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Saved TestNG as a project.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Integration_AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Integration_AB_seo_filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +122,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Sitemap/TestNG.xml" />
         <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters" />
         <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" />
         <item itemvalue="TestNG.AAAIntegration_AB_seo_filters" />
@@ -133,13 +137,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681990603028</updated>
-    </task>
-    <task id="LOCAL-00010" summary="First test-case is ready!">
-      <created>1682435154134</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1682435154134</updated>
     </task>
     <task id="LOCAL-00011" summary="First test-case is totally ready where everything is done automatically!">
       <created>1682501095311</created>
@@ -477,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683796860907</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Saved TestNG as a project.">
+      <created>1683796990899</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1683796990899</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -503,7 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added new test-case GeneralSettings_ExcludeProductVariations." />
     <MESSAGE value="Added new test-case XmlSitemap_IncludeCompanies." />
     <MESSAGE value="Added a new test-case XmlSitemap_AddLastModifiedDate." />
     <MESSAGE value="Started working with a test-case &quot;XmlSitemap_ProductSettings&quot;" />
@@ -528,7 +531,8 @@
     <MESSAGE value="Started to work with a test-case Integration_AB_seo_filters." />
     <MESSAGE value="Test-case Integration_AB_seo_filters is ready!" />
     <MESSAGE value="Improved messages for asserts!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved messages for asserts!" />
+    <MESSAGE value="Saved TestNG as a project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Saved TestNG as a project." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -72,5 +72,6 @@ public class Integration_AB_seo_filters extends TestRunner{
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfSeoPage)),
                 "There is no link to the SEO page for filters in the 'categories2.xml' sitemap!");
+        System.out.println("Integration_AB_seo_filters has passed successfully!");
     }
 }
