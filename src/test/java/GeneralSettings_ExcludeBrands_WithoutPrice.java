@@ -1,6 +1,5 @@
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
@@ -19,7 +18,8 @@ import static com.codeborne.selenide.Selenide.screenshot;
     * Бренд "Panasonic" отсутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeBrands_WithoutPrice extends TestRunner{
+public class GeneralSettings_ExcludeBrands_WithoutPrice extends TestRunner {
+
     @Test
     public void checkGeneralSettings_ExcludeBrands_WithoutPrice() {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -34,11 +34,13 @@ public class GeneralSettings_ExcludeBrands_WithoutPrice extends TestRunner{
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeBrands.selectOptionByValue("without_product_price");
-        sitemapSettings.tab_XMLSitemap.click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-        sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap.click();    }
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
+            sitemapSettings.setting_EnableXMLSitemap.click();
+        }
+        if (!sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap.isSelected()) {
+            sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap.click();
+        }
         csCartSettings.button_Save.click();
 
         //Работаем с выгрузкой
@@ -47,16 +49,18 @@ public class GeneralSettings_ExcludeBrands_WithoutPrice extends TestRunner{
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
         String urlForFeatureBrand = sitemapSettings.splitLinkMethod(3);
-        Selenide.executeJavaScript("window.open('"+urlForFeatureBrand+"');");
+        Selenide.executeJavaScript("window.open('" + urlForFeatureBrand + "');");
         shiftBrowserTab(2);
+
         //Проверяем, что ссылка на бренд "GoPro" присутствует
         String urlForGoPro = mainUrl + "gopro-ru/";
         String urlForPanasonic = mainUrl + "panasonic-ru/";
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForGoPro)),
+        softAssert.assertTrue($("[href='" + urlForGoPro + "']").exists(),
                 "There is no link for brand 'GoPro' in the 'feature_variants1' sitemap!");
+
         //Проверяем, что ссылка на бренд "Panasonic" отсутствует
-        softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForPanasonic)),
+        softAssert.assertFalse($("[href='" + urlForPanasonic + "']").exists(),
                 "There is a link for brand 'Panasonic' but shouldn't in the 'feature_variants1' sitemap!");
         screenshot("GeneralSettings_ExcludeBrands_WithoutPrice");
         softAssert.assertAll();

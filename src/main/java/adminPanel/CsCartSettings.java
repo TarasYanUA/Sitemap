@@ -40,7 +40,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_productSearch.click();
         field_productSearch.clear();
         field_productSearch.sendKeys(name);
-        field_productSearch.sendKeys(Keys.ENTER);
+        Selenide.sleep(1500);
         chooseAnyProduct.click();
         field_ProductPrice.click();
         field_ProductPrice.clear();
@@ -63,15 +63,16 @@ public class CsCartSettings implements CheckMenuToBeActive {
     }
 
     public void deleteProductOnProductsSection(String name) {
-        if ($(".alert").exists()) {     //Выключаем сообщение о предупреждении, если оно появилось
+        if ($(".alert.cm-notification-content").exists()) {     //Выключаем сообщение о сохранении, если оно появилось
             $(".close.cm-notification-close").click();
         }
         navigateToSection_Products();
         field_productSearch.click();
         field_productSearch.clear();
         field_productSearch.sendKeys(name);
-        Selenide.sleep(1500);
-        deleteAllProductsFromCategory();
+        Selenide.sleep(2000);
+        if(!$x("//p[text()='Здесь пока ничего нет']").exists())
+            deleteAllProductsFromCategory();
     }
 
     //Меню "Товары -- Категории"
