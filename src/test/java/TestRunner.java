@@ -1,11 +1,12 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /*
-Мультивендор + модуль "Расширенная карта сайта" 2.5.0.
+Мультивендор + модуль "Расширенная карта сайта" 2.6.0.
 Работает в браузерах Chrome и Edge (в Firefox не работает).
 */
 
@@ -15,9 +16,9 @@ public class TestRunner {
     @BeforeMethod
     public void openBrowser()  {
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
-        Configuration.screenshots = true;  //делаем скриншоты при падении
-        Configuration.browserSize = "1920x1050"; //Увеличиваем размер экрана
+        Configuration.holdBrowserOpen = false;  //не закрываем браузер пока ведём разработку
+        Configuration.screenshots = true;       //делаем скриншоты при падении
+        WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
         open(BASIC_URL);
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
@@ -27,5 +28,12 @@ public class TestRunner {
 
     public void shiftBrowserTab(int tabNumber){
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+    }
+
+    public void navigateTo_Storefront() {
+        String currentUrl = WebDriverRunner.url();
+        String[] url = currentUrl.split("admin.php");
+        executeJavaScript("window.open('" + url[0] + "')");
+        //return new StPromotions();
     }
 }

@@ -38,14 +38,14 @@ public class XmlSitemap_ProductsSettings extends TestRunner{
         csCartSettings.button_Save.click();
 
         //Устанавливаем модуль "Общие товары для продавцов"
-        csCartSettings.menuAddons.hover();
-        csCartSettings.sectionDownloadedAddons.click();
+        csCartSettings.menu_Addons.hover();
+        csCartSettings.section_DownloadedAddons.click();
         if($(".alert").exists()){
             $(".close.cm-notification-close").click();
         }   //Выключаем сообщение о предупредлении, если оно появилось
         csCartSettings.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
         if($$("td.nowrap.right a[href*='addon=master_products']").size()>0) {
-            csCartSettings.buttonInstallAddon.click();
+            csCartSettings.button_InstallAddon.click();
             Selenide.sleep(3000);
         webdriver().driver().getWebDriver().navigate().refresh();   }
         //Работаем со страницей редактирования товара
@@ -61,12 +61,12 @@ public class XmlSitemap_ProductsSettings extends TestRunner{
         shiftBrowserTab(1);
         customersPage.sellProductAsVendor();
         shiftBrowserTab(0);
-        csCartSettings.menuProducts.hover();
-        csCartSettings.sectionProducts.click();
-        csCartSettings.field_Search.click();
-        csCartSettings.field_Search.clear();
-        csCartSettings.field_Search.sendKeys("USB-N53");
-        csCartSettings.field_Search.sendKeys(Keys.ENTER);
+        csCartSettings.menu_Products.hover();
+        csCartSettings.section_Products.click();
+        csCartSettings.field_productSearch.click();
+        csCartSettings.field_productSearch.clear();
+        csCartSettings.field_productSearch.sendKeys("USB-N53");
+        csCartSettings.field_productSearch.sendKeys(Keys.ENTER);
         if(customersPage.iconThumbUp.exists()) {customersPage.iconThumbUp.click();  }
         csCartSettings.chooseAnyProduct.click();
         csCartSettings.gearwheelOnEditingPage.click();

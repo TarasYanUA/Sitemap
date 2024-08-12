@@ -24,7 +24,7 @@ public class GeneralSettings_ExcludeProducts_DoNotExclude extends TestRunner{
     public void checkGeneralSettings_ExcludeProducts_DoNotExclude() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем 2 товара из категории "Палатки"
-        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Tents.click();
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_ViewProducts.click();

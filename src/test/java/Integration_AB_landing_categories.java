@@ -29,7 +29,7 @@ public class Integration_AB_landing_categories extends TestRunner{
         }
 
         //Работаем со страницей категории
-        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.navigateToSection_Categories();
         $x("//table[contains(@class, 'table-tree')] //a[contains(text(), 'AB: Спорт и отдых')]").click();
         $("#elm_category_status_0_a").click();
         csCartSettings.button_Save.click();

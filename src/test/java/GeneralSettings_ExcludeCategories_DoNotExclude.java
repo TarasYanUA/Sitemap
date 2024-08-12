@@ -22,7 +22,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
     @Test
     public void checkGeneralSettings_ExcludeCategories_DoNotExclude() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Ipods.click();
         csCartSettings.goToStorefront_CategoryPage(1);
         String currentUrl_CategoryIpods = WebDriverRunner.getWebDriver().getCurrentUrl(); //Получили ссылку категории "iPods"
@@ -32,7 +32,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         shiftBrowserTab(0);
         csCartSettings.goAndSetFirstProductOfCategory("0", "0");
         csCartSettings.button_Save.click();
-        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Android.click();
         csCartSettings.goToStorefront_CategoryPage(2);
         String currentUrl_CategoryAndroid = WebDriverRunner.getWebDriver().getCurrentUrl(); //Получили ссылку категории "Android"

@@ -24,7 +24,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmountAndPrice extends TestR
     public void checkGeneralSettings_ExcludeProducts_WithoutAmountAndPrice() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем 2 товара из категории "Палатки"
-        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Tents.click();
         if($(".alert").exists()){
             $(".close.cm-notification-close").click();
