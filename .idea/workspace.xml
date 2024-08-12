@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Updated pom.xml file.&#10;Started adaptation to CS-Cart 4.18.2">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Adaptation to CS-Cart 4.18.2 is ready!&#10;Adapted test-case GeneralSettings_ExcludeProductVariations to the newest add-on version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HTMLSitemap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ZzZGeneralSettings_ExcludeProductVariations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_DoNotExclude.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeCategories_WithoutProducts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +80,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor": "Run",
     "TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor": "Run",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "master",
@@ -97,11 +105,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ZzZGeneralSettings_ExcludeProductVariations">
-    <configuration name="AAAIntegration_AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude">
+    <configuration name="GeneralSettings_ExcludeCategories_DoNotExclude" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AAAIntegration_AB_seo_filters" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_DoNotExclude" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -109,34 +117,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ExcludeCategories_WithoutAmount" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AAAIntegration_AB_seo_filters" />
-      <option name="METHOD_NAME" value="checkIntegration_AB_seo_filters" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AAAIntegration_AB_seo_filters" />
-      <option name="METHOD_NAME" value="checkIntegration_AB_seo_filters" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ExcludeProductVariations" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeProductVariations" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_WithoutAmount" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -144,10 +128,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Integration_AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Integration_AB_seo_filters" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ExcludeCategories_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_WithoutPrice" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ExcludeCategories_WithoutProducts" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_WithoutProducts" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -157,19 +163,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
-      <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
-      <item itemvalue="TestNG.AAAIntegration_AB_seo_filters" />
-      <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters" />
-      <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" />
-      <item itemvalue="TestNG.Integration_AB_seo_filters" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmount" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutPrice" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ZzZGeneralSettings_ExcludeProductVariations" />
-        <item itemvalue="TestNG.Integration_AB_seo_filters" />
-        <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters (1)" />
-        <item itemvalue="TestNG.AAAIntegration_AB_seo_filters.checkIntegration_AB_seo_filters" />
-        <item itemvalue="TestNG.AAAIntegration_AB_seo_filters" />
+        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_DoNotExclude" />
+        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts" />
+        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
+        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutPrice" />
+        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmount" />
       </list>
     </recent_temporary>
   </component>
@@ -525,7 +531,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -551,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a new test-case XmlSitemap_AddLastModifiedDate." />
     <MESSAGE value="Started working with a test-case &quot;XmlSitemap_ProductSettings&quot;" />
     <MESSAGE value="Test-case XmlSitemap_ProductSettings is ready!" />
     <MESSAGE value="Added some asserts and fixed some bugs." />
@@ -576,7 +581,8 @@
     <MESSAGE value="Improved messages for asserts!" />
     <MESSAGE value="Saved TestNG as a project." />
     <MESSAGE value="Updated pom.xml file.&#10;Started adaptation to CS-Cart 4.18.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated pom.xml file.&#10;Started adaptation to CS-Cart 4.18.2" />
+    <MESSAGE value="Adaptation to CS-Cart 4.18.2 is ready!&#10;Adapted test-case GeneralSettings_ExcludeProductVariations to the newest add-on version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adaptation to CS-Cart 4.18.2 is ready!&#10;Adapted test-case GeneralSettings_ExcludeProductVariations to the newest add-on version." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,12 +595,6 @@
           <properties class="java.net.SocketException" package="java.net" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java</url>
-          <line>18</line>
-          <properties field="storefrontMainButton" class="adminPanel.CsCartSettings" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

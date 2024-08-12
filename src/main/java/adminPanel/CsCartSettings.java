@@ -15,6 +15,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
     }
 
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
+    public SelenideElement button_SaveListOfProducts = $(".nav__actions-btn-save");
     public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
 
     //Меню "Товары --Товары"

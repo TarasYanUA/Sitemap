@@ -1,6 +1,5 @@
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
@@ -31,7 +30,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         System.out.println("iPods URL is: " + urlForCategoryIpods);
         shiftBrowserTab(0);
         csCartSettings.goAndSetFirstProductOfCategory("0", "0");
-        csCartSettings.button_Save.click();
+        csCartSettings.button_SaveListOfProducts.click();
         csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Android.click();
         csCartSettings.goToStorefront_CategoryPage(2);
@@ -45,7 +44,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeCategories.selectOptionByValue("none");
-        sitemapSettings.tab_XMLSitemap.click();
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
         sitemapSettings.setting_EnableXMLSitemap.click();   }
         if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
@@ -60,12 +59,14 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner{
         String urlForCategories = sitemapSettings.splitLinkMethod(2);
         Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
         shiftBrowserTab(4);
+
         //Проверяем, что ссылка на категорию "iPods" присутствует
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)),
+        softAssert.assertTrue($("[href='" + urlForCategoryIpods + "']").exists(),
                 "There is no link for category 'iPods' in the 'categories1' sitemap!");
+
         //Проверяем, что ссылка на категорию "Android" присутствует
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryAndroid)),
+        softAssert.assertTrue($("[href='" + urlForCategoryAndroid + "']").exists(),
                 "There is no link for category 'Android' in the 'categories1' sitemap!");
         screenshot("GeneralSettings_ExcludeCategories_DoNotExclude");
         softAssert.assertAll();

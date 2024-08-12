@@ -1,10 +1,10 @@
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.*;
 
 /*
@@ -17,7 +17,8 @@ import static com.codeborne.selenide.Selenide.*;
     * Категория "Android" отсутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner{
+public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner {
+
     @Test
     public void checkGeneralSettings_ExcludeCategories_WithoutAmount() {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -32,7 +33,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner{
         shiftBrowserTab(0);
         csCartSettings.goAndSetFirstProductOfCategory("249", "10");
         csCartSettings.goAndSetSecondProductOfCategory("255", "15");
-        csCartSettings.button_Save.click();
+        csCartSettings.button_SaveListOfProducts.click();
         //Настраиваем вторую категорию "Android"
         csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Android.click();
@@ -44,17 +45,19 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner{
         System.out.println("Android URL is: " + urlForCategoryAndroid);
         csCartSettings.goAndSetFirstProductOfCategory("249", "0");
         csCartSettings.goAndSetSecondProductOfCategory("255", "0");
-        csCartSettings.button_Save.click();
+        csCartSettings.button_SaveListOfProducts.click();
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeCategories.selectOptionByValue("without_product_amount");
         sitemapSettings.tab_XMLSitemap.click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-        sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();    }
+        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
+            sitemapSettings.setting_EnableXMLSitemap.click();
+        }
+        if (!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()) {
+            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();
+        }
         csCartSettings.button_Save.click();
 
         //Работаем с выгрузкой
@@ -63,14 +66,16 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner{
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
         String urlForCategories = sitemapSettings.splitLinkMethod(2);
-        Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
+        Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
         shiftBrowserTab(4);
+
         //Проверяем, что ссылка на категорию "iPods" присутствует
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForCategoryIpods)),
+        softAssert.assertTrue($("[href='" + urlForCategoryIpods + "']").exists(),
                 "There is no link for category 'iPods' in the 'categories1' sitemap!");
+
         //Проверяем, что ссылка на категорию "Android" отсутствует
-        softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForCategoryAndroid)),
+        softAssert.assertFalse($("[href='" + urlForCategoryAndroid + "']").exists(),
                 "There is a link for category 'Android' but shouldn't in the 'categories1' sitemap!");
         screenshot("GeneralSettings_ExcludeCategories_WithoutAmount");
         softAssert.assertAll();
