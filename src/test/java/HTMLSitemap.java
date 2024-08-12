@@ -5,7 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.screenshot;
 
-public class HTMLSitemap extends TestRunner{
+public class HTMLSitemap extends TestRunner {
     @Test
     public void checkHTMLSitemap(){
         //Включаем HTML-карту сайта
@@ -19,8 +19,7 @@ public class HTMLSitemap extends TestRunner{
         }
 
         //Работаем на витрине
-        csCartSettings.storefrontMainButton.click();
-        shiftBrowserTab(1);
+        navigateTo_Storefront(1);
         String storefrontUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
         String urlOfHTMLSitemap = storefrontUrl + "sitemap/";
         Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemap + "');");
@@ -31,6 +30,5 @@ public class HTMLSitemap extends TestRunner{
         shiftBrowserTab(3);
         screenshot("HTMLSitemap on storefront (RTL)");
         System.out.println("HTMLSitemap has passed successfully!");
-
     }
 }

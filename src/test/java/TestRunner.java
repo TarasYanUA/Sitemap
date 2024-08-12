@@ -11,15 +11,15 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4162mvru/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4182mvru/admin.php?dispatch=addons.manage";
 
     @BeforeMethod
     public void openBrowser()  {
         Configuration.browser = "chrome";
+        open(BASIC_URL);
         Configuration.holdBrowserOpen = false;  //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true;       //делаем скриншоты при падении
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
-        open(BASIC_URL);
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
     }
@@ -30,10 +30,9 @@ public class TestRunner {
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
     }
 
-    public void navigateTo_Storefront() {
+    public void navigateTo_Storefront(int tabNumber) {
         String currentUrl = WebDriverRunner.url();
         String[] url = currentUrl.split("admin.php");
-        executeJavaScript("window.open('" + url[0] + "')");
-        //return new StPromotions();
+        executeJavaScript("window.open('" + url[tabNumber] + "')");
     }
 }

@@ -6,13 +6,15 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class CsCartSettings implements CheckMenuToBeActive {
-    public CsCartSettings(){super();}
-    public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
+    public CsCartSettings() {
+        super();
+    }
 
-    public SelenideElement storefrontMainButton = $("#header_navbar a[href*='profiles.act_as_user']");
+    public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
     public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
 
     //Меню "Товары --Товары"
@@ -27,15 +29,13 @@ public class CsCartSettings implements CheckMenuToBeActive {
     SelenideElement menuCustomers = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']");
     SelenideElement customersPage = $x("//span[text()='Администраторы продавца']");
 
-    public ProductSettings navigateToSection_Products(){
+    public void navigateToSection_Products() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Products.click();
-        return new ProductSettings();
     }
 
-    public void goAndSetEditingProductPage(String name, String price, String amount){
-        menu_Products.hover();
-        section_Products.click();
+    public void goAndSetEditingProductPage(String name, String price, String amount) {
+        navigateToSection_Products();
         field_productSearch.click();
         field_productSearch.clear();
         field_productSearch.sendKeys(name);
@@ -49,26 +49,28 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_ProductAmount.sendKeys(amount);
         button_Save.click();
     }
-    public void navigateToEditingProductPage(String name){
-        menu_Products.hover();
-        section_Products.click();
+
+    public void navigateToEditingProductPage(String name) {
+        navigateToSection_Products();
         field_productSearch.click();
         field_productSearch.clear();
         field_productSearch.sendKeys(name);
-        field_productSearch.sendKeys(Keys.ENTER);
-        if(chooseAnyProduct.exists()){chooseAnyProduct.click(); }
+        Selenide.sleep(1500);
+        if (chooseAnyProduct.exists()) {
+            chooseAnyProduct.click();
+        }
     }
-    public void deleteProductOnProductsSection(String name){
-            if($(".alert").exists()){
-                $(".close.cm-notification-close").click();
-            }   //Выключаем сообщение о предупредлении, если оно появилось
-            menu_Products.hover();
-            section_Products.click();
-            field_productSearch.click();
-            field_productSearch.clear();
-            field_productSearch.sendKeys(name);
-            field_productSearch.sendKeys(Keys.ENTER);
-            deleteAllProductsFromCategory();
+
+    public void deleteProductOnProductsSection(String name) {
+        if ($(".alert").exists()) {     //Выключаем сообщение о предупреждении, если оно появилось
+            $(".close.cm-notification-close").click();
+        }
+        navigateToSection_Products();
+        field_productSearch.click();
+        field_productSearch.clear();
+        field_productSearch.sendKeys(name);
+        Selenide.sleep(1500);
+        deleteAllProductsFromCategory();
     }
 
     //Меню "Товары -- Категории"
@@ -82,11 +84,11 @@ public class CsCartSettings implements CheckMenuToBeActive {
     SelenideElement field_PriceForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[2]");
     SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
-    public void navigateToSection_Categories(){
+    public void navigateToSection_Categories() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Categories.click();
     }
-    
+
     public void goToStorefront_CategoryPage(int tab) {
         Selenide.sleep(2000);
         gearwheelOnEditingPage.click();
@@ -94,12 +96,13 @@ public class CsCartSettings implements CheckMenuToBeActive {
         switchTo().window(tab);
     }
 
-    public void goAndSetFirstProductOfCategory(String price, String amount){
+    public void goAndSetFirstProductOfCategory(String price, String amount) {
         Selenide.sleep(2000);
         gearwheelOnEditingPage.click();
         button_ViewProducts.click();
-        if($$(".products-list__image").size() > 2){
-            deleteProductsFromCategory();   }
+        if ($$(".products-list__image").size() > 2) {
+            deleteProductsFromCategory();
+        }
         field_PriceForCategory_ProdOne.click();
         field_PriceForCategory_ProdOne.clear();
         field_PriceForCategory_ProdOne.sendKeys(price);
@@ -108,7 +111,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_AmountForCategory_ProdOne.sendKeys(amount);
     }
 
-    public void goAndSetSecondProductOfCategory(String price, String amount){
+    public void goAndSetSecondProductOfCategory(String price, String amount) {
         field_PriceForCategory_ProdTwo.click();
         field_PriceForCategory_ProdTwo.clear();
         field_PriceForCategory_ProdTwo.sendKeys(price);
@@ -117,10 +120,10 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_AmountForCategory_ProdTwo.sendKeys(amount);
     }
 
-    public void setFirstProduct(String price, String amount){
-        if($(".alert").exists()){
+    public void setFirstProduct(String price, String amount) {
+        if ($(".alert").exists()) {     //Выключаем сообщение о предупреждении, если оно появилось
             $(".close.cm-notification-close").click();
-        }   //Выключаем сообщение о предупредлении, если оно появилось
+        }
         field_PriceForCategory_ProdOne.click();
         field_PriceForCategory_ProdOne.clear();
         field_PriceForCategory_ProdOne.sendKeys(price);
@@ -129,7 +132,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_AmountForCategory_ProdOne.sendKeys(amount);
     }
 
-    public void setSecondProduct(String price, String amount){
+    public void setSecondProduct(String price, String amount) {
         field_PriceForCategory_ProdTwo.click();
         field_PriceForCategory_ProdTwo.clear();
         field_PriceForCategory_ProdTwo.sendKeys(price);
@@ -138,8 +141,8 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_AmountForCategory_ProdTwo.sendKeys(amount);
     }
 
-    public void deleteProductsFromCategory(){
-        do{
+    public void deleteProductsFromCategory() {
+        do {
             $(".mobile-hide .dropdown-icon--tools").hover().click();
             $("a[href*='products.delete']").click();
             Alert alert = Selenide.webdriver().driver().switchTo().alert();
@@ -148,14 +151,14 @@ public class CsCartSettings implements CheckMenuToBeActive {
         } while ($$(".products-list__image").size() > 2);
     }
 
-    public void deleteAllProductsFromCategory(){
-        do{
+    public void deleteAllProductsFromCategory() {
+        do {
             $(".mobile-hide .dropdown-icon--tools").hover().click();
             $("a[href*='products.delete']").click();
             Alert alert = Selenide.webdriver().driver().switchTo().alert();
             alert.accept();
             Selenide.sleep(1500);
-        } while ($$(".products-list__image").size() > 0);
+        } while (!$$(".products-list__image").isEmpty());
     }
 
 
@@ -187,29 +190,31 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public SelenideElement menuOfAB__seo_filters = $("tr#addon_ab__seo_filters button.btn.dropdown-toggle");
     SelenideElement section_SeoFiltersGeneralSettings = $("div.nowrap a[href$='addon=ab__seo_filters']");
 
-    public SitemapSettings navigateToSitemapSettings(){
-        menu_Addons.hover();
+    private void navigateTo_DownloadedAddonsPage() {
+        checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
         section_DownloadedAddons.click();
+    }
+
+    public SitemapSettings navigateToSitemapSettings() {
+        navigateTo_DownloadedAddonsPage();
         menuOfSitemap.click();
         section_SitemapSettings.click();
         return new SitemapSettings();
     }
 
-    public void navigateToSitemapGenerating(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public void navigateToSitemapGenerating() {
+        navigateTo_DownloadedAddonsPage();
         menuOfSitemap.click();
         section_SitemapGenerating.click();
     }
 
-    public void navigateToUserLinksSection(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public void navigateToUserLinksSection() {
+        navigateTo_DownloadedAddonsPage();
         menuOfSitemap.click();
         section_UserLinks.click();
     }
 
-    public void clickAndTypeSearchFieldAtManagementPage(String value){
+    public void clickAndTypeSearchFieldAtManagementPage(String value) {
         searchFieldAtManagementPage.click();
         searchFieldAtManagementPage.sendKeys(value);
         searchFieldAtManagementPage.sendKeys(Keys.ENTER);
@@ -221,10 +226,9 @@ public class CsCartSettings implements CheckMenuToBeActive {
         return new CustomersPage();
     }
 
-    public void installAddonAtAddonsManager(SelenideElement addonMenu, String addonCode, String installButton){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
-        if(!$(addonMenu).exists()) {
+    public void installAddonAtAddonsManager(SelenideElement addonMenu, String addonCode, String installButton) {
+        navigateTo_DownloadedAddonsPage();
+        if (!$(addonMenu).exists()) {
             menuOfABAddonsManager.click();
             section_ListOfAvailableSets.click();
             addonsManagerField_Search.click();
@@ -238,17 +242,15 @@ public class CsCartSettings implements CheckMenuToBeActive {
         }
     }
 
-    public AB_images_seo navigateTo_ab_images_seo(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public AB_images_seo navigateTo_ab_images_seo() {
+        navigateTo_DownloadedAddonsPage();
         menuOfAB__images_seo.click();
         section_ManageAttributes.click();
         return new AB_images_seo();
     }
 
-    public AB_deal_of_the_day addDemoDataTo_ab_deal_of_the_day(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public AB_deal_of_the_day addDemoDataTo_ab_deal_of_the_day() {
+        navigateTo_DownloadedAddonsPage();
         menuOfAB__deal_of_the_day.click();
         section_PromotionDemoData.click();
         DemoDataTo_ab_deal_of_the_day.click();
@@ -256,9 +258,8 @@ public class CsCartSettings implements CheckMenuToBeActive {
         return new AB_deal_of_the_day();
     }
 
-    public AB_landing_categories addDemoDataTo_ab_landing_categories(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public AB_landing_categories addDemoDataTo_ab_landing_categories() {
+        navigateTo_DownloadedAddonsPage();
         menuOfAB__landing_categories.click();
         section_LandingCategoriesDemoData.click();
         DemoDataTo_ab_landing_categories.click();
@@ -266,17 +267,15 @@ public class CsCartSettings implements CheckMenuToBeActive {
         return new AB_landing_categories();
     }
 
-    public void navigateToGeneralSettingOf_ab_seo_for_tags(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public void navigateToGeneralSettingOf_ab_seo_for_tags() {
+        navigateTo_DownloadedAddonsPage();
         menuOfAB__seo_for_tags.click();
         section_TagsGeneralSettings.click();
         $("#settings").click();
     }
 
-    public AB_seo_filters navigateToGeneralSettingsOf_ab_seo_filters(){
-        menu_Addons.hover();
-        section_DownloadedAddons.click();
+    public AB_seo_filters navigateToGeneralSettingsOf_ab_seo_filters() {
+        navigateTo_DownloadedAddonsPage();
         menuOfAB__seo_filters.click();
         section_SeoFiltersGeneralSettings.click();
         $("#settings").click();
