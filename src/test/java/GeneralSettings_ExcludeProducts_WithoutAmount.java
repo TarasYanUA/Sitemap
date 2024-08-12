@@ -1,10 +1,10 @@
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
 
@@ -18,21 +18,22 @@ import static com.codeborne.selenide.Selenide.screenshot;
     * Товар "WeatherMaster" отсутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
+public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner {
+
     @Test
     public void checkGeneralSettings_ExcludeProducts_WithoutAmount() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем 2 товара из категории "Палатки"
         csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Tents.click();
-        if($(".alert").exists()){
+        if ($(".alert").exists()) {
             $(".close.cm-notification-close").click();
         }   //Выключаем сообщение о предупредлении, если оно появилось
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_ViewProducts.click();
         csCartSettings.setFirstProduct("300", "8");
         csCartSettings.setSecondProduct("350", "0");
-        csCartSettings.button_Save.click();
+        csCartSettings.button_SaveListOfProducts.click();
         csCartSettings.chooseAnyProduct.click();
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_Preview.click();
@@ -42,8 +43,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         String urlForProductElite = arrayProductElite[0];     //Получили ссылку товара "Elite"
         System.out.println("URL for a product Elite: " + urlForProductElite);
         shiftBrowserTab(0);
-        csCartSettings.button_dropdown.click();
-        csCartSettings.chooseCategory_Tents.click();
+        csCartSettings.button_ArrowLeft.click();
         $("tr[data-ca-id='236'] .products-list__image").click();
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_Preview.click();
@@ -58,11 +58,13 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeProducts.selectOptionByValue("without_amount");
-        sitemapSettings.tab_XMLSitemap.click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-        sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();    }
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
+            sitemapSettings.setting_EnableXMLSitemap.click();
+        }
+        if (!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()) {
+            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();
+        }
         csCartSettings.button_Save.click();
 
         //Работаем с выгрузкой
@@ -71,15 +73,16 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner{
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
         String urlForProducts = sitemapSettings.splitLinkMethod(1);
-        Selenide.executeJavaScript("window.open('"+urlForProducts+"');");
+        Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
         shiftBrowserTab(4);
 
         //Проверяем, что ссылка на товар "Elite" присутствует
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductElite)),
+        softAssert.assertTrue($("[href='" + urlForProductElite + "']").exists(),
                 "There is no link for product 'Elite' in the 'products1' sitemap!");
+
         //Проверяем, что ссылка на товар "WeatherMaster" отсутствует
-        softAssert.assertFalse($(".pretty-print").has(Condition.text(urlForProductWeatherMaster)),
+        softAssert.assertFalse($("[href='" + urlForProductWeatherMaster + "']").exists(),
                 "There is a link for product 'WeatherMaster' but shouldn't in the 'products1' sitemap!");
         screenshot("GeneralSettings_ExcludeProducts_WithoutAmount");
         softAssert.assertAll();

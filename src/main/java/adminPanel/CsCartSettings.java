@@ -23,8 +23,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public SelenideElement section_Products = $(By.id("products_products"));
     public SelenideElement field_ProductPrice = $("#elm_price_price");
     public SelenideElement field_ProductAmount = $("#elm_in_stock");
-    public SelenideElement button_dropdown = $(".btn-bar-left .dropdown-toggle");
-    public SelenideElement chooseCategory_Tents = $("a[href*='products.manage.reset_view&cid=218']");
+    public SelenideElement button_ArrowLeft = $(".cs-icon--type-arrow-left");
     public SelenideElement productVendor = $("#sw_product_data_company_id_selector_wrap_");
     public SelenideElement productBelongsToAllVendors = $("a[title='Все продавцы (общий товар)']");
     SelenideElement menuCustomers = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']");
