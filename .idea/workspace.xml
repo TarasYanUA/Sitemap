@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="All auto-tests GeneralSettings_ExcludeBrands_ are ready!">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="All auto-tests GeneralSettings_ExcludeProducts_ are ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_AddLastModifiedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_AddLastModifiedDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_CategoriesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_CategoriesSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_CustomerLinksSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_CustomerLinksSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/XmlSitemap_FeatureVariantsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlSitemap_FeatureVariantsSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +92,10 @@
     "TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor": "Run",
     "TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor": "Run",
     "TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor": "Run",
+    "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
+    "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
+    "TestNG.XmlSitemap_CustomerLinksSettings.executor": "Run",
+    "TestNG.XmlSitemap_FeatureVariantsSettings.executor": "Run",
     "TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor": "Run",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "master",
@@ -112,51 +116,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice">
-    <configuration name="GeneralSettings_ExcludeCategories_WithoutProducts" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeCategories_WithoutProducts" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ExcludeProducts_DoNotExclude" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeProducts_DoNotExclude" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ExcludeProducts_WithoutAmount" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeProducts_WithoutAmount" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.XmlSitemap_FeatureVariantsSettings">
     <configuration name="GeneralSettings_ExcludeProducts_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <option name="PACKAGE_NAME" value="" />
@@ -168,21 +128,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XmlSitemap_AddLastModifiedDate" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlSitemap_AddLastModifiedDate" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlSitemap_CategoriesSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlSitemap_CategoriesSettings" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlSitemap_CustomerLinksSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlSitemap_CustomerLinksSettings" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlSitemap_FeatureVariantsSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlSitemap_FeatureVariantsSettings" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_DoNotExclude" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmount" />
-      <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
+      <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
+      <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
+      <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
+      <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.XmlSitemap_FeatureVariantsSettings" />
+        <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
+        <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
+        <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutPrice" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_WithoutAmount" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeProducts_DoNotExclude" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutProducts" />
       </list>
     </recent_temporary>
   </component>
@@ -538,7 +542,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -564,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added some asserts and fixed some bugs." />
     <MESSAGE value="Improved code for some test-cases." />
     <MESSAGE value="Added a new test-case XmlSitemap_CategorySettings." />
     <MESSAGE value="Started work with test-case XmlSitemap_PageSettings" />
@@ -589,7 +592,8 @@
     <MESSAGE value="Adaptation to CS-Cart 4.18.2 is ready!&#10;Adapted test-case GeneralSettings_ExcludeProductVariations to the newest add-on version." />
     <MESSAGE value="All auto-tests GeneralSettings_ExcludeCategories_ are ready!" />
     <MESSAGE value="All auto-tests GeneralSettings_ExcludeBrands_ are ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="All auto-tests GeneralSettings_ExcludeBrands_ are ready!" />
+    <MESSAGE value="All auto-tests GeneralSettings_ExcludeProducts_ are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="All auto-tests GeneralSettings_ExcludeProducts_ are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

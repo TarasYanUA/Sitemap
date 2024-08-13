@@ -18,9 +18,9 @@
             <class name="GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
             <class name="GeneralSettings_ExcludeProducts_DoNotExclude" />
 
-            <class name="GeneralSettings_ExcludeProductVariations" />   ready
+            <class name="GeneralSettings_ExcludeProductVariations" />
 
-            <class name="XmlSitemap_IncludeCompanies" />
+            <class name="XmlSitemap_IncludeCompanies" />    FROM HERE
             <class name="XmlSitemap_AddLastModifiedDate" />
             <class name="XmlSitemap_ProductsSettings" />
             <class name="XmlSitemap_CategoriesSettings" />

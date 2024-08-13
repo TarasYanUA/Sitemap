@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.*;
 
 /*
@@ -13,18 +14,21 @@ import static com.codeborne.selenide.Selenide.*;
     Приоритет -- 0.3
 */
 
-public class XmlSitemap_CategoriesSettings extends TestRunner{
+public class XmlSitemap_CategoriesSettings extends TestRunner {
+
     @Test
     public void checkXmlSitemap_CategoriesSettings() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.tab_XMLSitemap.click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-        sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();    }
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
+            sitemapSettings.setting_EnableXMLSitemap.click();
+        }
+        if (!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()) {
+            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();
+        }
         sitemapSettings.setting_CategoriesSettings_ChangeFrequency.selectOptionByValue("weekly");
         sitemapSettings.setting_CategoriesSettings_Priority.selectOptionByValue("0.3");
         csCartSettings.button_Save.click();
@@ -34,18 +38,22 @@ public class XmlSitemap_CategoriesSettings extends TestRunner{
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
-        //Проверяем, что ссылка на категории присутствует в xml карте-сайта
+
+        //Проверяем, что ссылка на категории присутствует в xml-карте сайта
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("categories")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'categories')]").exists(),
                 "There is no a link for categories in the xml-sitemap!");
+        screenshot("For me");
         String urlForCategories = sitemapSettings.splitLinkMethod(2);
-        Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
+        Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
         shiftBrowserTab(2);
+
         //Проверяем, что Частота изменений "Еженедельно"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<changefreq>weekly</changefreq>")),
+        softAssert.assertTrue($("changefreq").has(Condition.text("weekly")),
                 "There is no Change frequency 'Weekly'!");
+
         //Проверяем, что Приоритет "0.3"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.3</priority>")),
+        softAssert.assertTrue($("priority").has(Condition.text("0.3")),
                 "There is no Priority '0.3'!");
         screenshot("XmlSitemap_CategoriesSettings");
         softAssert.assertAll();

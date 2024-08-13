@@ -20,7 +20,7 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner{
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.tab_XMLSitemap.click();
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
         sitemapSettings.setting_EnableXMLSitemap.click();   }
         sitemapSettings.setting_CustomerLinksSettings_ChangeFrequency.selectOptionByValue("yearly");
@@ -47,15 +47,18 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner{
         String urlForCustomerLinks = sitemapSettings.splitLinkMethod(4);
         Selenide.executeJavaScript("window.open('"+urlForCustomerLinks+"');");
         shiftBrowserTab(2);
+
         //Проверяем, что Частота изменений "Ежегодно"
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<changefreq>yearly</changefreq>")),
+        softAssert.assertTrue($("changefreq").has(Condition.text("yearly")),
                 "There is no Change frequency 'Yearly'!");
+
         //Проверяем, что Приоритет "1"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>1</priority>")),
+        softAssert.assertTrue($("priority").has(Condition.text("1")),
                 "There is no Priority '1'!");
+
         //Проверяем, что пользовательская ссылка присутствует
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(customerLink)),
+        softAssert.assertTrue($("[href*='https://cs-cart.alexbranding.com/']").exists(),
                 "There is no customer link in the xml sitemap!");
         screenshot("XmlSitemap_CustomerLinksSettings");
         softAssert.assertAll();
