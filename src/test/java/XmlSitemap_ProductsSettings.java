@@ -1,12 +1,11 @@
 import adminPanel.CsCartSettings;
-import adminPanel.CustomersPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.*;
 
 /*
@@ -19,62 +18,68 @@ import static com.codeborne.selenide.Selenide.*;
 Проверяем, что у товара в ссылке должен присутствовать код 'vendor_id'
 */
 
-public class XmlSitemap_ProductsSettings extends TestRunner{
+public class XmlSitemap_ProductsSettings extends TestRunner {
+    public static final String PRODUCTNAME = "USB-N53";
+
     @Test
     public void checkXmlSitemap_ProductsSettings() {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.tab_XMLSitemap.click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-        sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();    }
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
+            sitemapSettings.setting_EnableXMLSitemap.click();
+        }
+        if (!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()) {
+            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();
+        }
         sitemapSettings.setting_ProductsSettings_ChangeFrequency.selectOptionByValue("daily");
         sitemapSettings.setting_ProductsSettings_Priority.selectOptionByValue("0.7");
-        if(!sitemapSettings.setting_ProductsSettings_AddVendorsOffers.isSelected()){
-            sitemapSettings.setting_ProductsSettings_AddVendorsOffers.click();  }
+        if (!sitemapSettings.setting_ProductsSettings_AddVendorsOffers.isSelected()) {
+            sitemapSettings.setting_ProductsSettings_AddVendorsOffers.click();
+        }
         csCartSettings.button_Save.click();
 
         //Устанавливаем модуль "Общие товары для продавцов"
-        csCartSettings.menu_Addons.hover();
-        csCartSettings.section_DownloadedAddons.click();
-        if($(".alert").exists()){
+        csCartSettings.navigateTo_DownloadedAddonsPage();
+        if ($(".alert").exists()) {   //Выключаем сообщение о предупреждении, если оно появилось
             $(".close.cm-notification-close").click();
-        }   //Выключаем сообщение о предупредлении, если оно появилось
+        }
         csCartSettings.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
-        if($$("td.nowrap.right a[href*='addon=master_products']").size()>0) {
+        if ($("td.nowrap.right a[href*='addon=master_products']").exists()) {
             csCartSettings.button_InstallAddon.click();
             Selenide.sleep(3000);
-        webdriver().driver().getWebDriver().navigate().refresh();   }
+            webdriver().driver().getWebDriver().navigate().refresh();
+        }
+
         //Работаем со страницей редактирования товара
-        csCartSettings.navigateToEditingProductPage("USB-N53");
+        csCartSettings.navigateToEditingProductPage(PRODUCTNAME);
         if (!$("label[for*='elm_parent_product']").exists()) {
             csCartSettings.productVendor.click();
             csCartSettings.productBelongsToAllVendors.click();
             csCartSettings.button_Save.click();
         }
-        CustomersPage customersPage = csCartSettings.navigateToCustomersPage();
-        customersPage.gearwheelOfSimtechVendor.hover().click();
-        customersPage.actAsUser.click();
+        csCartSettings.navigateTo_VendorAdminsPage();
         shiftBrowserTab(1);
-        customersPage.sellProductAsVendor();
+        csCartSettings.sellProductAsVendor();
         shiftBrowserTab(0);
-        csCartSettings.menu_Products.hover();
-        csCartSettings.section_Products.click();
+        csCartSettings.navigateToSection_Products();
         csCartSettings.field_productSearch.click();
         csCartSettings.field_productSearch.clear();
-        csCartSettings.field_productSearch.sendKeys("USB-N53");
-        csCartSettings.field_productSearch.sendKeys(Keys.ENTER);
-        if(customersPage.iconThumbUp.exists()) {customersPage.iconThumbUp.click();  }
+        csCartSettings.field_productSearch.sendKeys(PRODUCTNAME);
+        Selenide.sleep(2000);
+        if (csCartSettings.button_ThumbUp.exists()) {
+            csCartSettings.button_ThumbUp.click();
+            Selenide.sleep(2000);
+        }
         csCartSettings.chooseAnyProduct.click();
         csCartSettings.gearwheelOnEditingPage.click();
         csCartSettings.button_Preview.click();
         shiftBrowserTab(2);
         String currentUrl_ProductUSB = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductUSB = currentUrl_ProductUSB.split("\\?");
-        String urlForProductUSB = arrayProductUSB[0] + "?vendor_id";     //Получили ссылку товара "USB-N53" с кодом продавца
+        String urlForProductUSB = arrayProductUSB[0] + "?vendor_id";     //Получили ссылку товара с кодом продавца
         System.out.println("URL for a product USB: " + urlForProductUSB);
         shiftBrowserTab(0);
 
@@ -83,21 +88,25 @@ public class XmlSitemap_ProductsSettings extends TestRunner{
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
+
         //Проверяем, что ссылка на товары присутствует в xml карте-сайта
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("products")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'products')]").exists(),
                 "There is no a link for products in the xml-sitemap!");
         String urlForProducts = sitemapSettings.splitLinkMethod(1);
-        Selenide.executeJavaScript("window.open('"+urlForProducts+"');");
+        Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
         shiftBrowserTab(4);
+
         //Проверяем, что Частота изменений "Каждый день"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<changefreq>daily</changefreq>")),
+        softAssert.assertTrue($("changefreq").has(Condition.text("daily")),
                 "There is no Change frequency 'Daily'!");
+
         //Проверяем, что Приоритет "0.7"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.7</priority>")),
+        softAssert.assertTrue($("priority").has(Condition.text("0.7")),
                 "There is no Priority '0.7'!");
+
         //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForProductUSB)),
+        softAssert.assertTrue($x("//*[contains(@href, '" + urlForProductUSB + "')]").exists(),
                 "There is no link for product 'USB-N53' or a vendor code is missed!");
         screenshot("XmlSitemap_ProductsSettings");
         softAssert.assertAll();

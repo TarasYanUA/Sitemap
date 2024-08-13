@@ -26,8 +26,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public SelenideElement button_ArrowLeft = $(".cs-icon--type-arrow-left");
     public SelenideElement productVendor = $("#sw_product_data_company_id_selector_wrap_");
     public SelenideElement productBelongsToAllVendors = $("a[title='Все продавцы (общий товар)']");
-    SelenideElement menuCustomers = $x("//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']");
-    SelenideElement customersPage = $x("//span[text()='Администраторы продавца']");
+    public SelenideElement button_ThumbUp = $(".cs-icon--type-thumbs-up");
 
     public void navigateToSection_Products() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
@@ -55,7 +54,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_productSearch.click();
         field_productSearch.clear();
         field_productSearch.sendKeys(name);
-        Selenide.sleep(1500);
+        Selenide.sleep(2000);
         if (chooseAnyProduct.exists()) {
             chooseAnyProduct.click();
         }
@@ -70,7 +69,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
         field_productSearch.clear();
         field_productSearch.sendKeys(name);
         Selenide.sleep(2000);
-        if(!$x("//p[text()='Здесь пока ничего нет']").exists())
+        if (!$x("//p[text()='Здесь пока ничего нет']").exists())
             deleteAllProductsFromCategory();
     }
 
@@ -163,6 +162,35 @@ public class CsCartSettings implements CheckMenuToBeActive {
     }
 
 
+    //Меню "Продавцы -- Продавцы"
+    SelenideElement menu_Vendors = $("a[href$='dispatch=companies.manage'].main-menu-1__link");
+    SelenideElement section_Vendors = $(By.id("vendors_vendors"));
+    SelenideElement gearwheelOf_CsCartVendor = $("tr[data-ct-company-id='1'] .dropdown-icon--tools");
+    SelenideElement section_ViewVendorAdmins = $(".dropleft.open a[href*='dispatch=profiles.manage']");
+    SelenideElement gearwheelOfVendor = $(".dropdown-icon--tools");
+    SelenideElement section_LogInAsUser = $(".dropleft.open a[href*='dispatch=profiles.act_as_user']");
+    SelenideElement button_ProductsThatCanBeSold = $("a[href*='dispatch=products.master_products']");
+    SelenideElement button_SellProduct = $("a[href*='dispatch=products.sell_master_product']");
+
+    public void navigateTo_VendorAdminsPage() {
+        checkMenuToBeActive("dispatch=companies.manage", menu_Vendors);
+        section_Vendors.click();
+        gearwheelOf_CsCartVendor.hover().click();
+        section_ViewVendorAdmins.click();
+        gearwheelOfVendor.hover().click();
+        section_LogInAsUser.click();
+    }
+
+    public void sellProductAsVendor() {
+        menu_Products.click();
+        button_ProductsThatCanBeSold.click();
+        if (button_SellProduct.exists()) {
+            button_SellProduct.click();
+            button_Save.click();
+        }
+    }
+
+
     //Меню "Модули -- Скачанные модули"
     public SelenideElement menu_Addons = $("a[href$='dispatch=addons.manage'].main-menu-1__link");
     public SelenideElement section_DownloadedAddons = $("#addons_downloaded_add_ons");
@@ -191,7 +219,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public SelenideElement menuOfAB__seo_filters = $("tr#addon_ab__seo_filters button.btn.dropdown-toggle");
     SelenideElement section_SeoFiltersGeneralSettings = $("div.nowrap a[href$='addon=ab__seo_filters']");
 
-    private void navigateTo_DownloadedAddonsPage() {
+    public void navigateTo_DownloadedAddonsPage() {
         checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
         section_DownloadedAddons.click();
     }
@@ -219,12 +247,6 @@ public class CsCartSettings implements CheckMenuToBeActive {
         searchFieldAtManagementPage.click();
         searchFieldAtManagementPage.sendKeys(value);
         searchFieldAtManagementPage.sendKeys(Keys.ENTER);
-    }
-
-    public CustomersPage navigateToCustomersPage() {
-        menuCustomers.hover();
-        customersPage.click();
-        return new CustomersPage();
     }
 
     public void installAddonAtAddonsManager(SelenideElement addonMenu, String addonCode, String installButton) {
