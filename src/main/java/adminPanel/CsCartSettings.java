@@ -257,6 +257,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
             addonsManagerField_Search.click();
             addonsManagerField_Search.sendKeys(addonCode);
             addonsManagerField_Search.sendKeys(Keys.ENTER);
+            Selenide.sleep(2000);
             $(installButton).click();
             Alert alert = Selenide.webdriver().driver().switchTo().alert();
             alert.accept();

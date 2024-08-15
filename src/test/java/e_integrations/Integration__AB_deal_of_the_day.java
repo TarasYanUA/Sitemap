@@ -8,8 +8,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.screenshot;
+
+import static com.codeborne.selenide.Selenide.*;
 
 /*
 Модуль "AB: Расширенные промоакции":
@@ -17,7 +17,8 @@ import static com.codeborne.selenide.Selenide.screenshot;
     * Включаем настройку
 */
 
-public class Integration_AB_deal_of_the_day extends TestRunner {
+public class Integration__AB_deal_of_the_day extends TestRunner {
+
     @Test
     public void checkIntegration_AB_deal_of_the_day (){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -45,21 +46,24 @@ public class Integration_AB_deal_of_the_day extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
+
         //Проверяем, что ссылка на XML-карту промо-акций присутствует в xml карте-сайта
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("other_links")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'other_links')]").exists(),
                 "There is no a link for XML of integrated add-ons in the xml-sitemap!");
         String urlForXMLPromotions = sitemapSettings.splitLinkMethod(9);
         Selenide.executeJavaScript("window.open('" + urlForXMLPromotions + "');");
         shiftBrowserTab(2);
+
         //Проверяем, что в карте-сайта промо-акций Частота изменений "Всегда"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<changefreq>always</changefreq>")),
+        softAssert.assertTrue($("changefreq").has(Condition.text("always")),
                 "There is no Change frequency 'Always' in the 'other_links1' sitemap!");
+
         //Проверяем, что в карте-сайта промо-акций Приоритет "0.8"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.8</priority>")),
+        softAssert.assertTrue($("priority").has(Condition.text("0.8")),
                 "There is no Priority '0.8' in the 'other_links1' sitemap!");
+        screenshot("Integration__AB_deal_of_the_day");
         softAssert.assertAll();
-        screenshot("integrations.Integration_AB_deal_of_the_day");
-        System.out.println("integrations.Integration_AB_deal_of_the_day has passed successfully!");
+        System.out.println("Integration__AB_deal_of_the_day has passed successfully!");
     }
 }

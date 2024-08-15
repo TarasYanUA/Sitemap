@@ -1,3 +1,5 @@
+package testRunner;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -11,7 +13,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4182mvru/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4182mvru_advanced_sitemap/admin.php?dispatch=addons.manage";
 
     @BeforeMethod
     public void openBrowser()  {
@@ -28,11 +30,5 @@ public class TestRunner {
 
     public void shiftBrowserTab(int tabNumber){
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
-    }
-
-    public void navigateTo_Storefront(int tabNumber) {
-        String currentUrl = WebDriverRunner.url();
-        String[] url = currentUrl.split("admin.php");
-        executeJavaScript("window.open('" + url[tabNumber] + "')");
     }
 }

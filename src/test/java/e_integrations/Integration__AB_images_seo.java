@@ -4,12 +4,11 @@ import testRunner.TestRunner;
 import adminPanel.AB_images_seo;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.screenshot;
+
+import static com.codeborne.selenide.Selenide.*;
 
 /*
 Модуль "AB: Автоматические теги Alt и Title для изображений по шаблонам":
@@ -18,7 +17,8 @@ import static com.codeborne.selenide.Selenide.screenshot;
     * Включаем настройку
 */
 
-public class Integration_AB_images_seo extends TestRunner {
+public class Integration__AB_images_seo extends TestRunner {
+
     @Test
     public void checkIntegration_AB_images_seo(){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -59,21 +59,24 @@ public class Integration_AB_images_seo extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
+
         //Проверяем, что ссылка на XML-карту изображений присутствует в xml карте-сайта
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("images")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images')]").exists(),
                 "There is no a link for XML images in the xml-sitemap!");
         String urlForXMLImages = sitemapSettings.splitLinkMethod(8);
         Selenide.executeJavaScript("window.open('"+urlForXMLImages+"');");
         shiftBrowserTab(2);
+
         //Проверяем, что изображения присутствуют в карте сайта
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("images/detailed/")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images/detailed/')]").exists(),
                 "There are no images in the 'images1' sitemap!");
+
         //Проверяем, что у изображений присутствует Title и Caption от модуля "AB: Автоматические теги Alt и Title для изображений по шаблонам"
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("Attribute_TitleSuffix")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'Attribute_TitleSuffix')]").exists(),
                 "There is no Attribute_TitleSuffix from the add-on 'ab__images_seo' in the 'images1' sitemap!");
+        screenshot("Integration__AB_images_seo");
         softAssert.assertAll();
-        screenshot("integrations.Integration_AB_images_seo");
-        System.out.println("integrations.Integration_AB_images_seo has passed successfully!");
+        System.out.println("Integration__AB_images_seo has passed successfully!");
     }
 }
