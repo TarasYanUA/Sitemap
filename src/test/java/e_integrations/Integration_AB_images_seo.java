@@ -1,3 +1,6 @@
+package e_integrations;
+
+import testRunner.TestRunner;
 import adminPanel.AB_images_seo;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
@@ -70,7 +73,7 @@ public class Integration_AB_images_seo extends TestRunner {
         softAssert.assertTrue($(".pretty-print").has(Condition.text("Attribute_TitleSuffix")),
                 "There is no Attribute_TitleSuffix from the add-on 'ab__images_seo' in the 'images1' sitemap!");
         softAssert.assertAll();
-        screenshot("Integration_AB_images_seo");
-        System.out.println("Integration_AB_images_seo has passed successfully!");
+        screenshot("integrations.Integration_AB_images_seo");
+        System.out.println("integrations.Integration_AB_images_seo has passed successfully!");
     }
 }

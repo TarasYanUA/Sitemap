@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
@@ -41,15 +44,15 @@ public class XmlSitemap_AddLastModifiedDate extends TestRunner {
         shiftBrowserTab(2);
         softAssert.assertTrue($("lastmod").exists(),
                 "There are no tags <lastmod> at xml sitemap of the categories!");
-        screenshot("XmlSitemap_AddLastModifiedDate - Last modified date at categories");
+        screenshot("xmlSitemap.XmlSitemap_AddLastModifiedDate - Last modified date at categories");
 
         //Проверяем, что теги даты последнего редактирования присутствуют в xml-карте сайта компаний
         Selenide.executeJavaScript("window.open('" + urlForCompanies + "');");
         shiftBrowserTab(3);
         softAssert.assertTrue($("lastmod").exists(),
                 "There are no tags <lastmod> at xml sitemap of the companies!");
-        screenshot("XmlSitemap_AddLastModifiedDate - Last modified date at companies");
+        screenshot("xmlSitemap.XmlSitemap_AddLastModifiedDate - Last modified date at companies");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_AddLastModifiedDate has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_AddLastModifiedDate has passed successfully!");
     }
 }

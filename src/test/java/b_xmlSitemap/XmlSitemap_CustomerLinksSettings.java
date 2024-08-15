@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
@@ -13,7 +16,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
     Приоритет -- 1
 */
 
-public class XmlSitemap_CustomerLinksSettings extends TestRunner{
+public class XmlSitemap_CustomerLinksSettings extends TestRunner {
     @Test
     public void checkXmlSitemap_CustomerLinksSettings() {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -29,7 +32,7 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner{
 
         //Добавляем пользовательскую ссылку
         csCartSettings.navigateToUserLinksSection();
-        String customerLink = "https://cs-cart.alexbranding.com/";
+        String customerLink = "categories.catalog";
         if($(".cm-pagination-container .no-items").exists()) {
             sitemapSettings.button_Add.click();
             $(".ui-dialog-title").shouldBe(Condition.appear);
@@ -58,10 +61,10 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner{
                 "There is no Priority '1'!");
 
         //Проверяем, что пользовательская ссылка присутствует
-        softAssert.assertTrue($("[href*='https://cs-cart.alexbranding.com/']").exists(),
+        softAssert.assertTrue($("[href*='catalog']").exists(),
                 "There is no customer link in the xml sitemap!");
-        screenshot("XmlSitemap_CustomerLinksSettings");
+        screenshot("xmlSitemap.XmlSitemap_CustomerLinksSettings");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_CustomerLinksSettings has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_CustomerLinksSettings has passed successfully!");
     }
 }

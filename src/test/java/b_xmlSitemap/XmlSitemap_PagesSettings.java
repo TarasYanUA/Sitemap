@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
@@ -63,7 +66,7 @@ public class XmlSitemap_PagesSettings extends TestRunner {
         //Проверяем, что в карте-сайта страниц Приоритет "0.9"
         softAssert.assertTrue($("priority").has(Condition.text("0.9")),
                 "There is no Priority '0.9' in the sitemap of pages!");
-        screenshot("XmlSitemap_PagesSettings - Pages");
+        screenshot("xmlSitemap.XmlSitemap_PagesSettings - Pages");
         Selenide.executeJavaScript("window.open('" + urlForBlog + "');");
         shiftBrowserTab(3);
 
@@ -74,8 +77,8 @@ public class XmlSitemap_PagesSettings extends TestRunner {
         //Проверяем, что в карте-сайта блога Приоритет "0.9"
         softAssert.assertTrue($("priority").has(Condition.text("0.9")),
                 "There is no Priority '0.9' in the sitemap of blog!");
-        screenshot("XmlSitemap_PagesSettings - Blog");
+        screenshot("xmlSitemap.XmlSitemap_PagesSettings - Blog");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_PagesSettings has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_PagesSettings has passed successfully!");
     }
 }

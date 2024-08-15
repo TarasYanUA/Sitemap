@@ -1,3 +1,6 @@
+package a_generalSettings;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
@@ -16,7 +19,7 @@ import static com.codeborne.selenide.Selenide.*;
     * Категория "Android" отсутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends TestRunner{
+public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends TestRunner {
     @Test
     public void checkGeneralSettings_ExcludeCategories_WithoutAmountAndPrice() {
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -73,8 +76,8 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         //Проверяем, что ссылка на категорию "Android" отсутствует
         softAssert.assertFalse($("[href='" + urlForCategoryAndroid + "']").exists(),
                 "There is a link for category 'Android' but shouldn't in the 'categories1' sitemap!");
-        screenshot("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice");
+        screenshot("generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ExcludeCategories_WithoutAmountAndPrice has passed successfully!");
+        System.out.println("generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice has passed successfully!");
     }
 }

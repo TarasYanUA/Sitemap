@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
@@ -108,8 +111,8 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
         softAssert.assertTrue($x("//*[contains(@href, '" + urlForProductUSB + "')]").exists(),
                 "There is no link for product 'USB-N53' or a vendor code is missed!");
-        screenshot("XmlSitemap_ProductsSettings");
+        screenshot("xmlSitemap.XmlSitemap_ProductsSettings");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_ProductsSettings has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_ProductsSettings has passed successfully!");
     }
 }

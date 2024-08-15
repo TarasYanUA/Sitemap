@@ -1,3 +1,6 @@
+package c_htmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
@@ -19,16 +22,20 @@ public class HTMLSitemap extends TestRunner {
         }
 
         //Работаем на витрине
-        navigateTo_Storefront(1);
-        String storefrontUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
-        String urlOfHTMLSitemap = storefrontUrl + "sitemap/";
+        String url = WebDriverRunner.getWebDriver().getCurrentUrl();
+        String[] split = url.split("admin");
+        String storefrontUrl = split[0]; //получили ссылку
+        String urlOfHTMLSitemap = storefrontUrl + "sitemap-ru/";
+        System.out.println("urlOfHTMLSitemap is: " + urlOfHTMLSitemap);
         Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemap + "');");
-        shiftBrowserTab(2);
-        screenshot("HTMLSitemap on storefront");
+        shiftBrowserTab(1);
+        screenshot("htmlSitemap.HTMLSitemap on storefront (RU)");
+
         String urlOfHTMLSitemapRTL = storefrontUrl + "sitemap-ar/";
+        System.out.println("urlOfHTMLSitemapRTL is: " + urlOfHTMLSitemapRTL);
         Selenide.executeJavaScript("window.open('" + urlOfHTMLSitemapRTL + "');");
-        shiftBrowserTab(3);
-        screenshot("HTMLSitemap on storefront (RTL)");
-        System.out.println("HTMLSitemap has passed successfully!");
+        shiftBrowserTab(2);
+        screenshot("htmlSitemap.HTMLSitemap on storefront (RTL)");
+        System.out.println("htmlSitemap.HTMLSitemap has passed successfully!");
     }
 }

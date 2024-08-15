@@ -1,40 +1,42 @@
 <suite name="Sitemap" >
     <test name="General settings of Sitemap">
         <classes>
-            <class name="GeneralSettings_ExcludeCategories_WithoutAmount" />
-            <class name="GeneralSettings_ExcludeCategories_WithoutPrice" />
-            <class name="GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
-            <class name="GeneralSettings_ExcludeCategories_WithoutProducts" />
-            <class name="GeneralSettings_ExcludeCategories_DoNotExclude" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutPrice" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude" />
 
-            <class name="GeneralSettings_ExcludeBrands_WithoutAmount" />
-            <class name="GeneralSettings_ExcludeBrands_WithoutPrice" />
-            <class name="GeneralSettings_ExcludeBrands_WithoutAmountAndPrice" />
-            <class name="GeneralSettings_ExcludeBrands_WithoutProducts" />
-            <class name="GeneralSettings_ExcludeBrands_DoNotExclude" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutPrice" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutProducts" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_DoNotExclude" />
 
-            <class name="GeneralSettings_ExcludeProducts_WithoutAmount" />
-            <class name="GeneralSettings_ExcludeProducts_WithoutPrice" />
-            <class name="GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
-            <class name="GeneralSettings_ExcludeProducts_DoNotExclude" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmount" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutPrice" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeProducts_DoNotExclude" />
 
-            <class name="GeneralSettings_ExcludeProductVariations" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeProductVariations" />
 
-            <class name="XmlSitemap_IncludeCompanies" />    FROM HERE
-            <class name="XmlSitemap_AddLastModifiedDate" />
-            <class name="XmlSitemap_ProductsSettings" />
-            <class name="XmlSitemap_CategoriesSettings" />
-            <class name="XmlSitemap_PagesSettings" />
-            <class name="XmlSitemap_FeatureVariantsSettings" />
-            <class name="XmlSitemap_CustomerLinksSettings" />
-            <class name="HTMLSitemap" />
-            <class name="XMLSitemapOfImages" />
+            <class name="b_xmlSitemap.XmlSitemap_IncludeCompanies" />
+            <class name="b_xmlSitemap.XmlSitemap_AddLastModifiedDate" />
+            <class name="b_xmlSitemap.XmlSitemap_ProductsSettings" />
+            <class name="b_xmlSitemap.XmlSitemap_CategoriesSettings" />
+            <class name="b_xmlSitemap.XmlSitemap_PagesSettings" />
+            <class name="b_xmlSitemap.XmlSitemap_FeatureVariantsSettings" />
+            <class name="b_xmlSitemap.XmlSitemap_CustomerLinksSettings" />
 
-            <class name="Integration_AB_images_seo" />
-            <class name="Integration_AB_deal_of_the_day" />
-            <class name="Integration_AB_landing_categories" />
-            <class name="Integration_AB_seo_for_tags" />
-            <class name="Integration_AB_seo_filters" />
+            <class name="c_htmlSitemap.HTMLSitemap" />
+
+            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages" />
+
+            <class name="e_integrations.Integration_AB_images_seo" />
+            <class name="e_integrations.Integration_AB_deal_of_the_day" />
+            <class name="e_integrations.Integration_AB_landing_categories" />
+            <class name="e_integrations.Integration_AB_seo_for_tags" />
+            <class name="e_integrations.Integration_AB_seo_filters" />
         </classes>
     </test>
 </suite>

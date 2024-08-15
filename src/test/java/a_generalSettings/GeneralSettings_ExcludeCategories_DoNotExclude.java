@@ -1,3 +1,6 @@
+package a_generalSettings;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
@@ -9,20 +12,18 @@ import static com.codeborne.selenide.Selenide.*;
 
 /*
 Двум категориям "iPods" и "Android" настраиваем по 2 товара:
-    * Категория "iPods" - с ценой и в наличии
-    * Категория "Android" - с ценой и без наличия
-Настройка модуля: "Общие -- Исключить категории -- с товарами без наличия"
+    * Категория "iPods" - без цены и без наличия
+    * Категория "Android" - без товаров
+Настройка модуля: "Общие -- Исключить категории -- не исключать"
 Проверяем, что:
     * Категория "iPods" присутствует в карте сайта
-    * Категория "Android" отсутствует в карте сайта
+    * Категория "Android" присутствует в карте сайта
 */
 
-public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner {
-
+public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner {
     @Test
-    public void checkGeneralSettings_ExcludeCategories_WithoutAmount() {
+    public void checkGeneralSettings_ExcludeCategories_DoNotExclude() {
         CsCartSettings csCartSettings = new CsCartSettings();
-        //Настраиваем первую категорию "iPods"
         csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Ipods.click();
         csCartSettings.goToStorefront_CategoryPage(1);
@@ -31,10 +32,8 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner 
         String urlForCategoryIpods = arrayIpods[0];
         System.out.println("iPods URL is: " + urlForCategoryIpods);
         shiftBrowserTab(0);
-        csCartSettings.goAndSetFirstProductOfCategory("249", "10");
-        csCartSettings.goAndSetSecondProductOfCategory("255", "15");
+        csCartSettings.goAndSetFirstProductOfCategory("0", "0");
         csCartSettings.button_SaveListOfProducts.click();
-        //Настраиваем вторую категорию "Android"
         csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Android.click();
         csCartSettings.goToStorefront_CategoryPage(2);
@@ -43,21 +42,16 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner 
         String[] arrayAndroid = currentUrl_CategoryAndroid.split("\\?");
         String urlForCategoryAndroid = arrayAndroid[0];
         System.out.println("Android URL is: " + urlForCategoryAndroid);
-        csCartSettings.goAndSetFirstProductOfCategory("249", "0");
-        csCartSettings.goAndSetSecondProductOfCategory("255", "0");
-        csCartSettings.button_SaveListOfProducts.click();
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.setting_ExcludeCategories.selectOptionByValue("without_product_amount");
-        sitemapSettings.tab_XMLSitemap.click();
-        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
-            sitemapSettings.setting_EnableXMLSitemap.click();
-        }
-        if (!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()) {
-            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();
-        }
+        sitemapSettings.setting_ExcludeCategories.selectOptionByValue("none");
+        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
+        sitemapSettings.setting_EnableXMLSitemap.click();   }
+        if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
+            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();    }
         csCartSettings.button_Save.click();
 
         //Работаем с выгрузкой
@@ -66,7 +60,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner 
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
         String urlForCategories = sitemapSettings.splitLinkMethod(2);
-        Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
+        Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
         shiftBrowserTab(4);
 
         //Проверяем, что ссылка на категорию "iPods" присутствует
@@ -74,11 +68,11 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner 
         softAssert.assertTrue($("[href='" + urlForCategoryIpods + "']").exists(),
                 "There is no link for category 'iPods' in the 'categories1' sitemap!");
 
-        //Проверяем, что ссылка на категорию "Android" отсутствует
-        softAssert.assertFalse($("[href='" + urlForCategoryAndroid + "']").exists(),
-                "There is a link for category 'Android' but shouldn't in the 'categories1' sitemap!");
-        screenshot("GeneralSettings_ExcludeCategories_WithoutAmount");
+        //Проверяем, что ссылка на категорию "Android" присутствует
+        softAssert.assertTrue($("[href='" + urlForCategoryAndroid + "']").exists(),
+                "There is no link for category 'Android' in the 'categories1' sitemap!");
+        screenshot("generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ExcludeCategories_WithoutAmount has passed successfully!");
+        System.out.println("generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude has passed successfully!");
     }
 }

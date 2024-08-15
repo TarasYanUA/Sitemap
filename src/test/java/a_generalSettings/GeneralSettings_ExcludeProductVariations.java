@@ -1,3 +1,6 @@
+package a_generalSettings;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
@@ -60,8 +63,8 @@ public class GeneralSettings_ExcludeProductVariations extends TestRunner {
         int actualSizeOfUrls = $$("[href='" + urlForProductTshirt + "']").size();
         softAssert.assertEquals(actualSizeOfUrls, 1,
                 "There are more than 1 link of a product 'T-Shirt' in the 'products1' sitemap. It means there are variations but shouldn't!");
-        screenshot("GeneralSettings_ExcludeProductVariations");
+        screenshot("generalSettings.GeneralSettings_ExcludeProductVariations");
         softAssert.assertAll();
-        System.out.println("GeneralSettings_ExcludeProductVariations has passed successfully!");
+        System.out.println("generalSettings.GeneralSettings_ExcludeProductVariations has passed successfully!");
     }
 }

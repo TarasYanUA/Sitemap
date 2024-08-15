@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
@@ -45,8 +48,8 @@ public class XmlSitemap_IncludeCompanies extends TestRunner {
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'company_id')]").exists()
                         || $("[href*='company_id']").exists(),
                 "There are no links for companies pages!");
-        screenshot("XmlSitemap_IncludeCompanies");
+        screenshot("xmlSitemap.XmlSitemap_IncludeCompanies");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_IncludeCompanies has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_IncludeCompanies has passed successfully!");
     }
 }

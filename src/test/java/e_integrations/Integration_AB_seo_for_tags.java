@@ -1,3 +1,6 @@
+package e_integrations;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
@@ -14,7 +17,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
     * Включаем настройку
 */
 
-public class Integration_AB_seo_for_tags extends TestRunner{
+public class Integration_AB_seo_for_tags extends TestRunner {
     @Test
     public void checkIntegration_AB_seo_for_tags(){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -59,7 +62,7 @@ public class Integration_AB_seo_for_tags extends TestRunner{
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForAllTags)),
                 "There is no link to the page of all tags in the 'custom_links2.xml' sitemap!");
         softAssert.assertAll();
-        screenshot("Integration_AB_seo_for_tags");
-        System.out.println("Integration_AB_seo_for_tags has passed successfully!");
+        screenshot("integrations.Integration_AB_seo_for_tags");
+        System.out.println("integrations.Integration_AB_seo_for_tags has passed successfully!");
     }
 }

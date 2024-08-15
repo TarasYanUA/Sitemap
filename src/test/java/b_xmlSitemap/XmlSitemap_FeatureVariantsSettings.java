@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
@@ -54,8 +57,8 @@ public class XmlSitemap_FeatureVariantsSettings extends TestRunner {
         //Проверяем, что Приоритет "0.1"
         softAssert.assertTrue($("priority").has(Condition.text("0.1")),
                 "There is no Priority '0.1' on the sitemap of feature variants!");
-        screenshot("XmlSitemap_FeatureVariantsSettings");
+        screenshot("xmlSitemap.XmlSitemap_FeatureVariantsSettings");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_FeatureVariantsSettings has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_FeatureVariantsSettings has passed successfully!");
     }
 }

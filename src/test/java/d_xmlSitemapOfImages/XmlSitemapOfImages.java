@@ -1,12 +1,15 @@
+package d_xmlSitemapOfImages;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import static com.codeborne.selenide.Selenide.$;
 
-public class XMLSitemapOfImages extends TestRunner {
+import static com.codeborne.selenide.Selenide.*;
+
+public class XmlSitemapOfImages extends TestRunner {
     @Test
     public void checkXMLSitemapOfImages(){
         //Включаем XML-карту изображений
@@ -24,16 +27,19 @@ public class XMLSitemapOfImages extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
+
         //Проверяем, что ссылка на XML-карту изображений присутствует в xml карте-сайта
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("images")),
-                "There is no a link for XML images in the xml-sitemap!");
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images')]").exists(),
+                "There is no link for XML images in the xml-sitemap!");
         String urlForXMLImages = sitemapSettings.splitLinkMethod(8);
-        Selenide.executeJavaScript("window.open('"+urlForXMLImages+"');");
+        Selenide.executeJavaScript("window.open('" + urlForXMLImages + "');");
         shiftBrowserTab(2);
+
         //Проверяем, что изображения присутствуют в карте сайта
-        softAssert.assertTrue($(".pretty-print").has(Condition.text("images/detailed/")),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images/detailed/')]").exists(),
                 "There are no images in the xml-sitemap");
+        screenshot("xmlSitemapOfImages.XmlSitemapOfImages");
         softAssert.assertAll();
         System.out.println("XMLSitemapOfImages has passed successfully!");
     }

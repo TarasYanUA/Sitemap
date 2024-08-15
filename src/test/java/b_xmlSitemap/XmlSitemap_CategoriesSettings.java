@@ -1,3 +1,6 @@
+package b_xmlSitemap;
+
+import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
@@ -55,8 +58,8 @@ public class XmlSitemap_CategoriesSettings extends TestRunner {
         //Проверяем, что Приоритет "0.3"
         softAssert.assertTrue($("priority").has(Condition.text("0.3")),
                 "There is no Priority '0.3'!");
-        screenshot("XmlSitemap_CategoriesSettings");
+        screenshot("xmlSitemap.XmlSitemap_CategoriesSettings");
         softAssert.assertAll();
-        System.out.println("XmlSitemap_CategoriesSettings has passed successfully!");
+        System.out.println("xmlSitemap.XmlSitemap_CategoriesSettings has passed successfully!");
     }
 }

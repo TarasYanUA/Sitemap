@@ -1,3 +1,6 @@
+package e_integrations;
+
+import testRunner.TestRunner;
 import adminPanel.AB_seo_filters;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
@@ -17,7 +20,7 @@ import static com.codeborne.selenide.Selenide.$;
     * Генерируем SEO-страницы для фильтров
 */
 
-public class Integration_AB_seo_filters extends TestRunner{
+public class Integration_AB_seo_filters extends TestRunner {
     @Test
     public void checkIntegration_AB_seo_filters(){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -72,6 +75,6 @@ public class Integration_AB_seo_filters extends TestRunner{
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfSeoPage)),
                 "There is no link to the SEO page for filters in the 'categories2.xml' sitemap!");
-        System.out.println("Integration_AB_seo_filters has passed successfully!");
+        System.out.println("integrations.Integration_AB_seo_filters has passed successfully!");
     }
 }

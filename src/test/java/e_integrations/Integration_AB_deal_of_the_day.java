@@ -1,3 +1,6 @@
+package e_integrations;
+
+import testRunner.TestRunner;
 import adminPanel.AB_deal_of_the_day;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
@@ -56,7 +59,7 @@ public class Integration_AB_deal_of_the_day extends TestRunner {
         softAssert.assertTrue($(".pretty-print").has(Condition.text("<priority>0.8</priority>")),
                 "There is no Priority '0.8' in the 'other_links1' sitemap!");
         softAssert.assertAll();
-        screenshot("Integration_AB_deal_of_the_day");
-        System.out.println("Integration_AB_deal_of_the_day has passed successfully!");
+        screenshot("integrations.Integration_AB_deal_of_the_day");
+        System.out.println("integrations.Integration_AB_deal_of_the_day has passed successfully!");
     }
 }

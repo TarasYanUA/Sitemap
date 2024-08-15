@@ -1,3 +1,6 @@
+package e_integrations;
+
+import testRunner.TestRunner;
 import adminPanel.AB_landing_categories;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
@@ -15,7 +18,7 @@ import static com.codeborne.selenide.Selenide.*;
     * Включаем настройку
 */
 
-public class Integration_AB_landing_categories extends TestRunner{
+public class Integration_AB_landing_categories extends TestRunner {
     @Test
     public void checkIntegration_AB_landing_categories(){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -65,7 +68,7 @@ public class Integration_AB_landing_categories extends TestRunner{
         softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfLandingCategory)),
                 "There is no link for a landing category in the 'categories1' sitemap!");
         softAssert.assertAll();
-        screenshot("Integration_AB_landing_categories");
-        System.out.println("Integration_AB_landing_categories has passed successfully!");
+        screenshot("integrations.Integration_AB_landing_categories");
+        System.out.println("integrations.Integration_AB_landing_categories has passed successfully!");
     }
 }
