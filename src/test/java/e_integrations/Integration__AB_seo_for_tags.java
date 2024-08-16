@@ -3,13 +3,12 @@ package e_integrations;
 import testRunner.TestRunner;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.screenshot;
+
+import static com.codeborne.selenide.Selenide.*;
 
 /*
 Модуль "AB: SEO оптимизация страниц тегов и автоназначение по правилам":
@@ -17,9 +16,10 @@ import static com.codeborne.selenide.Selenide.screenshot;
     * Включаем настройку
 */
 
-public class Integration_AB_seo_for_tags extends TestRunner {
+public class Integration__AB_seo_for_tags extends TestRunner {
+
     @Test
-    public void checkIntegration_AB_seo_for_tags(){
+    public void checkIntegration_AB_seo_for_tags() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("admin");
@@ -46,23 +46,26 @@ public class Integration_AB_seo_for_tags extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
-        String urlForXMLTagSport = sitemapSettings.splitLinkMethod(10);
-        String urlForXMLTags = sitemapSettings.splitLinkMethod(5);
+        String urlForXMLTagSport = sitemapSettings.findLinkByPartialName("other_links1");
+        String urlForXMLTags = sitemapSettings.findLinkByPartialName("custom_links2");
+
         Selenide.executeJavaScript("window.open('" + urlForXMLTagSport + "');");
         shiftBrowserTab(2);
+
         //Проверяем, что ссылка на страницу тега "Спорт" присутствует
         SoftAssert softAssert = new SoftAssert();
         String urlOfTagSport = mainUrl + "sport/";
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfTagSport)),
+        softAssert.assertTrue($x("//*[contains(@href, '" + urlOfTagSport + "')]").exists(),
                 "There is no link to the page of tag 'Sport' in the 'other_links1.xml' sitemap!");
         Selenide.executeJavaScript("window.open('" + urlForXMLTags + "');");
         shiftBrowserTab(3);
+
         //Проверяем, что ссылка на страницу всех тегов присутствует
         String urlForAllTags = mainUrl + "tags";
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlForAllTags)),
+        softAssert.assertTrue($x("//*[contains(@href, '" + urlForAllTags + "')]").exists(),
                 "There is no link to the page of all tags in the 'custom_links2.xml' sitemap!");
+        screenshot("Integration__AB_seo_for_tags");
         softAssert.assertAll();
-        screenshot("integrations.Integration_AB_seo_for_tags");
-        System.out.println("integrations.Integration_AB_seo_for_tags has passed successfully!");
+        System.out.println("Integration__AB_seo_for_tags has passed successfully!");
     }
 }

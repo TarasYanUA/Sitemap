@@ -34,9 +34,9 @@
 
             <class name="e_integrations.Integration__AB_images_seo" />
             <class name="e_integrations.Integration__AB_deal_of_the_day" />
-            <class name="e_integrations.Integration_AB_landing_categories" />
-            <class name="e_integrations.Integration_AB_seo_for_tags" />
-            <class name="e_integrations.Integration_AB_seo_filters" />
+            <class name="e_integrations.Integration__AB_landing_categories" />
+            <class name="e_integrations.Integration__AB_seo_for_tags" />
+            <class name="e_integrations.Integration__AB_seo_filters" />
         </classes>
     </test>
 </suite>

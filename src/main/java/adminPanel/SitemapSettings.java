@@ -3,6 +3,8 @@ package adminPanel;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -51,7 +53,7 @@ public class SitemapSettings {
     public SelenideElement setting_AddFeatureValues = $("input[id*='addon_option_ab__advanced_sitemap_add_variation_features_description_']");
 
     //Секция "Генерация карты сайта"
-    private SelenideElement button_GenerateSitemap = $("a[href*='ab__advanced_sitemap.generate_sitemap']");
+    SelenideElement button_GenerateSitemap = $("a[href*='ab__advanced_sitemap.generate_sitemap']");
     public SelenideElement xmlLink = $("a[href$='sitemap.xml']");
 
     //Секция "Пользовательские ссылки в XML-карте сайта"
@@ -80,5 +82,21 @@ public class SitemapSettings {
         }
         System.out.println("Sitemap link is: " + finalResult[0]);
         return finalResult[0];   //Получили ссылку на карту сайта
+    }
+
+    public String findLinkByPartialName(String partialName) throws Exception {
+        String pageSource = WebDriverRunner.getWebDriver().getPageSource(); // Получаем исходный код страницы
+
+        Pattern pattern = Pattern.compile("<loc>(https://[^<]*" + partialName + "\\.xml)</loc>");
+        Matcher matcher = pattern.matcher(pageSource);
+
+        // Ищем первую подходящую ссылку
+        if (matcher.find()) {
+            String foundLink = matcher.group(1);
+            System.out.println("Found link: " + foundLink);
+            return foundLink;  // Возвращаем найденную ссылку
+        } else {
+            throw new Exception("Link with partial name " + partialName + " not found.");
+        }
     }
 }

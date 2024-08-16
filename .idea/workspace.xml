@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Test-cases XmlSitemapOfImages and HTMLSitemap are ready!&#10;Split all test-cases into different packages.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="First two test-cases for Integrations are ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_deal_of_the_day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_images_seo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration_AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration_AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration_AB_landing_categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration_AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration_AB_seo_for_tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,18 +59,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "TarasYanUA"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TarasYanUA&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TarasYanUA/Sitemap.git",
-    "accountId": "51eb8828-6df6-4bb4-96b1-341c135a258d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TarasYanUA/Sitemap.git&quot;,
+    &quot;accountId&quot;: &quot;51eb8828-6df6-4bb4-96b1-341c135a258d&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -113,6 +111,9 @@
     "TestNG.Integration_AB_deal_of_the_day.executor": "Run",
     "TestNG.Integration__AB_deal_of_the_day.executor": "Run",
     "TestNG.Integration__AB_images_seo.executor": "Run",
+    "TestNG.Integration__AB_landing_categories.executor": "Run",
+    "TestNG.Integration__AB_seo_filters.executor": "Run",
+    "TestNG.Integration__AB_seo_for_tags.executor": "Run",
     "TestNG.XmlSitemapOfImages.executor": "Run",
     "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
     "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
@@ -141,18 +142,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Integration__AB_images_seo">
-    <configuration name="HTMLSitemap" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="c_htmlSitemap.HTMLSitemap" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.Integration__AB_seo_for_tags">
     <configuration name="Integration__AB_deal_of_the_day" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -187,10 +177,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemapOfImages" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Integration__AB_landing_categories" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="d_xmlSitemapOfImages.XmlSitemapOfImages" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e_integrations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e_integrations" />
+      <option name="MAIN_CLASS_NAME" value="e_integrations.Integration__AB_landing_categories" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -198,10 +194,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_CustomerLinksSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Integration__AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_CustomerLinksSettings" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e_integrations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e_integrations" />
+      <option name="MAIN_CLASS_NAME" value="e_integrations.Integration__AB_seo_filters" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Integration__AB_seo_for_tags" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e_integrations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e_integrations" />
+      <option name="MAIN_CLASS_NAME" value="e_integrations.Integration__AB_seo_for_tags" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -211,19 +230,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
+      <item itemvalue="TestNG.Integration__AB_landing_categories" />
+      <item itemvalue="TestNG.Integration__AB_seo_filters" />
+      <item itemvalue="TestNG.Integration__AB_seo_for_tags" />
       <item itemvalue="TestNG.Integration__AB_deal_of_the_day" />
       <item itemvalue="TestNG.Integration__AB_images_seo" />
-      <item itemvalue="TestNG.XmlSitemapOfImages" />
-      <item itemvalue="TestNG.HTMLSitemap" />
-      <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Integration__AB_seo_for_tags" />
+        <item itemvalue="TestNG.Integration__AB_seo_filters" />
+        <item itemvalue="TestNG.Integration__AB_landing_categories" />
         <item itemvalue="TestNG.Integration__AB_images_seo" />
         <item itemvalue="TestNG.Integration__AB_deal_of_the_day" />
-        <item itemvalue="TestNG.XmlSitemapOfImages" />
-        <item itemvalue="TestNG.HTMLSitemap" />
-        <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -579,7 +598,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -605,7 +624,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case XmlSitemap_PagesSettings is ready!" />
     <MESSAGE value="Test-case XmlSitemap_FeatureVariantsSettings is ready!" />
     <MESSAGE value="Test-case XmlSitemap_CustomerLinksSettings is ready!" />
     <MESSAGE value="Started work with a test-case HTMLSitemap" />
@@ -630,7 +648,8 @@
     <MESSAGE value="4 test-cases for XmlSitemap_ are ready!" />
     <MESSAGE value="3 more test-cases for XmlSitemap_ are ready! One only left." />
     <MESSAGE value="Test-cases XmlSitemapOfImages and HTMLSitemap are ready!&#10;Split all test-cases into different packages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-cases XmlSitemapOfImages and HTMLSitemap are ready!&#10;Split all test-cases into different packages." />
+    <MESSAGE value="First two test-cases for Integrations are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="First two test-cases for Integrations are ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

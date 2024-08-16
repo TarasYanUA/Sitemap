@@ -10,7 +10,8 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import static com.codeborne.selenide.Selenide.$;
+
+import static com.codeborne.selenide.Selenide.*;
 
 /*
 Модуль "AB: SEO-страницы для фильтров":
@@ -20,7 +21,8 @@ import static com.codeborne.selenide.Selenide.$;
     * Генерируем SEO-страницы для фильтров
 */
 
-public class Integration_AB_seo_filters extends TestRunner {
+public class Integration__AB_seo_filters extends TestRunner {
+
     @Test
     public void checkIntegration_AB_seo_filters(){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -30,26 +32,30 @@ public class Integration_AB_seo_filters extends TestRunner {
         ab_seo_filters.setting_AddSeoPagesToSitemap.selectOptionByValue("all");
         csCartSettings.button_Save.click();
         ab_seo_filters.navigateToGenerationRulesForFilters();
-        ab_seo_filters.button_AddRule.click();
-        ab_seo_filters.field_Features.click();
-        ab_seo_filters.feature_OperatingSystem.click();
-        ab_seo_filters.feature_Brand.click();
-        ab_seo_filters.checkbox_IncludeSubcategories.click();
-        ab_seo_filters.button_AddCategories.click();
-        $(".ui-dialog").shouldBe(Condition.visible);
-        ab_seo_filters.categoryComputers.click();
-        ab_seo_filters.button_SaveCategories.click();
-        ab_seo_filters.select_ParentCategories.selectOptionByValue("by_all_filter_categories");
-        ab_seo_filters.placeAllPlaceholdersOnRulePage("[category] [variant]");
-        ab_seo_filters.button_Create.click();
-        ab_seo_filters.gearwhealOnRulePage.shouldBe(Condition.enabled).click();
-        ab_seo_filters.button_GenerateRulePage.click();
-        Alert alert = Selenide.webdriver().driver().switchTo().alert();
-        alert.accept();
+        if (!$x("//a[text()='Операционная система']").exists() && !$x("//a[text()='Бренд']").exists()) {
+            ab_seo_filters.button_AddRule.click();
+            ab_seo_filters.field_Features.click();
+            ab_seo_filters.feature_OperatingSystem.click();
+            ab_seo_filters.feature_Brand.click();
+            ab_seo_filters.checkbox_IncludeSubcategories.click();
+            ab_seo_filters.button_AddCategories.click();
+            $(".ui-dialog").shouldBe(Condition.visible);
+            ab_seo_filters.categoryComputers.click();
+            ab_seo_filters.button_SaveCategories.click();
+            ab_seo_filters.select_ParentCategories.selectOptionByValue("by_all_filter_categories");
+            ab_seo_filters.placeAllPlaceholdersOnRulePage("[category] [variant]");
+            ab_seo_filters.button_Create.click();
+            ab_seo_filters.gearwhealOnRulePage.shouldBe(Condition.enabled).click();
+            ab_seo_filters.button_GenerateRulePage.click();
+            Alert alert = Selenide.webdriver().driver().switchTo().alert();
+            alert.accept();
+            Selenide.sleep(4000);
+        }
         ab_seo_filters.navigateToSeoPagesList();
         $("a[href$='android-2.2-froyo-samsung/']").click();
         shiftBrowserTab(1);
         String urlOfSeoPage = WebDriverRunner.getWebDriver().getCurrentUrl();   //получили ссылку на SEO-страницу
+        System.out.println("Ссылка на SEO-страницу: " + urlOfSeoPage);
         shiftBrowserTab(0);
 
         //Настраиваем XML-карту сайта
@@ -71,10 +77,13 @@ public class Integration_AB_seo_filters extends TestRunner {
         String urlForXMLCategories = sitemapSettings.splitLinkMethod(3);
         Selenide.executeJavaScript("window.open('" + urlForXMLCategories + "');");
         shiftBrowserTab(3);
+
         //Проверяем, что ссылка на SEO-страницу для фильтров присутствует
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfSeoPage)),
+        softAssert.assertTrue($x("//*[contains(@href, '" + urlOfSeoPage + "')]").exists(),
                 "There is no link to the SEO page for filters in the 'categories2.xml' sitemap!");
-        System.out.println("integrations.Integration_AB_seo_filters has passed successfully!");
+        screenshot("Integration__AB_seo_filters");
+        softAssert.assertAll();
+        System.out.println("Integration__AB_seo_filters has passed successfully!");
     }
 }

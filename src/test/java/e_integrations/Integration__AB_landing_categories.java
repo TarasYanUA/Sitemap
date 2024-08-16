@@ -4,7 +4,6 @@ import testRunner.TestRunner;
 import adminPanel.AB_landing_categories;
 import adminPanel.CsCartSettings;
 import adminPanel.SitemapSettings;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
@@ -18,7 +17,8 @@ import static com.codeborne.selenide.Selenide.*;
     * Включаем настройку
 */
 
-public class Integration_AB_landing_categories extends TestRunner {
+public class Integration__AB_landing_categories extends TestRunner {
+
     @Test
     public void checkIntegration_AB_landing_categories(){
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -42,6 +42,7 @@ public class Integration_AB_landing_categories extends TestRunner {
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("\\?");
         String urlOfLandingCategory = split[0]; //получили ссылку на категорию
+        System.out.println("Ссылка на кетегорию: " + urlOfLandingCategory);
         shiftBrowserTab(0);
 
         //Настраиваем XML-карту сайта
@@ -63,12 +64,13 @@ public class Integration_AB_landing_categories extends TestRunner {
         String urlForXMLCategories = sitemapSettings.splitLinkMethod(2);
         Selenide.executeJavaScript("window.open('" + urlForXMLCategories + "');");
         shiftBrowserTab(3);
+
         //Проверяем, что в карте-сайта присутствует ссылка на посадочную категорию
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue($(".pretty-print").has(Condition.text(urlOfLandingCategory)),
+        softAssert.assertTrue($x("//*[contains(@href, '" + urlOfLandingCategory + "')]").exists(),
                 "There is no link for a landing category in the 'categories1' sitemap!");
+        screenshot("Integration__AB_landing_categories");
         softAssert.assertAll();
-        screenshot("integrations.Integration_AB_landing_categories");
-        System.out.println("integrations.Integration_AB_landing_categories has passed successfully!");
+        System.out.println("Integration__AB_landing_categories has passed successfully!");
     }
 }
