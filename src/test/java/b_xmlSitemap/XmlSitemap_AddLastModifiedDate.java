@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class XmlSitemap_AddLastModifiedDate extends TestRunner {
 
     @Test
-    public void checkXmlSitemap_AddLastModifiedDate() {
+    public void checkXmlSitemap_AddLastModifiedDate() throws Exception {
         //Настраиваем настройки модуля
         CsCartSettings csCartSettings = new CsCartSettings();
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -36,8 +36,9 @@ public class XmlSitemap_AddLastModifiedDate extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
-        String urlForCategories = sitemapSettings.splitLinkMethod(2);
-        String urlForCompanies = sitemapSettings.splitLinkMethod(7);
+        String urlForCategories = sitemapSettings.findLinkByPartialName("categories1");
+        String urlForCompanies = sitemapSettings.findLinkByPartialName("companies1");
+
         //Проверяем, что теги даты последнего редактирования присутствуют в xml карте-сайта категорий
         SoftAssert softAssert = new SoftAssert();
         Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
@@ -51,8 +52,8 @@ public class XmlSitemap_AddLastModifiedDate extends TestRunner {
         shiftBrowserTab(3);
         softAssert.assertTrue($("lastmod").exists(),
                 "There are no tags <lastmod> at xml sitemap of the companies!");
-        screenshot("xmlSitemap.XmlSitemap_AddLastModifiedDate - Last modified date at companies");
+        screenshot("XmlSitemap_AddLastModifiedDate - Last modified date at companies");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_AddLastModifiedDate has passed successfully!");
+        System.out.println("XmlSitemap_AddLastModifiedDate has passed successfully!");
     }
 }

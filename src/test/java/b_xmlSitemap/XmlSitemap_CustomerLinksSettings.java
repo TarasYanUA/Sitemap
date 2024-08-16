@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 
 public class XmlSitemap_CustomerLinksSettings extends TestRunner {
     @Test
-    public void checkXmlSitemap_CustomerLinksSettings() {
+    public void checkXmlSitemap_CustomerLinksSettings() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -47,7 +47,8 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
-        String urlForCustomerLinks = sitemapSettings.splitLinkMethod(4);
+        String urlForCustomerLinks = sitemapSettings.findLinkByPartialName("custom_links1");
+
         Selenide.executeJavaScript("window.open('"+urlForCustomerLinks+"');");
         shiftBrowserTab(2);
 
@@ -62,9 +63,9 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner {
 
         //Проверяем, что пользовательская ссылка присутствует
         softAssert.assertTrue($("[href*='catalog']").exists(),
-                "There is no customer link in the xml sitemap!");
-        screenshot("xmlSitemap.XmlSitemap_CustomerLinksSettings");
+                "There is no customer link in the xml sitemap 'custom_links1'!");
+        screenshot("XmlSitemap_CustomerLinksSettings");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_CustomerLinksSettings has passed successfully!");
+        System.out.println("XmlSitemap_CustomerLinksSettings has passed successfully!");
     }
 }

@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class GeneralSettings_ExcludeProductVariations extends TestRunner {
 
     @Test
-    public void checkGeneralSettings_ExcludeProductVariations() {
+    public void checkGeneralSettings_ExcludeProductVariations() throws Exception {
         //Переходим на страницу товара с вариациями (футболка синия)
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToEditingProductPage("Футболка, Цвет: Синий");
@@ -50,7 +50,7 @@ public class GeneralSettings_ExcludeProductVariations extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(2);
-        String urlForProducts = sitemapSettings.splitLinkMethod(1);
+        String urlForProducts = sitemapSettings.findLinkByPartialName("products1");
         Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
         shiftBrowserTab(3);
 
@@ -63,8 +63,8 @@ public class GeneralSettings_ExcludeProductVariations extends TestRunner {
         int actualSizeOfUrls = $$("[href='" + urlForProductTshirt + "']").size();
         softAssert.assertEquals(actualSizeOfUrls, 1,
                 "There are more than 1 link of a product 'T-Shirt' in the 'products1' sitemap. It means there are variations but shouldn't!");
-        screenshot("generalSettings.GeneralSettings_ExcludeProductVariations");
+        screenshot("GeneralSettings_ExcludeProductVariations");
         softAssert.assertAll();
-        System.out.println("generalSettings.GeneralSettings_ExcludeProductVariations has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeProductVariations has passed successfully!");
     }
 }

@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner {
     @Test
-    public void checkGeneralSettings_ExcludeCategories_DoNotExclude() {
+    public void checkGeneralSettings_ExcludeCategories_DoNotExclude() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToSection_Categories();
         csCartSettings.selectCategory_Ipods.click();
@@ -59,7 +59,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
-        String urlForCategories = sitemapSettings.splitLinkMethod(2);
+        String urlForCategories = sitemapSettings.findLinkByPartialName("categories1");
         Selenide.executeJavaScript("window.open('"+urlForCategories+"');");
         shiftBrowserTab(4);
 
@@ -71,8 +71,8 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner {
         //Проверяем, что ссылка на категорию "Android" присутствует
         softAssert.assertTrue($("[href='" + urlForCategoryAndroid + "']").exists(),
                 "There is no link for category 'Android' in the 'categories1' sitemap!");
-        screenshot("generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude");
+        screenshot("GeneralSettings_ExcludeCategories_DoNotExclude");
         softAssert.assertAll();
-        System.out.println("generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeCategories_DoNotExclude has passed successfully!");
     }
 }

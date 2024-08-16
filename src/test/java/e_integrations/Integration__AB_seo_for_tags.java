@@ -55,6 +55,7 @@ public class Integration__AB_seo_for_tags extends TestRunner {
         //Проверяем, что ссылка на страницу тега "Спорт" присутствует
         SoftAssert softAssert = new SoftAssert();
         String urlOfTagSport = mainUrl + "sport/";
+        System.out.println("Ссылка на тег 'sport': " + urlOfTagSport);
         softAssert.assertTrue($x("//*[contains(@href, '" + urlOfTagSport + "')]").exists(),
                 "There is no link to the page of tag 'Sport' in the 'other_links1.xml' sitemap!");
         Selenide.executeJavaScript("window.open('" + urlForXMLTags + "');");
@@ -62,6 +63,7 @@ public class Integration__AB_seo_for_tags extends TestRunner {
 
         //Проверяем, что ссылка на страницу всех тегов присутствует
         String urlForAllTags = mainUrl + "tags";
+        System.out.println("Ссылка на страницу всех тегов: " + urlForAllTags);
         softAssert.assertTrue($x("//*[contains(@href, '" + urlForAllTags + "')]").exists(),
                 "There is no link to the page of all tags in the 'custom_links2.xml' sitemap!");
         screenshot("Integration__AB_seo_for_tags");

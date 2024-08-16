@@ -67,23 +67,6 @@ public class SitemapSettings {
         Selenide.sleep(3000);
     }
 
-    public String splitLinkMethod (int partNumber) {
-        String allUrls = WebDriverRunner.getWebDriver().getPageSource();
-        String[] splitOne = allUrls.split("<loc>");
-        int i = 0;
-        while (i < splitOne.length) {
-            i++;
-        }
-        String preliminaryResult = splitOne[partNumber];
-        String[] finalResult = preliminaryResult.split("</loc>");
-        int k = 0;
-        while (k < finalResult.length) {
-            k++;
-        }
-        System.out.println("Sitemap link is: " + finalResult[0]);
-        return finalResult[0];   //Получили ссылку на карту сайта
-    }
-
     public String findLinkByPartialName(String partialName) throws Exception {
         String pageSource = WebDriverRunner.getWebDriver().getPageSource(); // Получаем исходный код страницы
 
@@ -93,7 +76,7 @@ public class SitemapSettings {
         // Ищем первую подходящую ссылку
         if (matcher.find()) {
             String foundLink = matcher.group(1);
-            System.out.println("Found link: " + foundLink);
+            System.out.println("XML sitemap link: " + foundLink);
             return foundLink;  // Возвращаем найденную ссылку
         } else {
             throw new Exception("Link with partial name " + partialName + " not found.");

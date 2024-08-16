@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class XmlSitemap_CategoriesSettings extends TestRunner {
 
     @Test
-    public void checkXmlSitemap_CategoriesSettings() {
+    public void checkXmlSitemap_CategoriesSettings() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -45,9 +45,9 @@ public class XmlSitemap_CategoriesSettings extends TestRunner {
         //Проверяем, что ссылка на категории присутствует в xml-карте сайта
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'categories')]").exists(),
-                "There is no a link for categories in the xml-sitemap!");
+                "There is no a link for categories in the xml sitemap!");
         screenshot("For me");
-        String urlForCategories = sitemapSettings.splitLinkMethod(2);
+        String urlForCategories = sitemapSettings.findLinkByPartialName("categories1");
         Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
         shiftBrowserTab(2);
 
@@ -58,8 +58,8 @@ public class XmlSitemap_CategoriesSettings extends TestRunner {
         //Проверяем, что Приоритет "0.3"
         softAssert.assertTrue($("priority").has(Condition.text("0.3")),
                 "There is no Priority '0.3'!");
-        screenshot("xmlSitemap.XmlSitemap_CategoriesSettings");
+        screenshot("XmlSitemap_CategoriesSettings");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_CategoriesSettings has passed successfully!");
+        System.out.println("XmlSitemap_CategoriesSettings has passed successfully!");
     }
 }

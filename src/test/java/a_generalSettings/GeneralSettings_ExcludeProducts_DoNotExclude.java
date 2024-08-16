@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class GeneralSettings_ExcludeProducts_DoNotExclude extends TestRunner {
 
     @Test
-    public void checkGeneralSettings_ExcludeProducts_DoNotExclude() {
+    public void checkGeneralSettings_ExcludeProducts_DoNotExclude() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем 2 товара из категории "Палатки"
         csCartSettings.navigateToSection_Categories();
@@ -72,7 +72,7 @@ public class GeneralSettings_ExcludeProducts_DoNotExclude extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
-        String urlForProducts = sitemapSettings.splitLinkMethod(1);
+        String urlForProducts = sitemapSettings.findLinkByPartialName("products1");
         Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
         shiftBrowserTab(4);
 
@@ -84,8 +84,8 @@ public class GeneralSettings_ExcludeProducts_DoNotExclude extends TestRunner {
         //Проверяем, что ссылка на товар "WeatherMaster" присутствует
         softAssert.assertTrue($("[href='" + urlForProductWeatherMaster + "']").exists(),
                 "There is no link for product 'WeatherMaster' in the 'products1' sitemap!");
-        screenshot("generalSettings.GeneralSettings_ExcludeProducts_DoNotExclude");
+        screenshot("GeneralSettings_ExcludeProducts_DoNotExclude");
         softAssert.assertAll();
-        System.out.println("generalSettings.GeneralSettings_ExcludeProducts_DoNotExclude has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeProducts_DoNotExclude has passed successfully!");
     }
 }

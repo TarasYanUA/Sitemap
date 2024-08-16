@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class XmlSitemap_FeatureVariantsSettings extends TestRunner {
 
     @Test
-    public void checkXmlSitemap_FeatureVariantsSettings() {
+    public void checkXmlSitemap_FeatureVariantsSettings() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -46,19 +46,19 @@ public class XmlSitemap_FeatureVariantsSettings extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'feature_variants')]").exists(),
                 "There is no a link for feature variants in the xml-sitemap!");
-        String urlForFeatureVariants = sitemapSettings.splitLinkMethod(3);
+        String urlForFeatureVariants = sitemapSettings.findLinkByPartialName("feature_variants1");
         Selenide.executeJavaScript("window.open('" + urlForFeatureVariants + "');");
         shiftBrowserTab(2);
 
         //Проверяем, что Частота изменений отсутствует
         softAssert.assertFalse($("changefreq").exists(),
-                "There is a Change frequency but shouldn't on the sitemap of feature variants!");
+                "There is a Change frequency but shouldn't on the sitemap 'feature_variants1'!");
 
         //Проверяем, что Приоритет "0.1"
         softAssert.assertTrue($("priority").has(Condition.text("0.1")),
                 "There is no Priority '0.1' on the sitemap of feature variants!");
-        screenshot("xmlSitemap.XmlSitemap_FeatureVariantsSettings");
+        screenshot("XmlSitemap_FeatureVariantsSettings");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_FeatureVariantsSettings has passed successfully!");
+        System.out.println("XmlSitemap_FeatureVariantsSettings has passed successfully!");
     }
 }

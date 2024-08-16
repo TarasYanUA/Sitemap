@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class GeneralSettings_ExcludeBrands_WithoutAmount extends TestRunner {
 
     @Test
-    public void checkGeneralSettings_ExcludeBrands_WithoutAmount() {
+    public void checkGeneralSettings_ExcludeBrands_WithoutAmount() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем товары двух брендов
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
@@ -51,7 +51,7 @@ public class GeneralSettings_ExcludeBrands_WithoutAmount extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
-        String urlForFeatureBrand = sitemapSettings.splitLinkMethod(3);
+        String urlForFeatureBrand = sitemapSettings.findLinkByPartialName("feature_variants1");
         Selenide.executeJavaScript("window.open('" + urlForFeatureBrand + "');");
         shiftBrowserTab(2);
 
@@ -65,8 +65,8 @@ public class GeneralSettings_ExcludeBrands_WithoutAmount extends TestRunner {
         //Проверяем, что ссылка на бренд "Panasonic" отсутствует
         softAssert.assertFalse($("[href='" + urlForPanasonic + "']").exists(),
                 "There is a link for brand 'Panasonic' but shouldn't in the 'feature_variants1' sitemap!");
-        screenshot("generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount");
+        screenshot("GeneralSettings_ExcludeBrands_WithoutAmount");
         softAssert.assertAll();
-        System.out.println("generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeBrands_WithoutAmount has passed successfully!");
     }
 }

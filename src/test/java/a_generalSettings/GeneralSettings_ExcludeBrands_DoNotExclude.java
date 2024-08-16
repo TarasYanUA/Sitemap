@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class GeneralSettings_ExcludeBrands_DoNotExclude extends TestRunner {
 
     @Test
-    public void checkGeneralSettings_ExcludeBrands_DoNotExclude() {
+    public void checkGeneralSettings_ExcludeBrands_DoNotExclude() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] split = url.split("admin");
@@ -49,7 +49,7 @@ public class GeneralSettings_ExcludeBrands_DoNotExclude extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
-        String urlForFeatureBrand = sitemapSettings.splitLinkMethod(3);
+        String urlForFeatureBrand = sitemapSettings.findLinkByPartialName("feature_variants1");
         Selenide.executeJavaScript("window.open('" + urlForFeatureBrand + "');");
         shiftBrowserTab(2);
 
@@ -63,8 +63,8 @@ public class GeneralSettings_ExcludeBrands_DoNotExclude extends TestRunner {
         //Проверяем, что ссылка на бренд "Panasonic" присутствует
         softAssert.assertTrue($("[href='" + urlForPanasonic + "']").exists(),
                 "There is no link for brand 'Panasonic' in the 'feature_variants1' sitemap!");
-        screenshot("generalSettings.GeneralSettings_ExcludeBrands_DoNotExclude");
+        screenshot("GeneralSettings_ExcludeBrands_DoNotExclude");
         softAssert.assertAll();
-        System.out.println("generalSettings.GeneralSettings_ExcludeBrands_DoNotExclude has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeBrands_DoNotExclude has passed successfully!");
     }
 }

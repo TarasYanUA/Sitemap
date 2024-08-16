@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class XmlSitemap_IncludeCompanies extends TestRunner {
 
     @Test
-    public void checkXmlSitemap_IncludeCompanies() {
+    public void checkXmlSitemap_IncludeCompanies() throws Exception {
         //Настраиваем настройки модуля
         CsCartSettings csCartSettings = new CsCartSettings();
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -40,7 +40,7 @@ public class XmlSitemap_IncludeCompanies extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'companies')]").exists(),
                 "There is no a link for companies in the xml-sitemap!");
-        String urlForCompanies = sitemapSettings.splitLinkMethod(7);
+        String urlForCompanies = sitemapSettings.findLinkByPartialName("companies1");
         Selenide.executeJavaScript("window.open('" + urlForCompanies + "');");
         shiftBrowserTab(2);
 
@@ -48,8 +48,8 @@ public class XmlSitemap_IncludeCompanies extends TestRunner {
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'company_id')]").exists()
                         || $("[href*='company_id']").exists(),
                 "There are no links for companies pages!");
-        screenshot("xmlSitemap.XmlSitemap_IncludeCompanies");
+        screenshot("XmlSitemap_IncludeCompanies");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_IncludeCompanies has passed successfully!");
+        System.out.println("XmlSitemap_IncludeCompanies has passed successfully!");
     }
 }

@@ -25,7 +25,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
     public static final String PRODUCTNAME = "USB-N53";
 
     @Test
-    public void checkXmlSitemap_ProductsSettings() {
+    public void checkXmlSitemap_ProductsSettings() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -83,7 +83,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         String currentUrl_ProductUSB = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductUSB = currentUrl_ProductUSB.split("\\?");
         String urlForProductUSB = arrayProductUSB[0] + "?vendor_id";     //Получили ссылку товара с кодом продавца
-        System.out.println("URL for a product USB: " + urlForProductUSB);
+        System.out.println("URL for a product 'USB': " + urlForProductUSB);
         shiftBrowserTab(0);
 
         //Работаем с выгрузкой
@@ -96,7 +96,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'products')]").exists(),
                 "There is no a link for products in the xml-sitemap!");
-        String urlForProducts = sitemapSettings.splitLinkMethod(1);
+        String urlForProducts = sitemapSettings.findLinkByPartialName("products1");
         Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
         shiftBrowserTab(4);
 
@@ -111,8 +111,8 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
         softAssert.assertTrue($x("//*[contains(@href, '" + urlForProductUSB + "')]").exists(),
                 "There is no link for product 'USB-N53' or a vendor code is missed!");
-        screenshot("xmlSitemap.XmlSitemap_ProductsSettings");
+        screenshot("XmlSitemap_ProductsSettings");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_ProductsSettings has passed successfully!");
+        System.out.println("XmlSitemap_ProductsSettings has passed successfully!");
     }
 }

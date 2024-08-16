@@ -22,7 +22,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunner {
     @Test
-    public void checkGeneralSettings_ExcludeCategories_WithoutProducts() {
+    public void checkGeneralSettings_ExcludeCategories_WithoutProducts() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем первую категорию "iPods"
         csCartSettings.navigateToSection_Categories();
@@ -70,7 +70,7 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(3);
-        String urlForCategories = sitemapSettings.splitLinkMethod(2);
+        String urlForCategories = sitemapSettings.findLinkByPartialName("categories1");
         Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
         shiftBrowserTab(4);
 
@@ -82,8 +82,8 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         //Проверяем, что ссылка на категорию "Android" отсутствует
         softAssert.assertFalse($("[href='" + urlForCategoryAndroid + "']").exists(),
                 "There is a link for category 'Android' but shouldn't in the 'categories1' sitemap!");
-        screenshot("generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts");
+        screenshot("GeneralSettings_ExcludeCategories_WithoutProducts");
         softAssert.assertAll();
-        System.out.println("generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts has passed successfully!");
+        System.out.println("GeneralSettings_ExcludeCategories_WithoutProducts has passed successfully!");
     }
 }

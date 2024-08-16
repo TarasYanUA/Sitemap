@@ -21,7 +21,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class XmlSitemap_PagesSettings extends TestRunner {
 
     @Test
-    public void checkXmlSitemap_PagesSettings() {
+    public void checkXmlSitemap_PagesSettings() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -54,8 +54,8 @@ public class XmlSitemap_PagesSettings extends TestRunner {
         //Проверяем, что ссылка на блог присутствует в xml карте-сайта
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'blog')]").exists(),
                 "There is no a link for blog in the xml-sitemap!");
-        String urlForPages = sitemapSettings.splitLinkMethod(5);
-        String urlForBlog = sitemapSettings.splitLinkMethod(6);
+        String urlForPages = sitemapSettings.findLinkByPartialName("pages1");
+        String urlForBlog = sitemapSettings.findLinkByPartialName("blog1");
         Selenide.executeJavaScript("window.open('" + urlForPages + "');");
         shiftBrowserTab(2);
 
@@ -77,8 +77,8 @@ public class XmlSitemap_PagesSettings extends TestRunner {
         //Проверяем, что в карте-сайта блога Приоритет "0.9"
         softAssert.assertTrue($("priority").has(Condition.text("0.9")),
                 "There is no Priority '0.9' in the sitemap of blog!");
-        screenshot("xmlSitemap.XmlSitemap_PagesSettings - Blog");
+        screenshot("XmlSitemap_PagesSettings - Blog");
         softAssert.assertAll();
-        System.out.println("xmlSitemap.XmlSitemap_PagesSettings has passed successfully!");
+        System.out.println("XmlSitemap_PagesSettings has passed successfully!");
     }
 }

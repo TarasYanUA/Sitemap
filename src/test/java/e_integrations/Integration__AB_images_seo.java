@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class Integration__AB_images_seo extends TestRunner {
 
     @Test
-    public void checkIntegration_AB_images_seo(){
+    public void checkIntegration_AB_images_seo() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Устанавливаем модуль "AB: Автоматические теги Alt и Title для изображений по шаблонам"
         csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAB__images_seo, "ab__images_seo", "form[name=ab_install_form_54348]");
@@ -60,11 +60,11 @@ public class Integration__AB_images_seo extends TestRunner {
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
 
-        //Проверяем, что ссылка на XML-карту изображений присутствует в xml карте-сайта
+        //Проверяем, что ссылка на XML-карту изображений присутствует в xml-карте сайта
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images')]").exists(),
                 "There is no a link for XML images in the xml-sitemap!");
-        String urlForXMLImages = sitemapSettings.splitLinkMethod(8);
+        String urlForXMLImages = sitemapSettings.findLinkByPartialName("images1");
         Selenide.executeJavaScript("window.open('"+urlForXMLImages+"');");
         shiftBrowserTab(2);
 

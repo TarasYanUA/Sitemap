@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class Integration__AB_deal_of_the_day extends TestRunner {
 
     @Test
-    public void checkIntegration_AB_deal_of_the_day (){
+    public void checkIntegration_AB_deal_of_the_day () throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Устанавливаем модуль "AB: Расширенные промоакции"
         csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAB__deal_of_the_day, "ab__deal_of_the_day", "form[name=ab_install_form_54317]");
@@ -47,11 +47,11 @@ public class Integration__AB_deal_of_the_day extends TestRunner {
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(1);
 
-        //Проверяем, что ссылка на XML-карту промо-акций присутствует в xml карте-сайта
+        //Проверяем, что ссылка на XML-карту промо-акций присутствует в xml-карте сайта
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'other_links')]").exists(),
                 "There is no a link for XML of integrated add-ons in the xml-sitemap!");
-        String urlForXMLPromotions = sitemapSettings.splitLinkMethod(9);
+        String urlForXMLPromotions = sitemapSettings.findLinkByPartialName("other_links1");
         Selenide.executeJavaScript("window.open('" + urlForXMLPromotions + "');");
         shiftBrowserTab(2);
 

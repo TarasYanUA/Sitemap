@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class XmlSitemapOfImages extends TestRunner {
     @Test
-    public void checkXMLSitemapOfImages(){
+    public void checkXMLSitemapOfImages() throws Exception {
         //Включаем XML-карту изображений
         CsCartSettings csCartSettings = new CsCartSettings();
         SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
@@ -32,15 +32,16 @@ public class XmlSitemapOfImages extends TestRunner {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images')]").exists(),
                 "There is no link for XML images in the xml-sitemap!");
-        String urlForXMLImages = sitemapSettings.splitLinkMethod(8);
+        String urlForXMLImages = sitemapSettings.findLinkByPartialName("images1");
+
         Selenide.executeJavaScript("window.open('" + urlForXMLImages + "');");
         shiftBrowserTab(2);
 
         //Проверяем, что изображения присутствуют в карте сайта
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'images/detailed/')]").exists(),
                 "There are no images in the xml-sitemap");
-        screenshot("xmlSitemapOfImages.XmlSitemapOfImages");
+        screenshot("XmlSitemapOfImages");
         softAssert.assertAll();
-        System.out.println("XMLSitemapOfImages has passed successfully!");
+        System.out.println("XmlSitemapOfImages has passed successfully!");
     }
 }

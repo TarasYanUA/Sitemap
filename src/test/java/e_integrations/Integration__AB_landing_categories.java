@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class Integration__AB_landing_categories extends TestRunner {
 
     @Test
-    public void checkIntegration_AB_landing_categories(){
+    public void checkIntegration_AB_landing_categories() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Устанавливаем модуль "AB: Посадочные категории"
         csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAB__landing_categories, "ab__landing_categories", "form[name=ab_install_form_54315]");
@@ -61,7 +61,7 @@ public class Integration__AB_landing_categories extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(2);
-        String urlForXMLCategories = sitemapSettings.splitLinkMethod(2);
+        String urlForXMLCategories = sitemapSettings.findLinkByPartialName("categories1");
         Selenide.executeJavaScript("window.open('" + urlForXMLCategories + "');");
         shiftBrowserTab(3);
 

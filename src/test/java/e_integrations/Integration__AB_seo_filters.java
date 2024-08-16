@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class Integration__AB_seo_filters extends TestRunner {
 
     @Test
-    public void checkIntegration_AB_seo_filters(){
+    public void checkIntegration_AB_seo_filters() throws Exception {
         CsCartSettings csCartSettings = new CsCartSettings();
         //Работа с модулем "AB: SEO страницы для фильтров"
         csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAB__seo_filters, "ab__seo_filters", "form[name=ab_install_form_54338]");
@@ -74,7 +74,7 @@ public class Integration__AB_seo_filters extends TestRunner {
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
         shiftBrowserTab(2);
-        String urlForXMLCategories = sitemapSettings.splitLinkMethod(3);
+        String urlForXMLCategories = sitemapSettings.findLinkByPartialName("categories2");
         Selenide.executeJavaScript("window.open('" + urlForXMLCategories + "');");
         shiftBrowserTab(3);
 
