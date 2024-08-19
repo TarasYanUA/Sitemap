@@ -27,6 +27,7 @@
             <class name="b_xmlSitemap.XmlSitemap_PagesSettings" />
             <class name="b_xmlSitemap.XmlSitemap_FeatureVariantsSettings" />
             <class name="b_xmlSitemap.XmlSitemap_CustomerLinksSettings" />
+            <class name="b_xmlSitemap.XmlSitemap_Directory" />
 
             <class name="c_htmlSitemap.HTMLSitemap" />
 

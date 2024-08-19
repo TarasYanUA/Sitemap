@@ -41,6 +41,7 @@ public class SitemapSettings {
     public SelenideElement setting_CustomerLinksSettings_Priority = $("select[id*='addon_option_ab__advanced_sitemap_custom_links_priority_']");
     public SelenideElement setting_OtherAddons_ChangeFrequency = $("select[id*='addon_option_ab__advanced_sitemap_other_links_changefreq_']");
     public SelenideElement setting_OtherAddons_Priority = $("select[id*='addon_option_ab__advanced_sitemap_other_links_priority_']");
+    public SelenideElement setting_XmlSitemapDirectory = $("input[id*='addon_option_ab__advanced_sitemap_xml_sitemap_directory_']");
 
     //вкладка "HTML-карта сайта"
     public SelenideElement tab_HTMLSitemap = $("#ab__advanced_sitemap_html_sitemap");
@@ -66,6 +67,13 @@ public class SitemapSettings {
         button_GenerateSitemap.click();
         Selenide.sleep(3000);
     }
+
+    public void clickAndTypeSetting_XmlSitemapDirectory(String value) {
+        setting_XmlSitemapDirectory.click();
+        setting_XmlSitemapDirectory.clear();
+        setting_XmlSitemapDirectory.setValue(value);
+    }
+
 
     public String findLinkByPartialName(String partialName) throws Exception {
         String pageSource = WebDriverRunner.getWebDriver().getPageSource(); // Получаем исходный код страницы

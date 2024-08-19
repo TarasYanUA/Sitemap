@@ -4,39 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="All test-cases are adapted to CS-Cart 4.18.2 and to the newest add-on version 2.6.0.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProductVariations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_AddLastModifiedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_AddLastModifiedDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CategoriesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CategoriesSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CustomerLinksSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CustomerLinksSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_FeatureVariantsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_FeatureVariantsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_IncludeCompanies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_IncludeCompanies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_PagesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_PagesSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/d_xmlSitemapOfImages/XmlSitemapOfImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/d_xmlSitemapOfImages/XmlSitemapOfImages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -144,6 +115,7 @@
     "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
     "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
     "TestNG.XmlSitemap_CustomerLinksSettings.executor": "Run",
+    "TestNG.XmlSitemap_Directory.executor": "Run",
     "TestNG.XmlSitemap_FeatureVariantsSettings.executor": "Run",
     "TestNG.XmlSitemap_IncludeCompanies.executor": "Run",
     "TestNG.XmlSitemap_PagesSettings.executor": "Run",
@@ -168,7 +140,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice">
+  <component name="RunManager" selected="TestNG.XmlSitemap_Directory">
     <configuration name="GeneralSettings_ExcludeBrands_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -237,7 +209,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_CustomerLinksSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="XmlSitemap_Directory" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
         <pattern>
@@ -246,7 +218,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="b_xmlSitemap" />
-      <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_CustomerLinksSettings" />
+      <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_Directory" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -256,19 +228,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
+      <item itemvalue="TestNG.XmlSitemap_Directory" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
       <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
       <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
-      <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.XmlSitemap_Directory" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
         <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
         <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
-        <item itemvalue="TestNG.XmlSitemap_CustomerLinksSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -624,7 +596,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -650,7 +622,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case XmlSitemap_CustomerLinksSettings is ready!" />
     <MESSAGE value="Started work with a test-case HTMLSitemap" />
     <MESSAGE value="Test-case HTMLSitemap is ready!" />
     <MESSAGE value="Test-case XMLSitemapOfImages is ready!" />
@@ -675,7 +646,8 @@
     <MESSAGE value="Test-cases XmlSitemapOfImages and HTMLSitemap are ready!&#10;Split all test-cases into different packages." />
     <MESSAGE value="First two test-cases for Integrations are ready!" />
     <MESSAGE value="All test-cases are adapted to CS-Cart 4.18.2 and to the newest add-on version 2.6.0." />
-    <option name="LAST_COMMIT_MESSAGE" value="All test-cases are adapted to CS-Cart 4.18.2 and to the newest add-on version 2.6.0." />
+    <MESSAGE value="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
