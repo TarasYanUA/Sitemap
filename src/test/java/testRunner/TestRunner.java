@@ -8,12 +8,12 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /*
-Мультивендор + модуль "Расширенная карта сайта" 2.6.0.
+Мультивендор + модуль "Расширенная карта сайта" 2.6.2.
 Работает в браузерах Chrome и Edge (в Firefox не работает).
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4182mvru_advanced_sitemap/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4183mvru_advanced_sitemap/admin.php?dispatch=storefronts.manage";
 
     @BeforeMethod
     public void openBrowser()  {

@@ -45,8 +45,7 @@ public class XmlSitemap_CategoriesSettings extends TestRunner {
         //Проверяем, что ссылка на категории присутствует в xml-карте сайта
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'categories')]").exists(),
-                "There is no a link for categories in the xml sitemap!");
-        screenshot("For me");
+                "There is no link for categories in the xml sitemap!");
         String urlForCategories = sitemapSettings.findLinkByPartialName("categories1");
         Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
         shiftBrowserTab(2);

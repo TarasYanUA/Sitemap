@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added new test-case XmlSitemap_Directory of the newest version of the add-on.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +110,7 @@
     "TestNG.Integration__AB_landing_categories.executor": "Run",
     "TestNG.Integration__AB_seo_filters.executor": "Run",
     "TestNG.Integration__AB_seo_for_tags.executor": "Run",
+    "TestNG.Sitemap/TestNG.xml.executor": "Run",
     "TestNG.XmlSitemapOfImages.executor": "Run",
     "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
     "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
@@ -127,8 +127,8 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IDEA Projects/Sitemap/pom.xml",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
@@ -140,7 +140,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.XmlSitemap_Directory">
+  <component name="RunManager" selected="TestNG.Sitemap/TestNG.xml">
     <configuration name="GeneralSettings_ExcludeBrands_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -211,15 +211,25 @@
     </configuration>
     <configuration name="XmlSitemap_Directory" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="b_xmlSitemap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="b_xmlSitemap" />
       <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_Directory" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -596,7 +606,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -622,7 +632,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started work with a test-case HTMLSitemap" />
     <MESSAGE value="Test-case HTMLSitemap is ready!" />
     <MESSAGE value="Test-case XMLSitemapOfImages is ready!" />
     <MESSAGE value="Started to work with test-case Integration_AutomaticAltAndTitleTagsForImages" />
@@ -647,7 +656,8 @@
     <MESSAGE value="First two test-cases for Integrations are ready!" />
     <MESSAGE value="All test-cases are adapted to CS-Cart 4.18.2 and to the newest add-on version 2.6.0." />
     <MESSAGE value="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;." />
+    <MESSAGE value="Added new test-case XmlSitemap_Directory of the newest version of the add-on." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new test-case XmlSitemap_Directory of the newest version of the add-on." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
