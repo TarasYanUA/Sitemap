@@ -87,7 +87,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner {
         //Проверяем, что ссылка на товар "WeatherMaster" отсутствует
         softAssert.assertFalse($("[href='" + urlForProductWeatherMaster + "']").exists(),
                 "There is a link for product 'WeatherMaster' but shouldn't in the 'products1' sitemap!");
-        screenshot("gGeneralSettings_ExcludeProducts_WithoutAmount");
+        screenshot("GeneralSettings_ExcludeProducts_WithoutAmount");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeProducts_WithoutAmount has passed successfully!");
     }

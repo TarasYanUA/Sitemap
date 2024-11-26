@@ -8,8 +8,8 @@ public class AB_seo_filters {
     public AB_seo_filters(){super();}
 
     public SelenideElement setting_AddSeoPagesToSitemap = $("select[id*='addon_option_ab__seo_filters_add_to_sitemap_']");
-    private SelenideElement ab_menu = $(".ab__am-menu .dropdown-toggle");
-    private SelenideElement generationRulesForFilters = $(".ab__am-menu a[href$='ab__sf_rules.manage']");
+    SelenideElement ab_menu = $(".ab__am-menu .dropdown-toggle");
+    SelenideElement generationRulesForFilters = $(".ab__am-menu a[href$='ab__sf_rules.manage']");
     public SelenideElement button_AddRule = $x("//div[@id='tools_manage_ab__sf_rules_adv_buttons']/div");
     public SelenideElement field_Features = $("ul.select2-selection__rendered");
     public SelenideElement feature_OperatingSystem = $x("//div[contains(text(), 'Операционная система')]");
@@ -28,7 +28,7 @@ public class AB_seo_filters {
     public SelenideElement button_Create = $(".nav__actions-bar .cm-submit");
     public SelenideElement gearwhealOnRulePage = $(".nav__actions-bar .dropdown-icon--tools");
     public SelenideElement button_GenerateRulePage = $("a[href*='ab__sf_rules.generate']");
-    private SelenideElement section_SeoPagesList = $(".adv-buttons a[href$='ab__sf_names.manage']");
+    SelenideElement section_SeoPagesList = $(".adv-buttons a[href$='ab__sf_names.manage']");
 
 
     public void navigateToGenerationRulesForFilters(){
