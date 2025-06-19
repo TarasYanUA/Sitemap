@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Updated pom.xml file.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Updated pom.xml file.&#10;Made some changed in code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,61 +76,64 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2OgmSYmwyLQqyXjXB9WCS1uAKJh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeBrands_DoNotExclude.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutAmount.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutPrice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutProducts.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeProducts_DoNotExclude.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.HTMLSitemap.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Integration_AB_deal_of_the_day.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Integration__AB_deal_of_the_day.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Integration__AB_images_seo.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Integration__AB_landing_categories.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Integration__AB_seo_filters.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Integration__AB_seo_for_tags.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.Sitemap/TestNG.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemapOfImages.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_AddLastModifiedDate.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_CategoriesSettings.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_CustomerLinksSettings.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_Directory.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_FeatureVariantsSettings.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_IncludeCompanies.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_PagesSettings.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.XmlSitemap_ProductsSettings.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor&quot;: &quot;Run&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;v2.6.0____4.18.2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/Sitemap/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.Sitemap [clean].executor": "Run",
+    "Maven.Sitemap [test].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.GeneralSettings_ExcludeBrands_DoNotExclude.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeBrands_WithoutAmount.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeBrands_WithoutPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeBrands_WithoutProducts.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeProducts_DoNotExclude.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor": "Run",
+    "TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor": "Run",
+    "TestNG.HTMLSitemap.executor": "Run",
+    "TestNG.Integration_AB_deal_of_the_day.executor": "Run",
+    "TestNG.Integration__AB_deal_of_the_day.executor": "Run",
+    "TestNG.Integration__AB_images_seo.executor": "Run",
+    "TestNG.Integration__AB_landing_categories.executor": "Run",
+    "TestNG.Integration__AB_seo_filters.executor": "Run",
+    "TestNG.Integration__AB_seo_for_tags.executor": "Run",
+    "TestNG.Sitemap/TestNG.xml.executor": "Run",
+    "TestNG.XmlSitemapOfImages.executor": "Run",
+    "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
+    "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
+    "TestNG.XmlSitemap_CustomerLinksSettings.executor": "Run",
+    "TestNG.XmlSitemap_Directory.executor": "Run",
+    "TestNG.XmlSitemap_FeatureVariantsSettings.executor": "Run",
+    "TestNG.XmlSitemap_IncludeCompanies.executor": "Run",
+    "TestNG.XmlSitemap_PagesSettings.executor": "Run",
+    "TestNG.XmlSitemap_ProductsSettings.executor": "Run",
+    "TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor": "Run",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "v2.6.0____4.18.2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/Sitemap/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -140,7 +142,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Sitemap/TestNG.xml">
+  <component name="RunManager" selected="TestNG.XmlSitemap_Directory">
     <configuration name="GeneralSettings_ExcludeBrands_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -606,7 +608,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -632,7 +634,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case XMLSitemapOfImages is ready!" />
     <MESSAGE value="Started to work with test-case Integration_AutomaticAltAndTitleTagsForImages" />
     <MESSAGE value="Test-case Integration_AB_images_seo is ready!" />
     <MESSAGE value="Started work with test-case Integration_AB_deal_of_the_day." />
@@ -657,7 +658,8 @@
     <MESSAGE value="Improved split method, so I could split the link according the name instead of numerical order.&#10;Added a new method for &quot;AB: Moduli&quot; menu into the Interface &quot;CheckMenuToBeActive&quot;." />
     <MESSAGE value="Added new test-case XmlSitemap_Directory of the newest version of the add-on." />
     <MESSAGE value="Updated pom.xml file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated pom.xml file." />
+    <MESSAGE value="Updated pom.xml file.&#10;Made some changed in code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pom.xml file.&#10;Made some changed in code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
