@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Transferred to Java24">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Updated pom vocabularies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +144,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.XmlSitemap_Directory">
+  <component name="RunManager" selected="TestNG.Integration__AB_seo_filters">
     <configuration name="GeneralSettings_ExcludeBrands_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -177,6 +179,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Integration__AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e_integrations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="e_integrations" />
+      <option name="MAIN_CLASS_NAME" value="e_integrations.Integration__AB_seo_filters" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="XmlSitemap_AddLastModifiedDate" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -187,23 +206,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="b_xmlSitemap" />
       <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_AddLastModifiedDate" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XmlSitemap_CategoriesSettings" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="b_xmlSitemap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="b_xmlSitemap" />
-      <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_CategoriesSettings" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -240,19 +242,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
+      <item itemvalue="TestNG.Integration__AB_seo_filters" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
       <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
-      <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
       <item itemvalue="TestNG.XmlSitemap_Directory" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Integration__AB_seo_filters" />
         <item itemvalue="TestNG.XmlSitemap_Directory" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
         <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
-        <item itemvalue="TestNG.XmlSitemap_CategoriesSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -608,7 +610,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -634,7 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case Integration_AB_images_seo is ready!" />
     <MESSAGE value="Started work with test-case Integration_AB_deal_of_the_day." />
     <MESSAGE value="Test-case Integration_AB_deal_of_the_day is ready!" />
     <MESSAGE value="Test-case Integration_AB_landing_categories is ready!" />
@@ -659,7 +660,8 @@
     <MESSAGE value="Updated pom.xml file." />
     <MESSAGE value="Updated pom.xml file.&#10;Made some changed in code." />
     <MESSAGE value="Transferred to Java24" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transferred to Java24" />
+    <MESSAGE value="Updated pom vocabularies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pom vocabularies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

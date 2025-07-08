@@ -37,7 +37,7 @@ public class AB_seo_filters {
     }
     public void placeAllPlaceholdersOnRulePage(String placeholder){
         placeholderOne_PageTagH1.click();
-        placeholderOne_PageTagH1.sendKeys("placeholder");
+        placeholderOne_PageTagH1.sendKeys(placeholder);
         placeholderTwo_PageTitle.click();
         placeholderTwo_PageTitle.sendKeys(placeholder);
         placeholderThree_PageMetaTagDescription.click();

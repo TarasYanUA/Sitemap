@@ -13,7 +13,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4184ultru_seo_filters/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4184ultru_seo_filters/admin.php?dispatch=ab__am.addons";
 
     @BeforeMethod
     public void openBrowser()  {
