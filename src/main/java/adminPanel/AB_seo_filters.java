@@ -12,7 +12,8 @@ public class AB_seo_filters {
     SelenideElement generationRulesForFilters = $(".ab__am-menu a[href$='ab__sf_rules.manage']");
     public SelenideElement button_AddRule = $x("//div[@id='tools_manage_ab__sf_rules_adv_buttons']/div");
     public SelenideElement field_Features = $("ul.select2-selection__rendered");
-    public SelenideElement feature_OperatingSystem = $x("//div[contains(text(), 'Операционная система')]");
+    public SelenideElement feature_OperatingSystem =
+            $x("//li[@aria-label='Электроника']//div[contains(text(), 'Операционная система')]");
     public SelenideElement feature_Brand = $x("//div[contains(text(), 'Бренд [18]')]");
     public SelenideElement button_AddCategories = $x("//a[contains(@id, 'opener_picker_elm_categories')]");
     public SelenideElement categoryComputers = $("#input_cat_167");

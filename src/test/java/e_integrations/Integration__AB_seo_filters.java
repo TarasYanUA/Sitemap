@@ -35,8 +35,11 @@ public class Integration__AB_seo_filters extends TestRunner {
         if (!$x("//a[text()='Операционная система']").exists() && !$x("//a[text()='Бренд']").exists()) {
             ab_seo_filters.button_AddRule.click();
             ab_seo_filters.field_Features.click();
-            ab_seo_filters.feature_OperatingSystem.click();
-            ab_seo_filters.feature_Brand.click();
+            sleep(2000);
+            ab_seo_filters.feature_Brand.scrollIntoCenter().click();
+            sleep(1000);
+            ab_seo_filters.feature_OperatingSystem.scrollIntoCenter().click();
+            sleep(1000);
             ab_seo_filters.checkbox_IncludeSubcategories.click();
             ab_seo_filters.button_AddCategories.click();
             $(".ui-dialog").shouldBe(Condition.visible);
@@ -52,7 +55,7 @@ public class Integration__AB_seo_filters extends TestRunner {
             Selenide.sleep(4000);
         }
         ab_seo_filters.navigateToSeoPagesList();
-        $("a[href$='android-2.2-froyo-samsung/']").click();
+        $("a[href$='samsung-android-2.2-froyo/']").click();
         shiftBrowserTab(1);
         String urlOfSeoPage = WebDriverRunner.getWebDriver().getCurrentUrl();   //получили ссылку на SEO-страницу
         System.out.println("Ссылка на SEO-страницу: " + urlOfSeoPage);
