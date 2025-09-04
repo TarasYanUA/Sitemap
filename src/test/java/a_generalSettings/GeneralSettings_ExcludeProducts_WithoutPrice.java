@@ -1,12 +1,14 @@
 package a_generalSettings;
 
+import adminPanel.CategoryPage;
 import testRunner.TestRunner;
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import testRunner.Utils;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
@@ -25,65 +27,64 @@ public class GeneralSettings_ExcludeProducts_WithoutPrice extends TestRunner {
 
     @Test
     public void checkGeneralSettings_ExcludeProducts_WithoutPrice() throws Exception {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
+        
         //Настраиваем 2 товара из категории "Палатки"
-        csCartSettings.navigateToSection_Categories();
-        csCartSettings.selectCategory_Tents.click();
-        csCartSettings.gearwheelOnEditingPage.click();
-        csCartSettings.button_ViewProducts.click();
-        csCartSettings.setFirstProduct("300", "8");
-        csCartSettings.setSecondProduct("0", "15");
-        csCartSettings.button_SaveListOfProducts.click();
-        csCartSettings.chooseAnyProduct.click();
-        csCartSettings.gearwheelOnEditingPage.click();
-        csCartSettings.button_Preview.click();
-        shiftBrowserTab(1);
+        CategoryPage categoryPage = basicPage.navigateToSection_Categories();
+        categoryPage.selectCategory_Tents.click();
+        basicPage.gearwheelOnEditingPage.click();
+        basicPage.button_ViewProducts.click();
+        categoryPage.setFirstProduct("300", "8");
+        categoryPage.setSecondProduct("0", "15");
+        basicPage.button_SaveListOfProducts.click();
+        basicPage.chooseAnyProduct.click();
+        basicPage.gearwheelOnEditingPage.click();
+        basicPage.button_Preview.click();
+        Utils.shiftBrowserTab(1);
         String currentUrl_ProductElite = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductElite = currentUrl_ProductElite.split("\\?");
         String urlForProductElite = arrayProductElite[0];     //Получили ссылку товара "Elite"
         System.out.println("URL for a product Elite: " + urlForProductElite);
-        shiftBrowserTab(0);
-        csCartSettings.button_ArrowLeft.click();
+        Utils.shiftBrowserTab(0);
+        categoryPage.button_ArrowLeft.click();
         $("tr[data-ca-id='236'] .products-list__image").click();
-        csCartSettings.gearwheelOnEditingPage.click();
-        csCartSettings.button_Preview.click();
-        shiftBrowserTab(2);
+        basicPage.gearwheelOnEditingPage.click();
+        basicPage.button_Preview.click();
+        Utils.shiftBrowserTab(2);
         String currentUrl_ProductWeatherMaster = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductWeatherMaster = currentUrl_ProductWeatherMaster.split("\\?");
         String urlForProductWeatherMaster = arrayProductWeatherMaster[0];     //Получили ссылку товара "WeatherMaster"
         System.out.println("URL for a product WeatherMaster: " + urlForProductWeatherMaster);
 
         //Настраиваем настройки модуля
-        shiftBrowserTab(0);
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        Utils.shiftBrowserTab(0);
+        SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeProducts.selectOptionByValue("without_price");
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
-        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
-            sitemapSettings.setting_EnableXMLSitemap.click();
-        }
-        if (!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()) {
-            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();
-        }
-        csCartSettings.button_Save.click();
+        Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
+        Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
+        basicPage.button_Save.click();
 
         //Работаем с выгрузкой
-        csCartSettings.navigateToSitemapGenerating();
+        basicPage.navigateTo_SitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        shiftBrowserTab(3);
+        Utils.shiftBrowserTab(3);
         String urlForProducts = sitemapSettings.findLinkByPartialName("products1");
         Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
-        shiftBrowserTab(4);
+        Utils.shiftBrowserTab(4);
+
+        SoftAssert softAssert = new SoftAssert();
 
         //Проверяем, что ссылка на товар "Elite" присутствует
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($("[href='" + urlForProductElite + "']").exists(),
                 "There is no link for product 'Elite' in the 'products1' sitemap!");
 
         //Проверяем, что ссылка на товар "WeatherMaster" отсутствует
         softAssert.assertFalse($("[href='" + urlForProductWeatherMaster + "']").exists(),
                 "There is a link for product 'WeatherMaster' but shouldn't in the 'products1' sitemap!");
+
         screenshot("GeneralSettings_ExcludeProducts_WithoutPrice");
         softAssert.assertAll();
         System.out.println("GeneralSettings_ExcludeProducts_WithoutPrice has passed successfully!");

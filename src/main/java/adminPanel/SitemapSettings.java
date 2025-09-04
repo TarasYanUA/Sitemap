@@ -68,13 +68,6 @@ public class SitemapSettings {
         Selenide.sleep(3000);
     }
 
-    public void clickAndTypeSetting_XmlSitemapDirectory(String value) {
-        setting_XmlSitemapDirectory.click();
-        setting_XmlSitemapDirectory.clear();
-        setting_XmlSitemapDirectory.setValue(value);
-    }
-
-
     public String findLinkByPartialName(String partialName) throws Exception {
         String pageSource = WebDriverRunner.getWebDriver().getPageSource(); // Получаем исходный код страницы
 

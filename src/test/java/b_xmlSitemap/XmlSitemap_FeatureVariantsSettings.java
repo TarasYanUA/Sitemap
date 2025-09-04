@@ -1,12 +1,13 @@
 package b_xmlSitemap;
 
 import testRunner.TestRunner;
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import testRunner.Utils;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -21,34 +22,32 @@ public class XmlSitemap_FeatureVariantsSettings extends TestRunner {
 
     @Test
     public void checkXmlSitemap_FeatureVariantsSettings() throws Exception {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
+        
         //Настраиваем настройки модуля
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
-        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
-            sitemapSettings.setting_EnableXMLSitemap.click();
-        }
-        if (!sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap.isSelected()) {
-            sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap.click();
-        }
+        Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
+        Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
         sitemapSettings.setting_FeatureVariantsSettings_ChangeFrequency.selectOptionByValue("do_not_use");
         sitemapSettings.setting_FeatureVariantsSettings_Priority.selectOptionByValue("0.1");
-        csCartSettings.button_Save.click();
+        basicPage.button_Save.click();
 
         //Работаем с выгрузкой
-        csCartSettings.navigateToSitemapGenerating();
+        basicPage.navigateTo_SitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        shiftBrowserTab(1);
+        Utils.shiftBrowserTab(1);
+
+        SoftAssert softAssert = new SoftAssert();
 
         //Проверяем, что ссылка на варианты характеристик присутствует в xml-карте сайта
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'feature_variants')]").exists(),
                 "There is no a link for feature variants in the xml-sitemap!");
         String urlForFeatureVariants = sitemapSettings.findLinkByPartialName("feature_variants1");
         Selenide.executeJavaScript("window.open('" + urlForFeatureVariants + "');");
-        shiftBrowserTab(2);
+        Utils.shiftBrowserTab(2);
 
         //Проверяем, что Частота изменений отсутствует
         softAssert.assertFalse($("changefreq").exists(),
@@ -57,6 +56,7 @@ public class XmlSitemap_FeatureVariantsSettings extends TestRunner {
         //Проверяем, что Приоритет "0.1"
         softAssert.assertTrue($("priority").has(Condition.text("0.1")),
                 "There is no Priority '0.1' on the sitemap of feature variants!");
+
         screenshot("XmlSitemap_FeatureVariantsSettings");
         softAssert.assertAll();
         System.out.println("XmlSitemap_FeatureVariantsSettings has passed successfully!");

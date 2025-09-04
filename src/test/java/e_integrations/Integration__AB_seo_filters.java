@@ -2,7 +2,7 @@ package e_integrations;
 
 import testRunner.TestRunner;
 import adminPanel.AB_seo_filters;
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
@@ -10,6 +10,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import testRunner.Utils;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -25,12 +26,13 @@ public class Integration__AB_seo_filters extends TestRunner {
 
     @Test
     public void checkIntegration_AB_seo_filters() throws Exception {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
+
         //Работа с модулем "AB: SEO страницы для фильтров"
-        csCartSettings.installAddonAtAddonsManager(csCartSettings.menuOfAB__seo_filters, "ab__seo_filters", "form[name=ab_install_form_54338]");
-        AB_seo_filters ab_seo_filters = csCartSettings.navigateToGeneralSettingsOf_ab_seo_filters();
+        basicPage.installAddonAtAddonsManager(basicPage.menuOfAB__seo_filters, "ab__seo_filters", "form[name=ab_install_form_54338]");
+        AB_seo_filters ab_seo_filters = basicPage.navigateTo_GeneralSettingsOf_ab_seo_filters();
         ab_seo_filters.setting_AddSeoPagesToSitemap.selectOptionByValue("all");
-        csCartSettings.button_Save.click();
+        basicPage.button_Save.click();
         ab_seo_filters.navigateToGenerationRulesForFilters();
         if (!$x("//a[text()='Операционная система']").exists() && !$x("//a[text()='Бренд']").exists()) {
             ab_seo_filters.button_AddRule.click();
@@ -56,35 +58,34 @@ public class Integration__AB_seo_filters extends TestRunner {
         }
         ab_seo_filters.navigateToSeoPagesList();
         $("a[href$='samsung-android-2.2-froyo/']").click();
-        shiftBrowserTab(1);
+        Utils.shiftBrowserTab(1);
         String urlOfSeoPage = WebDriverRunner.getWebDriver().getCurrentUrl();   //получили ссылку на SEO-страницу
         System.out.println("Ссылка на SEO-страницу: " + urlOfSeoPage);
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
 
         //Настраиваем XML-карту сайта
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-            sitemapSettings.setting_EnableXMLSitemap.click();   }
-        if(!sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.isSelected()){
-            sitemapSettings.setting_CategoriesSettings_IncludeToSitemap.click();
-        }
-        csCartSettings.button_Save.click();
+        Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
+        Utils.setCheckboxState(sitemapSettings.setting_CategoriesSettings_IncludeToSitemap, true);
+        basicPage.button_Save.click();
 
         //Работаем с выгрузкой
-        csCartSettings.navigateToSitemapGenerating();
+        basicPage.navigateTo_SitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        shiftBrowserTab(2);
+        Utils.shiftBrowserTab(2);
         String urlForXMLCategories = sitemapSettings.findLinkByPartialName("categories2");
         Selenide.executeJavaScript("window.open('" + urlForXMLCategories + "');");
-        shiftBrowserTab(3);
+        Utils.shiftBrowserTab(3);
+
+        SoftAssert softAssert = new SoftAssert();
 
         //Проверяем, что ссылка на SEO-страницу для фильтров присутствует
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[contains(@href, '" + urlOfSeoPage + "')]").exists(),
                 "There is no link to the SEO page for filters in the 'categories2.xml' sitemap!");
+
         screenshot("Integration__AB_seo_filters");
         softAssert.assertAll();
         System.out.println("Integration__AB_seo_filters has passed successfully!");

@@ -1,11 +1,12 @@
 package b_xmlSitemap;
 
 import testRunner.TestRunner;
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import testRunner.Utils;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
@@ -19,39 +20,37 @@ public class XmlSitemap_AddLastModifiedDate extends TestRunner {
     @Test
     public void checkXmlSitemap_AddLastModifiedDate() throws Exception {
         //Настраиваем настройки модуля
-        CsCartSettings csCartSettings = new CsCartSettings();
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        BasicPage basicPage = new BasicPage();
+        SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
-        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
-            sitemapSettings.setting_EnableXMLSitemap.click();
-        }
-        if (!sitemapSettings.setting_AddLastModifiedDate.isSelected()) {
-            sitemapSettings.setting_AddLastModifiedDate.click();
-        }
-        csCartSettings.button_Save.click();
+        Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
+        Utils.setCheckboxState(sitemapSettings.setting_AddLastModifiedDate, true);
+        basicPage.button_Save.click();
 
         //Работаем с выгрузкой
-        csCartSettings.navigateToSitemapGenerating();
+        basicPage.navigateTo_SitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        shiftBrowserTab(1);
+        Utils.shiftBrowserTab(1);
         String urlForCategories = sitemapSettings.findLinkByPartialName("categories1");
         String urlForCompanies = sitemapSettings.findLinkByPartialName("companies1");
 
-        //Проверяем, что теги даты последнего редактирования присутствуют в xml карте-сайта категорий
         SoftAssert softAssert = new SoftAssert();
+
+        //Проверяем, что теги даты последнего редактирования присутствуют в xml карте-сайта категорий
         Selenide.executeJavaScript("window.open('" + urlForCategories + "');");
-        shiftBrowserTab(2);
+        Utils.shiftBrowserTab(2);
         softAssert.assertTrue($("lastmod").exists(),
                 "There are no tags <lastmod> at xml sitemap of the categories!");
         screenshot("xmlSitemap.XmlSitemap_AddLastModifiedDate - Last modified date at categories");
 
         //Проверяем, что теги даты последнего редактирования присутствуют в xml-карте сайта компаний
         Selenide.executeJavaScript("window.open('" + urlForCompanies + "');");
-        shiftBrowserTab(3);
+        Utils.shiftBrowserTab(3);
         softAssert.assertTrue($("lastmod").exists(),
                 "There are no tags <lastmod> at xml sitemap of the companies!");
+
         screenshot("XmlSitemap_AddLastModifiedDate - Last modified date at companies");
         softAssert.assertAll();
         System.out.println("XmlSitemap_AddLastModifiedDate has passed successfully!");

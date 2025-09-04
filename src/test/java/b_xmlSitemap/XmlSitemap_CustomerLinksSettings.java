@@ -1,12 +1,14 @@
 package b_xmlSitemap;
 
 import testRunner.TestRunner;
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import testRunner.Utils;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.screenshot;
 
@@ -19,21 +21,21 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class XmlSitemap_CustomerLinksSettings extends TestRunner {
     @Test
     public void checkXmlSitemap_CustomerLinksSettings() throws Exception {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
+
         //Настраиваем настройки модуля
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
-        if(!sitemapSettings.setting_EnableXMLSitemap.isSelected()){
-        sitemapSettings.setting_EnableXMLSitemap.click();   }
+        Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         sitemapSettings.setting_CustomerLinksSettings_ChangeFrequency.selectOptionByValue("yearly");
         sitemapSettings.setting_CustomerLinksSettings_Priority.selectOptionByValue("1");
-        csCartSettings.button_Save.click();
+        basicPage.button_Save.click();
 
         //Добавляем пользовательскую ссылку
-        csCartSettings.navigateToUserLinksSection();
+        basicPage.navigateTo_UserLinksSection();
         String customerLink = "categories.catalog";
-        if($(".cm-pagination-container .no-items").exists()) {
+        if ($(".cm-pagination-container .no-items").exists()) {
             sitemapSettings.button_Add.click();
             $(".ui-dialog-title").shouldBe(Condition.appear);
             sitemapSettings.field_Link.click();
@@ -43,17 +45,18 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner {
         }
 
         //Работаем с выгрузкой
-        csCartSettings.navigateToSitemapGenerating();
+        basicPage.navigateTo_SitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        shiftBrowserTab(1);
+        Utils.shiftBrowserTab(1);
         String urlForCustomerLinks = sitemapSettings.findLinkByPartialName("custom_links1");
 
-        Selenide.executeJavaScript("window.open('"+urlForCustomerLinks+"');");
-        shiftBrowserTab(2);
+        Selenide.executeJavaScript("window.open('" + urlForCustomerLinks + "');");
+        Utils.shiftBrowserTab(2);
+
+        SoftAssert softAssert = new SoftAssert();
 
         //Проверяем, что Частота изменений "Ежегодно"
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($("changefreq").has(Condition.text("yearly")),
                 "There is no Change frequency 'Yearly'!");
 
@@ -64,6 +67,7 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner {
         //Проверяем, что пользовательская ссылка присутствует
         softAssert.assertTrue($("[href*='catalog']").exists(),
                 "There is no customer link in the xml sitemap 'custom_links1'!");
+
         screenshot("XmlSitemap_CustomerLinksSettings");
         softAssert.assertAll();
         System.out.println("XmlSitemap_CustomerLinksSettings has passed successfully!");

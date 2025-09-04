@@ -1,13 +1,15 @@
 package b_xmlSitemap;
 
+import adminPanel.ProductPage;
 import testRunner.TestRunner;
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import testRunner.Utils;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -26,79 +28,67 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
 
     @Test
     public void checkXmlSitemap_ProductsSettings() throws Exception {
-        CsCartSettings csCartSettings = new CsCartSettings();
+        BasicPage basicPage = new BasicPage();
+        
         //Настраиваем настройки модуля
-        SitemapSettings sitemapSettings = csCartSettings.navigateToSitemapSettings();
+        SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
-        if (!sitemapSettings.setting_EnableXMLSitemap.isSelected()) {
-            sitemapSettings.setting_EnableXMLSitemap.click();
-        }
-        if (!sitemapSettings.setting_ProductsSettings_IncludeToSitemap.isSelected()) {
-            sitemapSettings.setting_ProductsSettings_IncludeToSitemap.click();
-        }
+        Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
+        Utils.setCheckboxState(sitemapSettings.setting_ProductsSettings_IncludeToSitemap, true);
         sitemapSettings.setting_ProductsSettings_ChangeFrequency.selectOptionByValue("daily");
         sitemapSettings.setting_ProductsSettings_Priority.selectOptionByValue("0.7");
-        if (!sitemapSettings.setting_ProductsSettings_AddVendorsOffers.isSelected()) {
-            sitemapSettings.setting_ProductsSettings_AddVendorsOffers.click();
-        }
-        csCartSettings.button_Save.click();
+        Utils.setCheckboxState(sitemapSettings.setting_ProductsSettings_AddVendorsOffers, true);
+        basicPage.button_Save.click();
 
         //Устанавливаем модуль "Общие товары для продавцов"
-        csCartSettings.navigateTo_DownloadedAddonsPage();
-        if ($(".alert").exists()) {   //Выключаем сообщение о предупреждении, если оно появилось
+        basicPage.navigateTo_DownloadedAddonsPage();
+        if ($(".alert").exists())       //Выключаем сообщение о предупреждении, если оно появилось
             $(".close.cm-notification-close").click();
-        }
-        csCartSettings.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
+        basicPage.searchFieldAtManagementPage.setValue("Общие товары для продавцов");
         if ($("td.nowrap.right a[href*='addon=master_products']").exists()) {
-            csCartSettings.button_InstallAddon.click();
+            basicPage.button_InstallAddon.click();
             Selenide.sleep(3000);
             webdriver().driver().getWebDriver().navigate().refresh();
         }
 
         //Работаем со страницей редактирования товара
-        csCartSettings.navigateToEditingProductPage(PRODUCTNAME);
+        ProductPage productPage = new ProductPage();
+        productPage.navigateToEditingProductPage(PRODUCTNAME);
         if (!$("label[for*='elm_parent_product']").exists()) {
-            csCartSettings.productVendor.click();
-            csCartSettings.productBelongsToAllVendors.click();
-            csCartSettings.button_Save.click();
+            productPage.productVendor.click();
+            productPage.productBelongsToAllVendors.click();
+            basicPage.button_Save.click();
         }
-        csCartSettings.navigateTo_VendorAdminsPage();
-        shiftBrowserTab(1);
-        csCartSettings.sellProductAsVendor();
-        shiftBrowserTab(0);
-        csCartSettings.navigateToSection_Products();
-        csCartSettings.field_productSearch.click();
-        csCartSettings.field_productSearch.clear();
-        csCartSettings.field_productSearch.sendKeys(PRODUCTNAME);
-        Selenide.sleep(2000);
-        if (csCartSettings.button_ThumbUp.exists()) {
-            csCartSettings.button_ThumbUp.click();
-            Selenide.sleep(2000);
-        }
-        csCartSettings.chooseAnyProduct.click();
-        csCartSettings.gearwheelOnEditingPage.click();
-        csCartSettings.button_Preview.click();
-        shiftBrowserTab(2);
+        basicPage.navigateTo_VendorAdminsPage();
+        Utils.shiftBrowserTab(1);
+        basicPage.sellProductAsVendor();
+        Utils.shiftBrowserTab(0);
+        productPage.setThumbUp(PRODUCTNAME);
+        basicPage.chooseAnyProduct.click();
+        basicPage.gearwheelOnEditingPage.click();
+        basicPage.button_Preview.click();
+        Utils.shiftBrowserTab(2);
         String currentUrl_ProductUSB = WebDriverRunner.getWebDriver().getCurrentUrl();
         String[] arrayProductUSB = currentUrl_ProductUSB.split("\\?");
         String urlForProductUSB = arrayProductUSB[0] + "?vendor_id";     //Получили ссылку товара с кодом продавца
         System.out.println("URL for a product 'USB': " + urlForProductUSB);
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
 
         //Работаем с выгрузкой
-        csCartSettings.navigateToSitemapGenerating();
+        basicPage.navigateTo_SitemapGenerating();
         sitemapSettings.clickButton_GenerateSitemap();
         $("a[href*='sitemap.xml']").click();
-        shiftBrowserTab(3);
+        Utils.shiftBrowserTab(3);
+
+        SoftAssert softAssert = new SoftAssert();
 
         //Проверяем, что ссылка на товары присутствует в xml карте-сайта
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'products')]").exists(),
                 "There is no a link for products in the xml-sitemap!");
         String urlForProducts = sitemapSettings.findLinkByPartialName("products1");
         Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
-        shiftBrowserTab(4);
+        Utils.shiftBrowserTab(4);
 
         //Проверяем, что Частота изменений "Каждый день"
         softAssert.assertTrue($("changefreq").has(Condition.text("daily")),
@@ -111,6 +101,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
         softAssert.assertTrue($x("//*[contains(@href, '" + urlForProductUSB + "')]").exists(),
                 "There is no link for product 'USB-N53' or a vendor code is missed!");
+
         screenshot("XmlSitemap_ProductsSettings");
         softAssert.assertAll();
         System.out.println("XmlSitemap_ProductsSettings has passed successfully!");
