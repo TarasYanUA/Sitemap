@@ -3,6 +3,7 @@ package adminPanel;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,7 +17,6 @@ public class SitemapSettings {
     public SelenideElement setting_ExcludeCategories = $("select[id*='addon_option_ab__advanced_sitemap_exclude_categories_']");
     public SelenideElement setting_ExcludeBrands = $("select[id*='addon_option_ab__advanced_sitemap_exclude_brands_']");
     public SelenideElement setting_ExcludeProducts = $("select[id*='addon_option_ab__advanced_sitemap_exclude_products_']");
-    public SelenideElement setting_ExcludeProductVariations = $("input[id*='addon_option_ab__advanced_sitemap_exclude_products_variations_']");
 
     //вкладка "XML-карта сайта"
     public SelenideElement tab_XMLSitemap = $("#ab__advanced_sitemap_xml_sitemap");
@@ -65,7 +65,8 @@ public class SitemapSettings {
 
     public void clickButton_GenerateSitemap(){
         button_GenerateSitemap.click();
-        Selenide.sleep(3000);
+        UtilsAdm.waitForSpinnerDisappear();
+        Selenide.sleep(2000);
     }
 
     public String findLinkByPartialName(String partialName) throws Exception {

@@ -22,7 +22,7 @@
 
             <class name="b_xmlSitemap.XmlSitemap_IncludeCompanies" />
             <class name="b_xmlSitemap.XmlSitemap_AddLastModifiedDate" />
-            <class name="b_xmlSitemap.XmlSitemap_ProductsSettings" />
+<!--            <class name="b_xmlSitemap.XmlSitemap_ProductsSettings" />
             <class name="b_xmlSitemap.XmlSitemap_CategoriesSettings" />
             <class name="b_xmlSitemap.XmlSitemap_PagesSettings" />
             <class name="b_xmlSitemap.XmlSitemap_FeatureVariantsSettings" />
@@ -31,7 +31,7 @@
 
             <class name="c_htmlSitemap.HTMLSitemap" />
 
-            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages" />
+            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages" />-->
 
             <class name="e_integrations.Integration__AB_images_seo" />
             <class name="e_integrations.Integration__AB_deal_of_the_day" />

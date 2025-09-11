@@ -3,11 +3,8 @@ package adminPanel;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -17,19 +14,17 @@ public class BasicPage implements CheckMenuToBeActive {
     }
 
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
-    public SelenideElement button_SaveListOfProducts = $(".nav__actions-btn-save");
-    public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
-    public SelenideElement button_Preview = $("a[href*='profiles.view_product_as_user']");
-    public SelenideElement button_ViewProducts = $(".dropleft a[href*='products.manage']");
     public SelenideElement chooseAnyProduct = $(".products-list__image");
+    public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
+    public SelenideElement button_Preview = $(".dropdown-menu a[target='_blank']");
 
-    public SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
-    public SelenideElement menu_Addons = $("a[href$='dispatch=addons.manage'].main-menu-1__link");
+    SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
+    SelenideElement menu_Addons = $("a[href$='dispatch=addons.manage'].main-menu-1__link");
     SelenideElement menu_Vendors = $("a[href$='dispatch=companies.manage'].main-menu-1__link");
 
-    public SelenideElement section_Products = $(By.id("products_products"));
-    public SelenideElement section_Categories = $(By.id("products_categories"));
-    public SelenideElement section_DownloadedAddons = $("#addons_downloaded_add_ons");
+    SelenideElement section_Products = $(By.id("products_products"));
+    SelenideElement section_Categories = $(By.id("products_categories"));
+    SelenideElement section_DownloadedAddons = $("#addons_downloaded_add_ons");
     SelenideElement section_Vendors = $(By.id("vendors_vendors"));
 
 
@@ -73,7 +68,7 @@ public class BasicPage implements CheckMenuToBeActive {
 
 
     //Меню "Модули -- Скачанные модули"
-    public SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
+    SelenideElement menuOfSitemap = $("tr#addon_ab__advanced_sitemap button.btn.dropdown-toggle");
     SelenideElement section_SitemapSettings = $("div.nowrap a[href*='addon=ab__advanced_sitemap']");
     SelenideElement section_SitemapGenerating = $("div.nowrap a[href*='ab__advanced_sitemap.manage']");
     SelenideElement section_UserLinks = $("div.nowrap a[href*='ab__as_links.manage']");
@@ -128,9 +123,7 @@ public class BasicPage implements CheckMenuToBeActive {
             addonsManagerField_Search.sendKeys(Keys.ENTER);
             Selenide.sleep(3000);
             $(installButton).click();
-            Alert alert = Selenide.webdriver().driver().switchTo().alert();
-            alert.accept();
-            $("div#ajax_loading_box[style=\"display: block;\"]").shouldBe(Condition.disappear, Duration.ofSeconds(15));
+            UtilsAdm.switchToAndAcceptAlertWindow();
             $(menu_Addons).shouldBe(Condition.enabled);
         }
     }

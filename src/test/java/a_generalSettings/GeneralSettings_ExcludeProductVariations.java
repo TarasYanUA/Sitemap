@@ -24,7 +24,8 @@ public class GeneralSettings_ExcludeProductVariations extends TestRunner {
         ProductPage productPage = new ProductPage();
         
         //Переходим на страницу товара с вариациями (футболка синия)
-        productPage.navigateToEditingProductPage("Футболка, Цвет: Синий");
+        productPage.searchProduct("Футболка, Цвет: Синий");
+        basicPage.chooseAnyProduct.click();
         basicPage.gearwheelOnEditingPage.click();
         basicPage.button_Preview.click();
         Utils.shiftBrowserTab(1);

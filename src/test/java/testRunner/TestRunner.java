@@ -29,5 +29,7 @@ public class TestRunner {
     }
 
     @AfterMethod
-    public void closeBrowser() {Selenide.closeWebDriver();}
+    public void closeBrowser() {
+        Selenide.sleep(1500);
+        Selenide.closeWebDriver();}
 }

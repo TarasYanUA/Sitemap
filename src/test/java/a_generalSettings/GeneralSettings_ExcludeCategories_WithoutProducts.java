@@ -39,7 +39,7 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         Utils.shiftBrowserTab(0);
         categoryPage.goAndSetFirstProductOfCategory("249", "10");
         categoryPage.goAndSetSecondProductOfCategory("255", "15");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
 
         //Настраиваем вторую категорию "Android"
         basicPage.navigateToSection_Categories();
@@ -52,7 +52,7 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         System.out.println("Android URL is: " + urlForCategoryAndroid);
         Selenide.sleep(2000);
         basicPage.gearwheelOnEditingPage.click();
-        basicPage.button_ViewProducts.click();
+        categoryPage.button_ViewProducts.click();
         if (!$$(".products-list__image").isEmpty())
             categoryPage.deleteAllProductsFromCategory();
 
@@ -60,7 +60,7 @@ public class GeneralSettings_ExcludeCategories_WithoutProducts extends TestRunne
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeCategories.selectOptionByValue("without_products");
-        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        sitemapSettings.tab_XMLSitemap.scrollIntoCenter().click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
         basicPage.button_Save.click();

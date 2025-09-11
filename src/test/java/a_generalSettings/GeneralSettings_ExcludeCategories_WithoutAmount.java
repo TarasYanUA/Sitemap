@@ -39,7 +39,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner 
         Utils.shiftBrowserTab(0);
         categoryPage.goAndSetFirstProductOfCategory("249", "10");
         categoryPage.goAndSetSecondProductOfCategory("255", "15");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
 
         //Настраиваем вторую категорию "Android"
         basicPage.navigateToSection_Categories();
@@ -52,7 +52,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmount extends TestRunner 
         System.out.println("Android URL is: " + urlForCategoryAndroid);
         categoryPage.goAndSetFirstProductOfCategory("249", "0");
         categoryPage.goAndSetSecondProductOfCategory("255", "0");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();

@@ -33,7 +33,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
-        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        sitemapSettings.tab_XMLSitemap.scrollIntoCenter().click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_ProductsSettings_IncludeToSitemap, true);
         sitemapSettings.setting_ProductsSettings_ChangeFrequency.selectOptionByValue("daily");
@@ -54,7 +54,8 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
 
         //Работаем со страницей редактирования товара
         ProductPage productPage = new ProductPage();
-        productPage.navigateToEditingProductPage(PRODUCTNAME);
+        productPage.searchProduct(PRODUCTNAME);
+        basicPage.chooseAnyProduct.click();
         if (!$("label[for*='elm_parent_product']").exists()) {
             productPage.productVendor.click();
             productPage.productBelongsToAllVendors.click();

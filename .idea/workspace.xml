@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Make refactoring of the whole code for all classes.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutProducts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
@@ -24,22 +23,10 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_AddLastModifiedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_AddLastModifiedDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CategoriesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CategoriesSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CustomerLinksSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CustomerLinksSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_Directory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_FeatureVariantsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_FeatureVariantsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_IncludeCompanies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_IncludeCompanies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_PagesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_PagesSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/d_xmlSitemapOfImages/XmlSitemapOfImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/d_xmlSitemapOfImages/XmlSitemapOfImages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,57 +104,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.Sitemap [clean].executor": "Run",
-    "Maven.Sitemap [test].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.GeneralSettings_ExcludeBrands_DoNotExclude.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutAmount.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutProducts.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_DoNotExclude.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor": "Run",
-    "TestNG.HTMLSitemap.executor": "Run",
-    "TestNG.Integration_AB_deal_of_the_day.executor": "Run",
-    "TestNG.Integration__AB_deal_of_the_day.executor": "Run",
-    "TestNG.Integration__AB_images_seo.executor": "Run",
-    "TestNG.Integration__AB_landing_categories.executor": "Run",
-    "TestNG.Integration__AB_seo_filters.executor": "Run",
-    "TestNG.Integration__AB_seo_for_tags.executor": "Run",
-    "TestNG.Sitemap/TestNG.xml.executor": "Run",
-    "TestNG.XmlSitemapOfImages.executor": "Run",
-    "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
-    "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
-    "TestNG.XmlSitemap_CustomerLinksSettings.executor": "Run",
-    "TestNG.XmlSitemap_Directory.executor": "Run",
-    "TestNG.XmlSitemap_FeatureVariantsSettings.executor": "Run",
-    "TestNG.XmlSitemap_IncludeCompanies.executor": "Run",
-    "TestNG.XmlSitemap_PagesSettings.executor": "Run",
-    "TestNG.XmlSitemap_ProductsSettings.executor": "Run",
-    "TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor": "Run",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "v2.6.4____4.18.4c",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/Sitemap/pom.xml",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.Sitemap [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Sitemap [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_DoNotExclude.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutAmount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutProducts.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_DoNotExclude.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HTMLSitemap.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration_AB_deal_of_the_day.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_deal_of_the_day.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_images_seo.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_landing_categories.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_seo_filters.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_seo_for_tags.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Sitemap/TestNG.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemapOfImages.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_AddLastModifiedDate.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_CategoriesSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_CustomerLinksSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_Directory.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_FeatureVariantsSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_IncludeCompanies.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_PagesSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_ProductsSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor&quot;: &quot;Run&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v2.6.4____4.18.4c&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/Sitemap/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -176,7 +163,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Integration__AB_seo_filters">
+  <component name="RunManager" selected="TestNG.Sitemap/TestNG.xml">
     <configuration name="GeneralSettings_ExcludeBrands_WithoutPrice" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <extension name="coverage">
@@ -213,15 +200,25 @@
     </configuration>
     <configuration name="Integration__AB_seo_filters" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="e_integrations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="e_integrations" />
       <option name="MAIN_CLASS_NAME" value="e_integrations.Integration__AB_seo_filters" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -649,7 +646,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

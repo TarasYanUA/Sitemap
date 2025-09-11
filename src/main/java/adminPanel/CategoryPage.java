@@ -2,7 +2,6 @@ package adminPanel;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.Alert;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -17,6 +16,8 @@ public class CategoryPage {
     public SelenideElement selectCategory_Android = $(".longtap-selection a[href$='category_id=182']");
     public SelenideElement selectCategory_Tents = $(".longtap-selection a[href*='category_id=218']");
     public SelenideElement button_ArrowLeft = $(".cs-icon--type-arrow-left");
+    public SelenideElement button_ViewProducts = $(".dropleft a[href*='products.manage']");
+    public SelenideElement button_SaveListOfProducts = $(".nav__actions-btn-save");
     SelenideElement field_PriceForCategory_ProdOne = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[1]");
     SelenideElement field_AmountForCategory_ProdOne = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[1]");
     SelenideElement field_PriceForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[2]");
@@ -33,7 +34,7 @@ public class CategoryPage {
     public void goAndSetFirstProductOfCategory(String price, String amount) {
         Selenide.sleep(2000);
         basicPage.gearwheelOnEditingPage.click();
-        basicPage.button_ViewProducts.click();
+        button_ViewProducts.click();
         if ($$(".products-list__image").size() > 2)
             deleteProductsFromCategory();
         field_PriceForCategory_ProdOne.setValue(price);
@@ -61,9 +62,7 @@ public class CategoryPage {
         do {
             $(".mobile-hide .dropdown-icon--tools").hover().click();
             $("a[href*='products.delete']").click();
-            Alert alert = Selenide.webdriver().driver().switchTo().alert();
-            alert.accept();
-            Selenide.sleep(1500);
+            UtilsAdm.switchToAndAcceptAlertWindow();
         } while ($$(".products-list__image").size() > 2);
     }
 
@@ -71,9 +70,7 @@ public class CategoryPage {
         do {
             $(".mobile-hide .dropdown-icon--tools").hover().click();
             $("a[href*='products.delete']").click();
-            Alert alert = Selenide.webdriver().driver().switchTo().alert();
-            alert.accept();
-            Selenide.sleep(1500);
+            UtilsAdm.switchToAndAcceptAlertWindow();
         } while (!$$(".products-list__image").isEmpty());
     }
 }

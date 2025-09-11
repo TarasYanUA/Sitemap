@@ -36,20 +36,16 @@ public class AB_seo_filters {
         ab_menu.click();
         generationRulesForFilters.click();
     }
+
     public void placeAllPlaceholdersOnRulePage(String placeholder){
-        placeholderOne_PageTagH1.click();
-        placeholderOne_PageTagH1.sendKeys(placeholder);
-        placeholderTwo_PageTitle.click();
-        placeholderTwo_PageTitle.sendKeys(placeholder);
-        placeholderThree_PageMetaTagDescription.click();
-        placeholderThree_PageMetaTagDescription.sendKeys(placeholder);
-        placeholderFour_PageMetaTagKeywords.click();
-        placeholderFour_PageMetaTagKeywords.sendKeys(placeholder);
-        placeholderFive_PageBreadcrumb.click();
-        placeholderFive_PageBreadcrumb.sendKeys(placeholder);
-        placeholderSix_ProductPageBreadcrumb.click();
-        placeholderSix_ProductPageBreadcrumb.sendKeys(placeholder);
+        placeholderOne_PageTagH1.setValue(placeholder);
+        placeholderTwo_PageTitle.setValue(placeholder);
+        placeholderThree_PageMetaTagDescription.setValue(placeholder);
+        placeholderFour_PageMetaTagKeywords.setValue(placeholder);
+        placeholderFive_PageBreadcrumb.setValue(placeholder);
+        placeholderSix_ProductPageBreadcrumb.setValue(placeholder);
     }
+
     public void navigateToSeoPagesList(){
         ab_menu.click();
         section_SeoPagesList.click();

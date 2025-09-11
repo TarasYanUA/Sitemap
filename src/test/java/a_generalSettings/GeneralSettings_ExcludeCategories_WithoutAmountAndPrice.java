@@ -38,7 +38,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         Utils.shiftBrowserTab(0);
         categoryPage.goAndSetFirstProductOfCategory("0", "10");
         categoryPage.goAndSetSecondProductOfCategory("255", "0");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
 
         //Настраиваем вторую категорию "Android"
         basicPage.navigateToSection_Categories();
@@ -51,7 +51,7 @@ public class GeneralSettings_ExcludeCategories_WithoutAmountAndPrice extends Tes
         System.out.println("Android URL is: " + urlForCategoryAndroid);
         categoryPage.goAndSetFirstProductOfCategory("0", "0");
         categoryPage.goAndSetSecondProductOfCategory("0", "0");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();

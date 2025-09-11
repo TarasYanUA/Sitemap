@@ -36,10 +36,10 @@ public class GeneralSettings_ExcludeProducts_WithoutAmountAndPrice extends TestR
             $(".close.cm-notification-close").click();
         //Выключаем сообщение о предупредлении, если оно появилось
         basicPage.gearwheelOnEditingPage.click();
-        basicPage.button_ViewProducts.click();
+        categoryPage.button_ViewProducts.click();
         categoryPage.setFirstProduct("300", "8");
         categoryPage.setSecondProduct("0", "0");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
         basicPage.chooseAnyProduct.click();
         basicPage.gearwheelOnEditingPage.click();
         basicPage.button_Preview.click();
@@ -64,7 +64,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmountAndPrice extends TestR
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeProducts.selectOptionByValue("without_amount_and_price");
-        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        sitemapSettings.tab_XMLSitemap.scrollIntoCenter().click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
         basicPage.button_Save.click();

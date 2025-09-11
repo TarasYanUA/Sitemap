@@ -1,5 +1,6 @@
 package e_integrations;
 
+import adminPanel.UtilsAdm;
 import testRunner.TestRunner;
 import adminPanel.AB_seo_filters;
 import adminPanel.BasicPage;
@@ -7,7 +8,6 @@ import adminPanel.SitemapSettings;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import testRunner.Utils;
@@ -52,9 +52,7 @@ public class Integration__AB_seo_filters extends TestRunner {
             ab_seo_filters.button_Create.click();
             ab_seo_filters.gearwhealOnRulePage.shouldBe(Condition.enabled).click();
             ab_seo_filters.button_GenerateRulePage.click();
-            Alert alert = Selenide.webdriver().driver().switchTo().alert();
-            alert.accept();
-            Selenide.sleep(4000);
+            UtilsAdm.switchToAndAcceptAlertWindow();
         }
         ab_seo_filters.navigateToSeoPagesList();
         $("a[href$='samsung-android-2.2-froyo/']").click();

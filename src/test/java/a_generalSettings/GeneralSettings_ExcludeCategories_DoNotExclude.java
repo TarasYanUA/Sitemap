@@ -36,7 +36,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner {
         System.out.println("iPods URL is: " + urlForCategoryIpods);
         Utils.shiftBrowserTab(0);
         categoryPage.goAndSetFirstProductOfCategory("0", "0");
-        basicPage.button_SaveListOfProducts.click();
+        categoryPage.button_SaveListOfProducts.click();
         basicPage.navigateToSection_Categories();
         categoryPage.selectCategory_Android.click();
         categoryPage.goToStorefront_CategoryPage(2);
@@ -50,7 +50,7 @@ public class GeneralSettings_ExcludeCategories_DoNotExclude extends TestRunner {
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
         sitemapSettings.tab_Settings.click();
         sitemapSettings.setting_ExcludeCategories.selectOptionByValue("none");
-        sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        sitemapSettings.tab_XMLSitemap.scrollIntoCenter().click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
         basicPage.button_Save.click();
