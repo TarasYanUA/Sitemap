@@ -1,12 +1,9 @@
 package adminPanel;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class SitemapSettings {
@@ -66,7 +63,7 @@ public class SitemapSettings {
     public void clickButton_GenerateSitemap(){
         button_GenerateSitemap.click();
         UtilsAdm.waitForSpinnerDisappear();
-        Selenide.sleep(2000);
+        UtilsAdm.closeAllNotifications();
     }
 
     public String findLinkByPartialName(String partialName) throws Exception {

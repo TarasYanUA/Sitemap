@@ -99,6 +99,7 @@ public class BasicPage implements CheckMenuToBeActive {
         navigateTo_DownloadedAddonsPage();
         menuOfSitemap.click();
         section_SitemapSettings.click();
+        UtilsAdm.closeAllNotifications();
         return new SitemapSettings();
     }
 

@@ -6,8 +6,8 @@ import org.openqa.selenium.Alert;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class UtilsAdm {
 
@@ -21,5 +21,12 @@ public class UtilsAdm {
         alert.accept();
         Selenide.sleep(2000);
         UtilsAdm.waitForSpinnerDisappear();
+    }
+
+    public static void closeAllNotifications() {
+        while (!$$(".cm-notification-close").isEmpty()) {
+            $$(".cm-notification-close").first().click();
+            sleep(200);
+        }
     }
 }

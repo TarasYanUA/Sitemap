@@ -4,27 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Make refactoring of the whole code for all classes.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Refactoring of the whole code is done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/SitemapSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProductVariations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UtilsAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UtilsAdm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/Utils.java" afterDir="false" />
     </list>
@@ -290,7 +276,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -646,7 +632,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -672,7 +658,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case Integration_AB_landing_categories is ready!" />
     <MESSAGE value="Test-case Integration_AB_seo_for_tags is ready!" />
     <MESSAGE value="Added test-cases to TestNG file." />
     <MESSAGE value="Started to work with a test-case Integration_AB_seo_filters." />
@@ -697,7 +682,8 @@
     <MESSAGE value="Updated pom vocabularies" />
     <MESSAGE value="* Made changes according to the last CS-Cart changes.&#10;* Updated pom vocabularies" />
     <MESSAGE value="Make refactoring of the whole code for all classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make refactoring of the whole code for all classes." />
+    <MESSAGE value="Refactoring of the whole code is done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring of the whole code is done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,6 +696,16 @@
           <properties class="java.net.SocketException" package="java.net" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -1,7 +1,7 @@
 <suite name="Sitemap" >
     <test name="General settings of Sitemap">
         <classes>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount" />
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts" />
@@ -22,22 +22,22 @@
 
             <class name="b_xmlSitemap.XmlSitemap_IncludeCompanies" />
             <class name="b_xmlSitemap.XmlSitemap_AddLastModifiedDate" />
-<!--            <class name="b_xmlSitemap.XmlSitemap_ProductsSettings" />
+            <class name="b_xmlSitemap.XmlSitemap_ProductsSettings" />
             <class name="b_xmlSitemap.XmlSitemap_CategoriesSettings" />
             <class name="b_xmlSitemap.XmlSitemap_PagesSettings" />
             <class name="b_xmlSitemap.XmlSitemap_FeatureVariantsSettings" />
             <class name="b_xmlSitemap.XmlSitemap_CustomerLinksSettings" />
-            <class name="b_xmlSitemap.XmlSitemap_Directory" />
+            <class name="b_xmlSitemap.XmlSitemap_Directory" />-->
 
             <class name="c_htmlSitemap.HTMLSitemap" />
 
-            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages" />-->
+            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages" />
 
-            <class name="e_integrations.Integration__AB_images_seo" />
-            <class name="e_integrations.Integration__AB_deal_of_the_day" />
-            <class name="e_integrations.Integration__AB_landing_categories" />
-            <class name="e_integrations.Integration__AB_seo_for_tags" />
-            <class name="e_integrations.Integration__AB_seo_filters" />
+<!--            <class name="e_integrations.Integration__AB_images_seo" />-->
+<!--            <class name="e_integrations.Integration__AB_deal_of_the_day" />-->
+<!--            <class name="e_integrations.Integration__AB_landing_categories" />-->
+<!--            <class name="e_integrations.Integration__AB_seo_for_tags" />-->
+<!--            <class name="e_integrations.Integration__AB_seo_filters" />-->
         </classes>
     </test>
 </suite>
