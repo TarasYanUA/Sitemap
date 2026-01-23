@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Updated vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1." />
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Added ReadMe file.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,57 +88,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.Sitemap [clean].executor": "Run",
-    "Maven.Sitemap [test].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.GeneralSettings_ExcludeBrands_DoNotExclude.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutAmount.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeBrands_WithoutProducts.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_DoNotExclude.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor": "Run",
-    "TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor": "Run",
-    "TestNG.HTMLSitemap.executor": "Run",
-    "TestNG.Integration_AB_deal_of_the_day.executor": "Run",
-    "TestNG.Integration__AB_deal_of_the_day.executor": "Run",
-    "TestNG.Integration__AB_images_seo.executor": "Run",
-    "TestNG.Integration__AB_landing_categories.executor": "Run",
-    "TestNG.Integration__AB_seo_filters.executor": "Run",
-    "TestNG.Integration__AB_seo_for_tags.executor": "Run",
-    "TestNG.Sitemap/TestNG.xml.executor": "Run",
-    "TestNG.XmlSitemapOfImages.executor": "Run",
-    "TestNG.XmlSitemap_AddLastModifiedDate.executor": "Run",
-    "TestNG.XmlSitemap_CategoriesSettings.executor": "Run",
-    "TestNG.XmlSitemap_CustomerLinksSettings.executor": "Run",
-    "TestNG.XmlSitemap_Directory.executor": "Run",
-    "TestNG.XmlSitemap_FeatureVariantsSettings.executor": "Run",
-    "TestNG.XmlSitemap_IncludeCompanies.executor": "Run",
-    "TestNG.XmlSitemap_PagesSettings.executor": "Run",
-    "TestNG.XmlSitemap_ProductsSettings.executor": "Run",
-    "TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor": "Run",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "v2.6.4____4.19.1",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/Sitemap/pom.xml",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.Sitemap [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Sitemap [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_DoNotExclude.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutAmount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeBrands_WithoutProducts.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_DoNotExclude.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutAmount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeCategories_WithoutProducts.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_DoNotExclude.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutAmount.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.GeneralSettings_ExcludeProducts_WithoutPrice.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.HTMLSitemap.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration_AB_deal_of_the_day.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_deal_of_the_day.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_images_seo.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_landing_categories.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_seo_filters.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Integration__AB_seo_for_tags.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Sitemap/TestNG.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemapOfImages.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_AddLastModifiedDate.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_CategoriesSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_CustomerLinksSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_Directory.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_FeatureVariantsSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_IncludeCompanies.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_PagesSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.XmlSitemap_ProductsSettings.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ZzZGeneralSettings_ExcludeProductVariations.executor&quot;: &quot;Run&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v2.6.4____4.19.1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/Sitemap/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -151,6 +158,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="a_generalSettings" />
       <option name="MAIN_CLASS_NAME" value="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutPrice" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralSettings_ExcludeCategories_WithoutAmount" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sitemap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="a_generalSettings.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="a_generalSettings" />
+      <option name="MAIN_CLASS_NAME" value="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -202,23 +226,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlSitemap_AddLastModifiedDate" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Sitemap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="b_xmlSitemap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="b_xmlSitemap" />
-      <option name="MAIN_CLASS_NAME" value="b_xmlSitemap.XmlSitemap_AddLastModifiedDate" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="XmlSitemap_Directory" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sitemap" />
       <shortenClasspath name="NONE" />
@@ -248,26 +255,26 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.Sitemap/TestNG.xml" />
+      <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmount" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
       <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
       <item itemvalue="TestNG.Integration__AB_seo_filters" />
-      <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
       <item itemvalue="TestNG.XmlSitemap_Directory" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmount" />
+        <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
         <item itemvalue="TestNG.Integration__AB_seo_filters" />
         <item itemvalue="TestNG.XmlSitemap_Directory" />
-        <item itemvalue="TestNG.GeneralSettings_ExcludeBrands_WithoutPrice" />
         <item itemvalue="TestNG.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
-        <item itemvalue="TestNG.XmlSitemap_AddLastModifiedDate" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
       </set>
     </attachedChunks>
   </component>
@@ -623,7 +630,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -649,7 +656,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added test-cases to TestNG file." />
     <MESSAGE value="Started to work with a test-case Integration_AB_seo_filters." />
     <MESSAGE value="Test-case Integration_AB_seo_filters is ready!" />
     <MESSAGE value="Improved messages for asserts!" />
@@ -674,7 +680,8 @@
     <MESSAGE value="Make refactoring of the whole code for all classes." />
     <MESSAGE value="Refactoring of the whole code is done." />
     <MESSAGE value="Updated vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1." />
+    <MESSAGE value="Added ReadMe file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ReadMe file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,11 +694,6 @@
           <properties class="java.net.SocketException" package="java.net" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java</url>
           <line>20</line>

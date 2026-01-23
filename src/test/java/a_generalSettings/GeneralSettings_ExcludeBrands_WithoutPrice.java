@@ -35,7 +35,7 @@ public class GeneralSettings_ExcludeBrands_WithoutPrice extends TestRunner {
         String[] split = url.split("admin");
         String mainUrl = split[0]; //получили ссылку
         productPage.goAndSetEditingProductPage("GoPro - Hero3", "400", "15");
-        productPage.goAndSetEditingProductPage("KX-MB2000", "0", "10");
+        productPage.goAndSetEditingProductPage("Cobra XRS 9370", "0", "10");
 
         //Настраиваем настройки модуля
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();

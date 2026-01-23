@@ -63,6 +63,7 @@ public class CategoryPage {
             $(".mobile-hide .dropdown-icon--tools").hover().click();
             $("a[href*='products.delete']").click();
             UtilsAdm.switchToAndAcceptAlertWindow();
+            sleep(3000);
         } while ($$(".products-list__image").size() > 2);
     }
 
