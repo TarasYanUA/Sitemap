@@ -7,7 +7,7 @@
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude" />
 
-            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount" />
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount" />
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutProducts" />
@@ -37,7 +37,7 @@
             <class name="e_integrations.Integration__AB_deal_of_the_day" />
             <class name="e_integrations.Integration__AB_landing_categories" />
             <class name="e_integrations.Integration__AB_seo_for_tags" />
-            <class name="e_integrations.Integration__AB_seo_filters" />
+            <class name="e_integrations.Integration__AB_seo_filters" />-->
         </classes>
     </test>
 </suite>

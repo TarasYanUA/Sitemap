@@ -1,5 +1,6 @@
 package adminPanel;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
@@ -12,8 +13,13 @@ public class CategoryPage {
 
     BasicPage basicPage = new BasicPage();
 
-    public SelenideElement selectCategory_Ipods = $(".longtap-selection a[href*='category_id=178']");
-    public SelenideElement selectCategory_Android = $(".longtap-selection a[href$='category_id=182']");
+    ElementsCollection collapsedCategoryList = $$("span[id*='off_comp'][class='cm-combination hidden']");
+    SelenideElement expandCategoryList = $x("//span[text()='Магазин: CS-Cart']/..//span[contains(@class, 'icon-caret-right')]");
+    SelenideElement expand_categoryElectronics = $("#on_cat_166 .icon-caret-right");
+    SelenideElement expand_categoryMP3Players = $("#on_cat_177 .icon-caret-right");
+
+
+
     public SelenideElement selectCategory_Tents = $(".longtap-selection a[href*='category_id=218']");
     public SelenideElement button_ArrowLeft = $(".cs-icon--type-arrow-left");
     public SelenideElement button_ViewProducts = $(".dropleft a[href*='products.manage']");
@@ -23,6 +29,22 @@ public class CategoryPage {
     SelenideElement field_PriceForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[price]') + 1) = '[price]']])[2]");
     SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
+
+    private boolean expandCategoryListIfCollapsed() {
+        if (!collapsedCategoryList.isEmpty()) {
+            expandCategoryList.click();
+            return true;
+        }
+        return false;
+    }
+
+    public void openCategoryPage(String categoryName) {
+        if (expandCategoryListIfCollapsed()) {
+            expand_categoryElectronics.click();
+            expand_categoryMP3Players.click();
+        }
+        $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
+    }
 
     public void goToStorefront_CategoryPage(int tab) {
         Selenide.sleep(2000);

@@ -29,7 +29,7 @@ public class GeneralSettings_ExcludeCategories_WithoutPrice extends TestRunner {
 
         //Настраиваем первую категорию "iPods"
         CategoryPage categoryPage = basicPage.navigateToSection_Categories();
-        categoryPage.selectCategory_Ipods.click();
+        categoryPage.openCategoryPage("iPod");
         categoryPage.goToStorefront_CategoryPage(1);
         String currentUrl_CategoryIpods = WebDriverRunner.getWebDriver().getCurrentUrl(); //Получили ссылку категории "iPods"
         String[] arrayIpods = currentUrl_CategoryIpods.split("\\?");
@@ -42,7 +42,7 @@ public class GeneralSettings_ExcludeCategories_WithoutPrice extends TestRunner {
 
         //Настраиваем вторую категорию "Android"
         basicPage.navigateToSection_Categories();
-        categoryPage.selectCategory_Android.click();
+        categoryPage.openCategoryPage("Android");
         categoryPage.goToStorefront_CategoryPage(2);
         String currentUrl_CategoryAndroid = WebDriverRunner.getWebDriver().getCurrentUrl(); //Получили ссылку категории "Android"
         Utils.shiftBrowserTab(0);
