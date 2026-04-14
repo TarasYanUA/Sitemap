@@ -8,11 +8,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 /*
 Мультивендор + модуль "Расширенная карта сайта" 2.6.2.
-Работает в браузерах Chrome и Edge (в Firefox не работает).
+Работает в браузерах Chrome и Edge.
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4191ultru_abank/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4201ultru/admin.php?dispatch=addons.manage";
 
     @BeforeMethod
     public void openBrowser()  {
