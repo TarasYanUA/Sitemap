@@ -1,24 +1,24 @@
 <suite name="Sitemap" >
     <test name="General settings of Sitemap">
         <classes>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount" />
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts" />
             <class name="a_generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude" />
 
-<!--            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount" />
+    <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount" />
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutProducts" />
-            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_DoNotExclude" />
+            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_DoNotExclude" />-->
 
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmount" />
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice" />
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_DoNotExclude" />
 
-            <class name="a_generalSettings.GeneralSettings_ExcludeProductVariations" />
+            <!--        <class name="a_generalSettings.GeneralSettings_ExcludeProductVariations" />
 
             <class name="b_xmlSitemap.XmlSitemap_IncludeCompanies" />
             <class name="b_xmlSitemap.XmlSitemap_AddLastModifiedDate" />

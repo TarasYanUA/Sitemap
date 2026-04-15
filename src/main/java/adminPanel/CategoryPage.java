@@ -17,10 +17,8 @@ public class CategoryPage {
     SelenideElement expandCategoryList = $x("//span[text()='Магазин: CS-Cart']/..//span[contains(@class, 'icon-caret-right')]");
     SelenideElement expand_categoryElectronics = $("#on_cat_166 .icon-caret-right");
     SelenideElement expand_categoryMP3Players = $("#on_cat_177 .icon-caret-right");
-
-
-
-    public SelenideElement selectCategory_Tents = $(".longtap-selection a[href*='category_id=218']");
+    SelenideElement expand_categorySports = $("#on_cat_203 .icon-caret-right");
+    SelenideElement expand_categoryCamping = $("#on_cat_215 .icon-caret-right");
     public SelenideElement button_ArrowLeft = $(".cs-icon--type-arrow-left");
     public SelenideElement button_ViewProducts = $(".dropleft a[href*='products.manage']");
     public SelenideElement button_SaveListOfProducts = $(".nav__actions-btn-save");
@@ -38,10 +36,18 @@ public class CategoryPage {
         return false;
     }
 
-    public void openCategoryPage(String categoryName) {
+    public void openCategoriesList_MP3Players(String categoryName) {
         if (expandCategoryListIfCollapsed()) {
             expand_categoryElectronics.click();
             expand_categoryMP3Players.click();
+        }
+        $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
+    }
+
+    public void openCategoriesList_Camping(String categoryName) {
+        if (expandCategoryListIfCollapsed()) {
+            expand_categorySports.click();
+            expand_categoryCamping.click();
         }
         $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
     }

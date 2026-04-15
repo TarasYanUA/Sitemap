@@ -31,7 +31,7 @@ public class GeneralSettings_ExcludeProducts_WithoutPrice extends TestRunner {
         
         //Настраиваем 2 товара из категории "Палатки"
         CategoryPage categoryPage = basicPage.navigateToSection_Categories();
-        categoryPage.selectCategory_Tents.click();
+        categoryPage.openCategoriesList_Camping("Палатки");
         basicPage.gearwheelOnEditingPage.click();
         categoryPage.button_ViewProducts.click();
         categoryPage.setFirstProduct("300", "8");

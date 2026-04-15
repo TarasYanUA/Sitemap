@@ -31,7 +31,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmount extends TestRunner {
         
         //Настраиваем 2 товара из категории "Палатки"
         CategoryPage categoryPage = basicPage.navigateToSection_Categories();
-        categoryPage.selectCategory_Tents.click();
+        categoryPage.openCategoriesList_Camping("Палатки");
         if ($(".alert").exists())
             $(".close.cm-notification-close").click();
         //Выключаем сообщение о предупредлении, если оно появилось
