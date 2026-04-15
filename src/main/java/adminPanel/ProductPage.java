@@ -25,7 +25,7 @@ public class ProductPage {
     public void searchProduct(String name) {
         basicPage.navigateToSection_Products();
         field_productSearch.setValue(name);
-        Selenide.sleep(3000);
+        UtilsAdm.waitForSpinnerDisappear();
     }
 
     public void goAndSetEditingProductPage (String name, String price, String amount) {
@@ -34,6 +34,7 @@ public class ProductPage {
         field_ProductPrice.setValue(price);
         field_ProductAmount.setValue(amount);
         basicPage.button_Save.click();
+        UtilsAdm.waitForSpinnerDisappear();
     }
 
     public void deleteProductOnProductsSection (String name) {

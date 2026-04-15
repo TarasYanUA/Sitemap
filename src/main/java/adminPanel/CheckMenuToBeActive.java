@@ -18,6 +18,7 @@ public interface CheckMenuToBeActive {
                 menu.click();
         } catch (ElementNotFound e) {
         }
+        sleep(2000);
     }
 
     static void checkMenu_Addons_ToBeActive() {

@@ -36,7 +36,7 @@ public class Integration__AB_seo_filters extends TestRunner {
         ab_seo_filters.navigateToGenerationRulesForFilters();
         if (!$x("//a[text()='Операционная система']").exists() && !$x("//a[text()='Бренд']").exists()) {
             ab_seo_filters.button_AddRule.click();
-            ab_seo_filters.field_Features.click();
+            executeJavaScript("arguments[0].dispatchEvent(new MouseEvent('click', { bubbles: true }));", ab_seo_filters.field_Features);
             sleep(2000);
             ab_seo_filters.feature_Brand.scrollIntoCenter().click();
             sleep(1000);
@@ -45,6 +45,11 @@ public class Integration__AB_seo_filters extends TestRunner {
             ab_seo_filters.checkbox_IncludeSubcategories.click();
             ab_seo_filters.button_AddCategories.click();
             $(".ui-dialog").shouldBe(Condition.visible);
+
+            if($("span[id*='off_comp'][class='hand cm-combination-cat cm-uncheck hidden']").exists()) {
+                $x("//span[text()='Магазин: CS-Cart']/..//span[contains(@class, 'icon-caret-right')]").click();
+                $("span[id*='on_cat_166']").click();
+            }
             ab_seo_filters.categoryComputers.click();
             ab_seo_filters.button_SaveCategories.click();
             ab_seo_filters.select_ParentCategories.selectOptionByValue("by_all_filter_categories");

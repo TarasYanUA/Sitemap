@@ -31,6 +31,7 @@ public class BasicPage implements CheckMenuToBeActive {
     public void navigateToSection_Products() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Products.click();
+        UtilsAdm.closeAllNotifications();
     }
 
     public CategoryPage navigateToSection_Categories() {
@@ -93,6 +94,7 @@ public class BasicPage implements CheckMenuToBeActive {
     public void navigateTo_DownloadedAddonsPage() {
         checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
         section_DownloadedAddons.click();
+        UtilsAdm.closeAllNotifications();
     }
 
     public SitemapSettings navigateTo_SitemapSettings() {

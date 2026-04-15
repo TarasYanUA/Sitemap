@@ -28,7 +28,7 @@ public class CategoryPage {
     SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
 
-    private boolean expandCategoryListIfCollapsed() {
+    public boolean expandCategoryListIfCollapsed() {
         if (!collapsedCategoryList.isEmpty()) {
             expandCategoryList.click();
             return true;

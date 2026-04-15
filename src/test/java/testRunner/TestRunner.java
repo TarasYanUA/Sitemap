@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4201ultru/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4201mvru_unitheme/admin.php?dispatch=addons.manage";
 
     @BeforeMethod
     public void openBrowser()  {

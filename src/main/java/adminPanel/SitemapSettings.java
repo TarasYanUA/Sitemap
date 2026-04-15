@@ -5,6 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class SitemapSettings {
     public SitemapSettings(){super();}
@@ -62,6 +63,7 @@ public class SitemapSettings {
 
     public void clickButton_GenerateSitemap(){
         button_GenerateSitemap.click();
+        sleep(2000);
         UtilsAdm.waitForSpinnerDisappear();
         UtilsAdm.closeAllNotifications();
     }

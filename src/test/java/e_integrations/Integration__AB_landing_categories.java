@@ -1,5 +1,6 @@
 package e_integrations;
 
+import adminPanel.CategoryPage;
 import testRunner.TestRunner;
 import adminPanel.AB_landing_categories;
 import adminPanel.BasicPage;
@@ -33,7 +34,9 @@ public class Integration__AB_landing_categories extends TestRunner {
         basicPage.button_Save.click();
 
         //Работаем со страницей категории
+        CategoryPage categoryPage = new CategoryPage();
         basicPage.navigateToSection_Categories();
+        categoryPage.expandCategoryListIfCollapsed();
         $x("//table[contains(@class, 'table-tree')] //a[contains(text(), 'AB: Спорт и отдых')]").click();
         $("#elm_category_status_0_a").click();
         basicPage.button_Save.click();
