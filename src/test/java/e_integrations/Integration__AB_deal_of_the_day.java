@@ -29,7 +29,7 @@ public class Integration__AB_deal_of_the_day extends TestRunner {
         AB_deal_of_the_day ab_deal_of_the_day = basicPage.addDemoDataTo_ab_deal_of_the_day();
         ab_deal_of_the_day.navigateToSection_GeneralSettings();
         Utils.setCheckboxState(ab_deal_of_the_day.setting_AddPromotionsToXml, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Настраиваем XML-карту сайта
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
@@ -38,7 +38,7 @@ public class Integration__AB_deal_of_the_day extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         sitemapSettings.setting_OtherAddons_ChangeFrequency.selectOptionByValue("always");
         sitemapSettings.setting_OtherAddons_Priority.selectOptionByValue("0.8");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

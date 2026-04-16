@@ -13,7 +13,7 @@ public class BasicPage implements CheckMenuToBeActive {
         super();
     }
 
-    public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
+    SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
     public SelenideElement chooseAnyProduct = $(".products-list__image");
     public SelenideElement gearwheelOnEditingPage = $(".actions__wrapper .dropdown-icon--tools");
     public SelenideElement button_Preview = $(".dropdown-menu a[target='_blank']");
@@ -27,6 +27,11 @@ public class BasicPage implements CheckMenuToBeActive {
     SelenideElement section_DownloadedAddons = $("#addons_downloaded_add_ons");
     SelenideElement section_Vendors = $(By.id("vendors_vendors"));
 
+
+    public void saveSettings() {
+        button_Save.click();
+        sleep(2000);
+    }
 
     public void navigateToSection_Products() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
@@ -63,7 +68,7 @@ public class BasicPage implements CheckMenuToBeActive {
         button_ProductsThatCanBeSold.click();
         if (button_SellProduct.exists()) {
             button_SellProduct.click();
-            button_Save.click();
+            saveSettings();
         }
     }
 

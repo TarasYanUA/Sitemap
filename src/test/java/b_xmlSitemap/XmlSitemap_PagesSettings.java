@@ -34,7 +34,7 @@ public class XmlSitemap_PagesSettings extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_PagesSettings_IncludeBlogPages, true);
         sitemapSettings.setting_PagesSettings_ChangeFrequency.selectOptionByValue("monthly");
         sitemapSettings.setting_PagesSettings_Priority.selectOptionByValue("0.9");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

@@ -32,7 +32,7 @@ public class Integration__AB_seo_filters extends TestRunner {
         basicPage.installAddonAtAddonsManager(basicPage.menuOfAB__seo_filters, "ab__seo_filters", "form[name=ab_install_form_54338]");
         AB_seo_filters ab_seo_filters = basicPage.navigateTo_GeneralSettingsOf_ab_seo_filters();
         ab_seo_filters.setting_AddSeoPagesToSitemap.selectOptionByValue("all");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
         ab_seo_filters.navigateToGenerationRulesForFilters();
         if (!$x("//a[text()='Операционная система']").exists() && !$x("//a[text()='Бренд']").exists()) {
             ab_seo_filters.button_AddRule.click();
@@ -46,10 +46,9 @@ public class Integration__AB_seo_filters extends TestRunner {
             ab_seo_filters.button_AddCategories.click();
             $(".ui-dialog").shouldBe(Condition.visible);
 
-            if($("span[id*='off_comp'][class='hand cm-combination-cat cm-uncheck hidden']").exists()) {
+            if ($("span[id*='off_comp'][class='hand cm-combination-cat cm-uncheck hidden']").exists())
                 $x("//span[text()='Магазин: CS-Cart']/..//span[contains(@class, 'icon-caret-right')]").click();
-                $("span[id*='on_cat_166']").click();
-            }
+            ab_seo_filters.categoryElectronics.click();
             ab_seo_filters.categoryComputers.click();
             ab_seo_filters.button_SaveCategories.click();
             ab_seo_filters.select_ParentCategories.selectOptionByValue("by_all_filter_categories");
@@ -72,7 +71,7 @@ public class Integration__AB_seo_filters extends TestRunner {
         sitemapSettings.tab_XMLSitemap.click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_CategoriesSettings_IncludeToSitemap, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

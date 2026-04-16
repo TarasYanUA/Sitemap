@@ -41,7 +41,7 @@ public class GeneralSettings_ExcludeProductVariations extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_ProductsSettings_IncludeToSitemap, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

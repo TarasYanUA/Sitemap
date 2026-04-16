@@ -26,7 +26,7 @@ public class XmlSitemap_IncludeCompanies extends TestRunner {
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_IncludeCompanies, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();
@@ -44,8 +44,8 @@ public class XmlSitemap_IncludeCompanies extends TestRunner {
         Utils.shiftBrowserTab(2);
 
         //Проверяем, что ссылки на страницы компаний присутствуют
-        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'company_id')]").exists()
-                        || $("[href*='company_id']").exists(),
+        softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'megaton')]").exists()
+                        || $("[href*='megaton']").exists(),
                 "There are no links for companies pages!");
 
         screenshot("XmlSitemap_IncludeCompanies");

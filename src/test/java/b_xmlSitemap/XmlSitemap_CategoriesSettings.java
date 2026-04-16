@@ -32,7 +32,7 @@ public class XmlSitemap_CategoriesSettings extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_CategoriesSettings_IncludeToSitemap, true);
         sitemapSettings.setting_CategoriesSettings_ChangeFrequency.selectOptionByValue("weekly");
         sitemapSettings.setting_CategoriesSettings_Priority.selectOptionByValue("0.3");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

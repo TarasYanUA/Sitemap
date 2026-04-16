@@ -39,7 +39,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         sitemapSettings.setting_ProductsSettings_ChangeFrequency.selectOptionByValue("daily");
         sitemapSettings.setting_ProductsSettings_Priority.selectOptionByValue("0.7");
         Utils.setCheckboxState(sitemapSettings.setting_ProductsSettings_AddVendorsOffers, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Устанавливаем модуль "Общие товары для продавцов"
         basicPage.navigateTo_DownloadedAddonsPage();
@@ -59,7 +59,7 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
         if (!$("label[for*='elm_parent_product']").exists()) {
             productPage.productVendor.click();
             productPage.productBelongsToAllVendors.click();
-            basicPage.button_Save.click();
+            basicPage.saveSettings();
         }
         basicPage.navigateTo_VendorAdminsPage();
         Utils.shiftBrowserTab(1);
@@ -86,22 +86,22 @@ public class XmlSitemap_ProductsSettings extends TestRunner {
 
         //Проверяем, что ссылка на товары присутствует в xml карте-сайта
         softAssert.assertTrue($x("//*[local-name()='span' and contains(text(), 'products')]").exists(),
-                "There is no a link for products in the xml-sitemap!");
+                "There is no link for products in the xml-sitemap!");
         String urlForProducts = sitemapSettings.findLinkByPartialName("products1");
         Selenide.executeJavaScript("window.open('" + urlForProducts + "');");
         Utils.shiftBrowserTab(4);
 
         //Проверяем, что Частота изменений "Каждый день"
         softAssert.assertTrue($("changefreq").has(Condition.text("daily")),
-                "There is no Change frequency 'Daily'!");
+                "Change is not frequency 'Daily'!");
 
         //Проверяем, что Приоритет "0.7"
         softAssert.assertTrue($("priority").has(Condition.text("0.7")),
-                "There is no Priority '0.7'!");
+                "Priority is not '0.7'!");
 
         //Проверяем, что ссылка на товар "USB-N53" с кодом продавца присутствует
         softAssert.assertTrue($x("//*[contains(@href, '" + urlForProductUSB + "')]").exists(),
-                "There is no link for product 'USB-N53' or a vendor code is missed!");
+                "There is no link for a product 'USB-N53'!");
 
         screenshot("XmlSitemap_ProductsSettings");
         softAssert.assertAll();

@@ -20,7 +20,7 @@ public class XmlSitemapOfImages extends TestRunner {
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemapOfImages.click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLImages, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

@@ -25,7 +25,7 @@ public class XmlSitemap_Directory extends TestRunner {
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         sitemapSettings.setting_XmlSitemapDirectory.setValue(textForSetting_XmlSitemapDirectory);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

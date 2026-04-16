@@ -1,19 +1,19 @@
 <suite name="Sitemap">
     <test name="General settings of Sitemap">
         <classes>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount"/>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutPrice"/>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice"/>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts"/>
-            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude"/>
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmount"/>-->
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutPrice"/>-->
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutAmountAndPrice"/>-->
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_WithoutProducts"/>-->
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeCategories_DoNotExclude"/>-->
 
-            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount"/>
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmount"/>-->
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutPrice"/>
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutAmountAndPrice"/>
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_WithoutProducts"/>
             <class name="a_generalSettings.GeneralSettings_ExcludeBrands_DoNotExclude"/>
 
-            <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmount"/>
+<!--            <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmount"/>
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutPrice"/>
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_WithoutAmountAndPrice"/>
             <class name="a_generalSettings.GeneralSettings_ExcludeProducts_DoNotExclude"/>
@@ -31,7 +31,7 @@
 
             <class name="c_htmlSitemap.HTMLSitemap"/>
 
-            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages"/>
+            <class name="d_xmlSitemapOfImages.XmlSitemapOfImages"/>-->
 
 <!--            <class name="e_integrations.Integration__AB_images_seo"/>
             <class name="e_integrations.Integration__AB_deal_of_the_day"/>

@@ -29,8 +29,8 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner {
         sitemapSettings.tab_XMLSitemap.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         sitemapSettings.setting_CustomerLinksSettings_ChangeFrequency.selectOptionByValue("yearly");
-        sitemapSettings.setting_CustomerLinksSettings_Priority.selectOptionByValue("1");
-        basicPage.button_Save.click();
+        sitemapSettings.setting_CustomerLinksSettings_Priority.selectOptionByValue("1.0");
+        basicPage.saveSettings();
 
         //Добавляем пользовательскую ссылку
         basicPage.navigateTo_UserLinksSection();
@@ -60,9 +60,9 @@ public class XmlSitemap_CustomerLinksSettings extends TestRunner {
         softAssert.assertTrue($("changefreq").has(Condition.text("yearly")),
                 "There is no Change frequency 'Yearly'!");
 
-        //Проверяем, что Приоритет "1"
-        softAssert.assertTrue($("priority").has(Condition.text("1")),
-                "There is no Priority '1'!");
+        //Проверяем, что Приоритет "1.0"
+        softAssert.assertTrue($("priority").has(Condition.text("1.0")),
+                "There is no Priority '1.0'!");
 
         //Проверяем, что пользовательская ссылка присутствует
         softAssert.assertTrue($("[href*='catalog']").exists(),

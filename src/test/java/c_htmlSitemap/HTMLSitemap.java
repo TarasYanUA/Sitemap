@@ -20,7 +20,7 @@ public class HTMLSitemap extends TestRunner {
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_HTMLSitemap.click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableHTMLSitemap, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем на витрине
         String url = WebDriverRunner.getWebDriver().getCurrentUrl();

@@ -16,6 +16,7 @@ public class AB_seo_filters {
             $x("//li[@aria-label='Электроника']//div[contains(text(), 'Операционная система')]");
     public SelenideElement feature_Brand = $x("//div[contains(text(), 'Бренд [18]')]");
     public SelenideElement button_AddCategories = $x("//a[contains(@id, 'opener_picker_elm_categories')]");
+    public SelenideElement categoryElectronics = $("span[id*='on_cat_166']");
     public SelenideElement categoryComputers = $("#input_cat_167");
     public SelenideElement button_SaveCategories = $(".cm-form-dialog-closer");
     public SelenideElement checkbox_IncludeSubcategories = $("#elm_subcats");

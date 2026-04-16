@@ -32,7 +32,7 @@ public class XmlSitemap_FeatureVariantsSettings extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
         sitemapSettings.setting_FeatureVariantsSettings_ChangeFrequency.selectOptionByValue("do_not_use");
         sitemapSettings.setting_FeatureVariantsSettings_Priority.selectOptionByValue("0.1");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

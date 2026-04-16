@@ -31,7 +31,7 @@ public class Integration__AB_landing_categories extends TestRunner {
         AB_landing_categories ab_landing_categories = basicPage.addDemoDataTo_ab_landing_categories();
         ab_landing_categories.navigateToSection_GeneralSettings();
         Utils.setCheckboxState(ab_landing_categories.setting_AddCatalogToXml, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем со страницей категории
         CategoryPage categoryPage = new CategoryPage();
@@ -39,7 +39,7 @@ public class Integration__AB_landing_categories extends TestRunner {
         categoryPage.expandCategoryListIfCollapsed();
         $x("//table[contains(@class, 'table-tree')] //a[contains(text(), 'AB: Спорт и отдых')]").click();
         $("#elm_category_status_0_a").click();
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
         basicPage.gearwheelOnEditingPage.click();
         basicPage.button_Preview.click();
         Utils.shiftBrowserTab(1);
@@ -56,7 +56,7 @@ public class Integration__AB_landing_categories extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_CategoriesSettings_IncludeToSitemap, true);
         sitemapSettings.setting_ExcludeCategories.selectOptionByValue("none");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

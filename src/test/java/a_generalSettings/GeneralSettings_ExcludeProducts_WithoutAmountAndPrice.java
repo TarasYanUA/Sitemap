@@ -67,7 +67,7 @@ public class GeneralSettings_ExcludeProducts_WithoutAmountAndPrice extends TestR
         sitemapSettings.tab_XMLSitemap.scrollIntoCenter().click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
         Utils.setCheckboxState(sitemapSettings.setting_FeatureVariantsSettings_IncludeToSitemap, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

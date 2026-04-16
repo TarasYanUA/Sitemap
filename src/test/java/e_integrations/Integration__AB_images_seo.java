@@ -31,10 +31,10 @@ public class Integration__AB_images_seo extends TestRunner {
         abImagesSeo.field_TitlePrefix.setValue("Attribute_TitlePrefix");
         abImagesSeo.field_TitleText.setValue("[text][image_num]");
         abImagesSeo.field_TitleSuffix.setValue("Attribute_TitleSuffix");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
         abImagesSeo.navigateToGeneralSettings();
         abImagesSeo.setting_AttributeGenerationMethod.selectOptionByValue("always_generate");
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Включаем XML-карту изображений c Alt и Title
         SitemapSettings sitemapSettings = basicPage.navigateTo_SitemapSettings();
@@ -43,7 +43,7 @@ public class Integration__AB_images_seo extends TestRunner {
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLImages, true);
         Utils.setCheckboxState(sitemapSettings.setting_AddTitleAndCaption, true);
         Utils.setCheckboxState(sitemapSettings.setting_AddFeatureValues, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

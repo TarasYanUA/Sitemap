@@ -9,7 +9,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CategoryPage {
-    public CategoryPage(){ super(); }
+    public CategoryPage() {
+        super();
+    }
 
     BasicPage basicPage = new BasicPage();
 
@@ -28,32 +30,27 @@ public class CategoryPage {
     SelenideElement field_AmountForCategory_ProdTwo = $x("(//input[starts-with(@name, 'products_data')][@name[substring(.,string-length(.) - string-length('[amount]') + 1) = '[amount]']])[2]");
 
 
-    public boolean expandCategoryListIfCollapsed() {
-        if (!collapsedCategoryList.isEmpty()) {
+    public void expandCategoryListIfCollapsed() {
+        if (!collapsedCategoryList.isEmpty())
             expandCategoryList.click();
-            return true;
-        }
-        return false;
     }
 
     public void openCategoriesList_MP3Players(String categoryName) {
-        if (expandCategoryListIfCollapsed()) {
-            expand_categoryElectronics.click();
-            expand_categoryMP3Players.click();
-        }
+        expandCategoryListIfCollapsed();
+        expand_categoryElectronics.click();
+        expand_categoryMP3Players.click();
         $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
     }
 
     public void openCategoriesList_Camping(String categoryName) {
-        if (expandCategoryListIfCollapsed()) {
-            expand_categorySports.click();
-            expand_categoryCamping.click();
-        }
+        expandCategoryListIfCollapsed();
+        expand_categorySports.click();
+        expand_categoryCamping.click();
         $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
     }
 
     public void goToStorefront_CategoryPage(int tab) {
-        Selenide.sleep(2000);
+        Selenide.sleep(3000);
         basicPage.gearwheelOnEditingPage.click();
         basicPage.button_Preview.click();
         switchTo().window(tab);

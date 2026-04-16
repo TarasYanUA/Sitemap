@@ -33,7 +33,7 @@ public class Integration__AB_seo_for_tags extends TestRunner {
         basicPage.navigateTo_GeneralSettingOf_ab_seo_for_tags();
         if(!$("input[id*='addon_option_ab__seo_for_tags_index_tag_pages_']").isSelected()){
             $("input[id*='addon_option_ab__seo_for_tags_index_tag_pages_']").click();
-            basicPage.button_Save.click();
+            basicPage.saveSettings();
         }
 
         //Настраиваем XML-карту сайта
@@ -41,7 +41,7 @@ public class Integration__AB_seo_for_tags extends TestRunner {
         sitemapSettings.tab_Settings.click();
         sitemapSettings.tab_XMLSitemap.click();
         Utils.setCheckboxState(sitemapSettings.setting_EnableXMLSitemap, true);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
 
         //Работаем с выгрузкой
         basicPage.navigateTo_SitemapGenerating();

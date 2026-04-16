@@ -33,7 +33,7 @@ public class ProductPage {
         basicPage.chooseAnyProduct.click();
         field_ProductPrice.setValue(price);
         field_ProductAmount.setValue(amount);
-        basicPage.button_Save.click();
+        basicPage.saveSettings();
         UtilsAdm.waitForSpinnerDisappear();
     }
 
