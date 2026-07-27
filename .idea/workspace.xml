@@ -4,43 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Make adaptation to CS-Cart 4.20.1.">
+    <list default="true" id="efb91b87-e5ad-4286-89ac-6252e465d44c" name="Changes" comment="Finished adaptation to CS-Cart 4.20.1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AB_seo_filters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/BasicPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeBrands_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeCategories_WithoutProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProductVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProductVariations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_DoNotExclude.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_DoNotExclude.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutAmountAndPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/a_generalSettings/GeneralSettings_ExcludeProducts_WithoutPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_AddLastModifiedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_AddLastModifiedDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CategoriesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CategoriesSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CustomerLinksSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_CustomerLinksSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_Directory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_FeatureVariantsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_FeatureVariantsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_IncludeCompanies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_IncludeCompanies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_PagesSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_PagesSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/b_xmlSitemap/XmlSitemap_ProductsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/c_htmlSitemap/HTMLSitemap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/d_xmlSitemapOfImages/XmlSitemapOfImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/d_xmlSitemapOfImages/XmlSitemapOfImages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_deal_of_the_day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_images_seo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_landing_categories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_filters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/e_integrations/Integration__AB_seo_for_tags.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -648,7 +613,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683796990899</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -674,7 +639,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improved messages for asserts!" />
     <MESSAGE value="Saved TestNG as a project." />
     <MESSAGE value="Updated pom.xml file.&#10;Started adaptation to CS-Cart 4.18.2" />
     <MESSAGE value="Adaptation to CS-Cart 4.18.2 is ready!&#10;Adapted test-case GeneralSettings_ExcludeProductVariations to the newest add-on version." />
@@ -699,7 +663,8 @@
     <MESSAGE value="Added ReadMe file." />
     <MESSAGE value="Updated libraries in pom file." />
     <MESSAGE value="Make adaptation to CS-Cart 4.20.1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make adaptation to CS-Cart 4.20.1." />
+    <MESSAGE value="Finished adaptation to CS-Cart 4.20.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished adaptation to CS-Cart 4.20.1." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
